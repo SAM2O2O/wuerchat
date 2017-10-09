@@ -5,4 +5,12 @@
 	<artifactId>wuer-storage</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
+	<dependencies>
+		<dependency>
+			<groupId>org.mongodb</groupId>
+			<artifactId>mongodb-driver</artifactId>
+			<version>3.6.0-beta1</version>
+		</dependency>
+	</dependencies>
+
 </project>
