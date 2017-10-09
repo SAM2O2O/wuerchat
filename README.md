@@ -1,4 +1,4 @@
-# wuerchat contains for parts
+# wuerchat contains four parts
 
 1.wuer-connector <br>
 2.wuer-protobuf  <br>
