@@ -1,4 +1,4 @@
-package com.chat.wuer.connector.dao.mongod;
+package com.chat.wuer.storage.mongodb;
 
 import java.util.ArrayList;
 import java.util.List;
