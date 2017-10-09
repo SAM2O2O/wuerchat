@@ -1,4 +1,4 @@
-package com.chat.wuer.storage.mongodb;
+package com.wuerchat.storage.mongodb;
 
 import java.util.ArrayList;
 import java.util.List;
