@@ -1,8 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.chat.wuer.connector</groupId>
-	<artifactId>wuer-connector</artifactId>
+	<groupId>com.wuerchat.connector</groupId>
+	<artifactId>wuerchat-connector</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
 	<dependencies>
@@ -13,14 +13,14 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.google.protobuf</groupId>
-			<artifactId>protobuf-java</artifactId>
-			<version>3.4.0</version>
+			<groupId>com.wuerchat.common</groupId>
+			<artifactId>wuerchat-common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
 		<dependency>
-			<groupId>com.chrome.chat.common</groupId>
-			<artifactId>chatchrome-common</artifactId>
+			<groupId>com.wuerchat.message</groupId>
+			<artifactId>wuerchat-message</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
