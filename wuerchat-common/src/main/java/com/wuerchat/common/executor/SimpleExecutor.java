@@ -1,6 +1,6 @@
-package com.chat.wuer.common.executor;
+package com.wuerchat.common.executor;
 
-import com.chat.wuer.common.chain.IHandler;
+import com.wuerchat.common.chain.IHandler;
 
 /**
  * 定义一个简单统一的执行器

@@ -1,4 +1,4 @@
-package com.chat.wuer.common.command;
+package com.wuerchat.common.command;
 
 /**
  * 处理完成后的消息载体

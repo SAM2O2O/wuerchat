@@ -1,4 +1,4 @@
-package com.chat.wuer.common.chain;
+package com.wuerchat.common.chain;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,9 +1,9 @@
-package com.chat.wuer.common.executor;
+package com.wuerchat.common.executor;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import com.chat.wuer.common.chain.IHandler;
+import com.wuerchat.common.chain.IHandler;
 
 public abstract class AbstracteExecutor<T> implements IExecutor<T> {
 

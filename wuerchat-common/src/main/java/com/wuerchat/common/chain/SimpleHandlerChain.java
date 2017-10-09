@@ -1,4 +1,4 @@
-package com.chat.wuer.common.chain;
+package com.wuerchat.common.chain;
 
 /**
  * 简单的来说，只有返回true，此条消息链才算处理成功

@@ -1,4 +1,4 @@
-package com.chat.wuer.common.chain;
+package com.wuerchat.common.chain;
 
 public interface IHandler<T> {
 	boolean handle(T t);
