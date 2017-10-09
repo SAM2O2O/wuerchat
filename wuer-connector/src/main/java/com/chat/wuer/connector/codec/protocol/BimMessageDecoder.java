@@ -1,0 +1,42 @@
+package com.chat.wuer.connector.codec.protocol;
+
+import java.util.List;
+
+import com.chat.wuer.connector.codec.parser.IProtocolParser;
+import com.chat.wuer.connector.codec.parser.ProtocolParser;
+
+import io.netty.buffer.ByteBuf;
+import io.netty.channel.ChannelHandlerContext;
+import io.netty.handler.codec.ReplayingDecoder;
+
+/**
+ * 解码器,使用ReplayingDecoder，每一个deccode必须是
+ * 
+ * @author Sam
+ * @since 2017.09.27
+ *
+ */
+public class BimMessageDecoder extends ReplayingDecoder<ReplaySignal> {
+
+	private IProtocolParser parser = new ProtocolParser();
+
+	public BimMessageDecoder() {
+		super.state(ReplaySignal.START_POINT);
+	}
+
+	@Override
+	public void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) throws Exception {
+		parser.readAndOut(ctx.channel(), in, out, this);
+	}
+
+	@Override
+	public void checkpoint(ReplaySignal bp) {
+		super.checkpoint(bp);
+	}
+
+	@Override
+	public ReplaySignal state() {
+		return super.state();
+	}
+
+}
