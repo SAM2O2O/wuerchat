@@ -1,5 +1,6 @@
 package com.wuerchat.message.api;
 
-public class IMessage {
+public interface IMessage {
 
+	public boolean sendMessage(String id, byte[] body);
 }

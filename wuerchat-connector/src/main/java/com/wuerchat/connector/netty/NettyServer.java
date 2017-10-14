@@ -1,7 +1,5 @@
 package com.wuerchat.connector.netty;
 
-import java.util.concurrent.TimeUnit;
-
 import com.chrome.chat.common.command.Command;
 import com.chrome.chat.common.executor.AbstracteExecutor;
 import com.chrome.chat.common.executor.SimpleExecutor;
@@ -20,24 +18,22 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
-import io.netty.handler.timeout.IdleStateHandler;
-import io.netty.handler.timeout.ReadTimeoutHandler;
 
-public abstract class BimNettyServer {
+public abstract class NettyServer {
 
 	private AbstracteExecutor<Command> executor;
 	private ServerBootstrap bootstrap;
 	private EventLoopGroup parentGroup;
 	private EventLoopGroup childGroup;
 
-	public BimNettyServer() {
+	public NettyServer() {
 		executor = new SimpleExecutor<Command>();
 		parentGroup = new NioEventLoopGroup(10, new PrefixThreadFactory("bim-boss-evenloopgroup"));
 		int childThreadNum = Runtime.getRuntime().availableProcessors() + 1;
 		childGroup = new NioEventLoopGroup(childThreadNum, new PrefixThreadFactory("bim-worker-evenloopgroup"));
 		bootstrap = new ServerBootstrap();
 		bootstrap.group(parentGroup, childGroup);
-		bootstrap.channel(NioServerSocketChannel.class).localAddress(443);
+		bootstrap.channel(NioServerSocketChannel.class).localAddress(8448);
 		bootstrap.option(ChannelOption.SO_BACKLOG, 2000);
 		bootstrap.option(ChannelOption.SO_REUSEADDR, true);
 		bootstrap.option(ChannelOption.SO_RCVBUF, 256 * 1024);
@@ -53,7 +49,7 @@ public abstract class BimNettyServer {
 	public void start() {
 		try {
 			if (bootstrap != null) {
-				ChannelFuture channelFuture = bootstrap.bind("172.16.36.10", 8443).sync();
+				ChannelFuture channelFuture = bootstrap.bind("10.11.56.76", 8448).sync();
 				channelFuture.channel().closeFuture().sync();
 			}
 		} catch (InterruptedException e) {
@@ -78,14 +74,14 @@ public abstract class BimNettyServer {
 
 			ch.pipeline().addLast(new MessageDecoder());
 			ch.pipeline().addLast(new MessageEncoder());
-			ch.pipeline().addLast("timeout", new IdleStateHandler(0, 10, 0, TimeUnit.MICROSECONDS));
+//			ch.pipeline().addLast("timeout", new IdleStateHandler(0, 10, 0, TimeUnit.MICROSECONDS));
 
 			// ch.pipeline().addLast(new SslHandler(sslEngine));
 
-			ch.pipeline().addLast("readTimeoutHandler", new ReadTimeoutHandler(50, TimeUnit.SECONDS));
-			ch.pipeline().addLast(new AuthResponseHandler());
-			ch.pipeline().addLast("keepAliveHandler", new HeartBeatHandler());
-			ch.pipeline().addLast(new BimInboundHandler());
+//			ch.pipeline().addLast("readTimeoutHandler", new ReadTimeoutHandler(50, TimeUnit.SECONDS));
+//			ch.pipeline().addLast(new AuthResponseHandler());
+//			ch.pipeline().addLast("keepAliveHandler", new HeartBeatHandler());
+			ch.pipeline().addLast(new NettyInboundHandler());
 		}
 
 	}

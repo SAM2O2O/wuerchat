@@ -2,6 +2,7 @@ package com.wuerchat.connector.codec.protocol;
 
 import java.util.List;
 
+import com.wuerchat.connector.client.ChannelSession;
 import com.wuerchat.connector.codec.parser.IProtocolParser;
 import com.wuerchat.connector.codec.parser.ProtocolParser;
 
@@ -26,7 +27,12 @@ public class MessageDecoder extends ReplayingDecoder<ReplaySignal> {
 
 	@Override
 	public void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) throws Exception {
+		// receive data from client
 		parser.readAndOut(ctx.channel(), in, out, this);
+
+		
+		ChannelSession channelSession = new ChannelSession(ctx.channel());
+		channelSession.send(null);
 	}
 
 	@Override

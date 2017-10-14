@@ -17,7 +17,7 @@ import io.netty.util.concurrent.GenericFutureListener;
  * @since 2017.09.27
  * 
  */
-public class MessageEncoder extends MessageToByteEncoder<ProtocolPacket> {
+public class MessageEncoder extends MessageToByteEncoder<RedisCommand> {
 
 	@Override
 	public void write(ChannelHandlerContext ctx, Object msg, ChannelPromise promise) throws Exception {
@@ -37,7 +37,7 @@ public class MessageEncoder extends MessageToByteEncoder<ProtocolPacket> {
 	}
 
 	@Override
-	protected void encode(ChannelHandlerContext ctx, ProtocolPacket msg, ByteBuf out) throws Exception {
+	protected void encode(ChannelHandlerContext ctx, RedisCommand msg, ByteBuf out) throws Exception {
 
 		IProtocolBuilder builder = ProtocolBuilder.getInstance();
 		builder.writeAndOut(ctx.channel(), msg, out);

@@ -5,5 +5,9 @@ import java.util.concurrent.ConcurrentMap;
 
 public class ClientChannelManager {
 
-	private ConcurrentMap<String, ClientChannel> clientChannels = new ConcurrentHashMap<String, ClientChannel>();
+	private ConcurrentMap<String, ChannelSession> clientChannels = new ConcurrentHashMap<String, ChannelSession>();
+
+	public void addChannel(){
+		
+	}
 }

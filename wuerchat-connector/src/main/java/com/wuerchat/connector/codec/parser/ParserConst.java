@@ -1,6 +1,6 @@
 package com.wuerchat.connector.codec.parser;
 
-import com.wuerchat.connector.client.ClientChannel;
+import com.wuerchat.connector.client.ChannelSession;
 
 import io.netty.util.AttributeKey;
 
@@ -9,5 +9,5 @@ public class ParserConst {
 
 	public static final AttributeKey<ProtocolParser> INPARSER = AttributeKey.valueOf("inParser");
 
-	public static final AttributeKey<ClientChannel> TOCLIENT = AttributeKey.valueOf("client");
+	public static final AttributeKey<ChannelSession> CHANNELSESSION = AttributeKey.valueOf("channelSession");
 }

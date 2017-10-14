@@ -1,10 +1,11 @@
 package com.wuerchat.connector.codec.parser;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.wuerchat.connector.codec.protocol.MessageDecoder;
-import com.wuerchat.connector.codec.protocol.ProtocolPacket;
 import com.wuerchat.connector.codec.protocol.ReplaySignal;
+import com.wuerchat.connector.codec.redis.RedisStringParameter;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.Channel;
@@ -17,67 +18,73 @@ import io.netty.channel.Channel;
  */
 public class ProtocolParser implements IProtocolParser {
 
-	private int HEAD_LENGTH = 8;
-	private int BODY_LENGTH = 0;
-	private byte[] headBuffer;
-	private byte[] bodyBuffer;
-
-	// private ProtocolParser() {
-	// }
-	//
-	// public static IProtocolParser getInstance() {
-	// return ISingletonHolder.instance;
-	// }
-	//
-	// public interface ISingletonHolder {
-	// IProtocolParser instance = new ProtocolParser();
-	// }
-
 	public void readAndOut(Channel ch, ByteBuf inByte, List<Object> out, MessageDecoder decoder) {
 		switch (decoder.state()) {
 		case START_POINT:
-			// if (inByte.readByte() == 1) {
-			// }
-			byte[] readByte = new byte[5];
-			inByte.readBytes(readByte);
-			System.out.println(new String(readByte));
-			decoder.checkpoint(ReplaySignal.START_POINT);
-			break;
+			if (inByte.readByte() == '*') {
+				List<Byte> sizeBytes = new ArrayList<>();
+				while (true) {
+					byte curent = inByte.readByte();
+					if (curent == '\r' && inByte.readByte() == '\n') {
+						break;
+					}
+					sizeBytes.add(curent);
+				}
 
-		case HEADER_POINT:
-			byte type = inByte.getByte(inByte.readerIndex());
-			if (type > 1) {
-				headBuffer = new byte[HEAD_LENGTH];
-				inByte.readBytes(headBuffer);
-				decoder.checkpoint(ReplaySignal.BODY_POINT);
-				BODY_LENGTH = (0x000000ff & headBuffer[2]) + ((0x000000ff & headBuffer[1]) << 8);
-			} else {
-				inByte.readByte();
-				decoder.checkpoint(ReplaySignal.START_POINT);
-				buildProtocolPacket(out);
+				byte[] tempBytes = new byte[sizeBytes.size()];
+				for (int i = 0; i < sizeBytes.size(); i++) {
+					tempBytes[i] = sizeBytes.get(i);
+				}
+
+				System.out.println("start read data size=" + Integer.parseInt(new String(tempBytes)));
+				List<RedisStringParameter> singularArguments = new ArrayList<RedisStringParameter>(
+						Integer.parseInt(new String(tempBytes)));
+
+				while (true) {
+					if (inByte.readByte() == '$') {
+						System.out.println("start read String ");
+						List<Byte> interBytes = new ArrayList<Byte>();
+						while (true) {
+							byte curent = inByte.readByte();
+							if (curent == '\r' && inByte.readByte() == '\n') {
+								break;
+							}
+							interBytes.add(curent);
+							
+						}
+
+						byte[] tempInnerByte = new byte[interBytes.size()];
+						for (int j = 0; j < interBytes.size(); j++) {
+							tempInnerByte[j] = interBytes.get(j);
+						}
+
+						int readByteSize = Integer.parseInt(new String(tempInnerByte));
+						System.out.println("String length=" + readByteSize);
+
+						byte[] dataBuffer = new byte[readByteSize + 2];
+						inByte.readBytes(dataBuffer);
+						String str = new String(dataBuffer);
+						System.out.println("read String==" + str);
+						singularArguments.add(new RedisStringParameter(str));
+
+						if (singularArguments.size() == Integer.parseInt(new String(tempBytes))) {
+							System.out.println("read data finished");
+							break;
+						}
+
+					}
+				}
 			}
-			break;
 
-		case BODY_POINT:
-			bodyBuffer = new byte[BODY_LENGTH];
-			inByte.readBytes(bodyBuffer);
-			
-			// #TODO 对body进行解密
-			
 			decoder.checkpoint(ReplaySignal.START_POINT);
-			buildProtocolPacket(out);
-			break;
 
+			break;
+		
 		default:
 			System.out.print("error......");
 			break;
 		}
 	}
 
-	private void buildProtocolPacket(List<Object> out) {
-		out.add(new ProtocolPacket(headBuffer, bodyBuffer));
-		this.headBuffer = new byte[0];
-		this.bodyBuffer = new byte[0];
-	}
 
 }

@@ -1,6 +1,8 @@
 package com.wuerchat.connector.codec.parser;
 
-import com.wuerchat.connector.codec.protocol.ProtocolPacket;
+import java.nio.ByteBuffer;
+
+import com.wuerchat.connector.codec.protocol.RedisCommand;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.Channel;
@@ -18,23 +20,14 @@ public class ProtocolBuilder implements IProtocolBuilder {
 		IProtocolBuilder instance = new ProtocolBuilder();
 	}
 
-	public void writeAndOut(Channel ch, ProtocolPacket pack, ByteBuf out) {
-		byte[] head = pack.getHead();
-		byte[] body = pack.getBody();
+	public void writeAndOut(Channel ch, RedisCommand cmd, ByteBuf out) {
 		
-		// #TODO 加密
+		ByteBuffer byteBuffer = ByteBuffer.allocate(100);
+		cmd.encode(byteBuffer);
+		byte[] bytes = byteBuffer.array();
 
-		out.writeByte((byte) 1);
-		if (head.length == 0) {
-			out.writeByte((byte) 1);
-		} else {
-			if (head.length > 0) {
-				out.writeBytes(head);
-				if (body.length > 0) {
-					out.writeBytes(body);
-				}
-			}
-		}
+		out.writeBytes(bytes);
+
 	}
 
 }
