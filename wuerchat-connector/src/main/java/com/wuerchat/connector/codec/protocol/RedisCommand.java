@@ -18,15 +18,17 @@ import com.wuerchat.connector.codec.redis.RedisStringParameter;
  * 
  */
 public class RedisCommand {
-
-	private static final Charset ASCII = Charset.forName("US-ASCII");
 	private static final Charset UTF8 = Charset.forName("UTF-8");
-	private static final byte[] CRLF = "\r\n".getBytes(ASCII);
+	private static final byte[] CRLF = "\r\n".getBytes(UTF8);
 
-	final List<AbstractParameter> arguments = new ArrayList<AbstractParameter>();
+	private final List<AbstractParameter> arguments = new ArrayList<AbstractParameter>();
 
 	public RedisCommand() {
 
+	}
+
+	public String getUserId() {
+		return arguments.get(2).getValue();
 	}
 
 	public RedisCommand add(int n) {
@@ -55,6 +57,11 @@ public class RedisCommand {
 	public RedisCommand add(byte[] value) {
 
 		arguments.add(RedisBytesParameter.of(value));
+		return this;
+	}
+
+	public RedisCommand addAll(List<AbstractParameter> paramList) {
+		arguments.addAll(paramList);
 		return this;
 	}
 

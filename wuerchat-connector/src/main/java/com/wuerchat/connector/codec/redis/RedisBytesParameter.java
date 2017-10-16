@@ -4,19 +4,19 @@ import java.nio.ByteBuffer;
 
 public class RedisBytesParameter extends AbstractParameter {
 
-	final byte[] val;
+	final byte[] value;
 
-	private RedisBytesParameter(byte[] val) {
-		this.val = val;
+	private RedisBytesParameter(byte[] value) {
+		this.value = value;
 	}
 
-	public static RedisBytesParameter of(byte[] val) {
-		return new RedisBytesParameter(val);
+	public static RedisBytesParameter of(byte[] value) {
+		return new RedisBytesParameter(value);
 	}
 
 	@Override
 	public void encode(ByteBuffer buffer) {
-		writeBytes(buffer, val);
+		writeBytes(buffer, value);
 	}
 
 	static void writeBytes(ByteBuffer buffer, byte[] value) {
@@ -28,5 +28,10 @@ public class RedisBytesParameter extends AbstractParameter {
 
 		buffer.put(value);
 		buffer.put(CRLF);
+	}
+
+	@Override
+	public String getValue() {
+		return new String(value);
 	}
 }

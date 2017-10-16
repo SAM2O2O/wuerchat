@@ -56,4 +56,9 @@ public class RedisIntegerParameter extends AbstractParameter {
 			}
 		}
 	}
+
+	@Override
+	public String getValue() {
+		return String.valueOf(val);
+	}
 }

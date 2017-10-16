@@ -27,4 +27,9 @@ public class RedisStringParameter extends AbstractParameter {
 		target.put(valueByte);
 		target.put(CRLF);
 	}
+
+	@Override
+	public String getValue() {
+		return val;
+	}
 }

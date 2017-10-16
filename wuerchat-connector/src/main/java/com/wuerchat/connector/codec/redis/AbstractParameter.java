@@ -8,4 +8,6 @@ public abstract class AbstractParameter {
 	protected static final byte[] CRLF = "\r\n".getBytes(UTF8);
 
 	public abstract void encode(ByteBuffer buffer);
+
+	public abstract String getValue();
 }

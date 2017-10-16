@@ -3,7 +3,7 @@ package com.wuerchat.connector.client;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MessagePacket {
+public class UserMessage {
 
 	private Map<String, Object> packFields = new HashMap<String, Object>();
 

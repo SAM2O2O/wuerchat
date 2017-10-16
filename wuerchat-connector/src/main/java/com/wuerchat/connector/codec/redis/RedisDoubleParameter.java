@@ -17,4 +17,9 @@ public class RedisDoubleParameter extends AbstractParameter {
 	public void encode(ByteBuffer target) {
 		RedisStringParameter.writeString(target, Double.toString(val));
 	}
+	
+	@Override
+	public String getValue() {
+		return String.valueOf(val);
+	}
 }

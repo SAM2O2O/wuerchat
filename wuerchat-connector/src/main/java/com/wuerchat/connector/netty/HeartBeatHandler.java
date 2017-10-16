@@ -18,7 +18,7 @@ public class HeartBeatHandler extends ChannelInboundHandlerAdapter {
 	@Override
 	public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
 		// ctx
-
+		System.out.println("======HeartBeatHandler"+msg);
 	}
 
 	@Override

@@ -1,5 +1,8 @@
 package com.wuerchat.connector.netty;
 
+import java.util.Random;
+
+import com.wuerchat.connector.client.ChannelManager;
 import com.wuerchat.connector.client.ChannelSession;
 import com.wuerchat.connector.codec.parser.ParserConst;
 import com.wuerchat.connector.codec.protocol.RedisCommand;
@@ -14,15 +17,19 @@ public class NettyInboundHandler extends SimpleChannelInboundHandler<RedisComman
 		/**
 		 * 用户建立连接到服务端，执行此方法。
 		 */
+
 		ctx.channel().attr(ParserConst.CHANNELSESSION).set(new ChannelSession(ctx.channel()));
-		
-		
+
 		System.out.println("================NettyInboundHandler.channelActive");
 	}
 
 	@Override
 	public void channelInactive(ChannelHandlerContext ctx) throws Exception {
-
+		System.out.println("================NettyInboundHandler.channelInactive");
+		ChannelSession channelSession = ctx.channel().attr(ParserConst.CHANNELSESSION).get();
+		ChannelManager.getInstance().delChannel(channelSession.getUserId());
+		System.out.println("del channel manager userid=" + channelSession.getUserId());
+		System.out.println("channel manager size=" + ChannelManager.getInstance().getChannelSet().size());
 	}
 
 	@Override
@@ -30,8 +37,14 @@ public class NettyInboundHandler extends SimpleChannelInboundHandler<RedisComman
 
 		System.out.println("BimInboundHandler===============" + cmd.toString());
 
-		// 转交客户端消息，至客户端
+		ChannelSession channelSession = ctx.channel().attr(ParserConst.CHANNELSESSION).get();
 
+		String userid = cmd.getUserId();
+		System.out.println("userId=" + userid);
+		channelSession.setUserId(userid);
+		ChannelManager.getInstance().addChannel(channelSession.getUserId(), channelSession);
+		// 转交客户端消息，至客户端
+		ChannelManager.getInstance().getChannelSession(channelSession.getUserId()).send(null);
 	}
 
 	@Override

@@ -9,7 +9,7 @@ public class AuthResponseHandler extends ChannelInboundHandlerAdapter {
 	public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
 		// ctx
 		
-		System.out.println("======"+msg);
+		System.out.println("======AuthResponseHandler"+msg);
 
 	}
 

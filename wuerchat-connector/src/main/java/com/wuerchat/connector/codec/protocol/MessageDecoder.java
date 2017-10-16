@@ -30,9 +30,6 @@ public class MessageDecoder extends ReplayingDecoder<ReplaySignal> {
 		// receive data from client
 		parser.readAndOut(ctx.channel(), in, out, this);
 
-		
-		ChannelSession channelSession = new ChannelSession(ctx.channel());
-		channelSession.send(null);
 	}
 
 	@Override

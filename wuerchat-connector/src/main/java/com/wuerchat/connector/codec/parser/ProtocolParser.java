@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.wuerchat.connector.codec.protocol.MessageDecoder;
+import com.wuerchat.connector.codec.protocol.RedisCommand;
 import com.wuerchat.connector.codec.protocol.ReplaySignal;
+import com.wuerchat.connector.codec.redis.AbstractParameter;
 import com.wuerchat.connector.codec.redis.RedisStringParameter;
 
 import io.netty.buffer.ByteBuf;
@@ -21,6 +23,8 @@ public class ProtocolParser implements IProtocolParser {
 	public void readAndOut(Channel ch, ByteBuf inByte, List<Object> out, MessageDecoder decoder) {
 		switch (decoder.state()) {
 		case START_POINT:
+			List<AbstractParameter> paramsList = null;
+
 			if (inByte.readByte() == '*') {
 				List<Byte> sizeBytes = new ArrayList<>();
 				while (true) {
@@ -37,8 +41,7 @@ public class ProtocolParser implements IProtocolParser {
 				}
 
 				System.out.println("start read data size=" + Integer.parseInt(new String(tempBytes)));
-				List<RedisStringParameter> singularArguments = new ArrayList<RedisStringParameter>(
-						Integer.parseInt(new String(tempBytes)));
+				paramsList = new ArrayList<AbstractParameter>(Integer.parseInt(new String(tempBytes)));
 
 				while (true) {
 					if (inByte.readByte() == '$') {
@@ -50,7 +53,7 @@ public class ProtocolParser implements IProtocolParser {
 								break;
 							}
 							interBytes.add(curent);
-							
+
 						}
 
 						byte[] tempInnerByte = new byte[interBytes.size()];
@@ -65,9 +68,9 @@ public class ProtocolParser implements IProtocolParser {
 						inByte.readBytes(dataBuffer);
 						String str = new String(dataBuffer);
 						System.out.println("read String==" + str);
-						singularArguments.add(new RedisStringParameter(str));
+						paramsList.add(new RedisStringParameter(str));
 
-						if (singularArguments.size() == Integer.parseInt(new String(tempBytes))) {
+						if (paramsList.size() == Integer.parseInt(new String(tempBytes))) {
 							System.out.println("read data finished");
 							break;
 						}
@@ -78,13 +81,18 @@ public class ProtocolParser implements IProtocolParser {
 
 			decoder.checkpoint(ReplaySignal.START_POINT);
 
+			out.add(buildRedisCommand(paramsList));
 			break;
-		
+
 		default:
 			System.out.print("error......");
 			break;
 		}
 	}
 
+	private RedisCommand buildRedisCommand(List<AbstractParameter> redisParamsList) {
+
+		return new RedisCommand().addAll(redisParamsList);
+	}
 
 }
