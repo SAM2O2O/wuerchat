@@ -14,8 +14,8 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.chrome.chat.common</groupId>
-			<artifactId>chatchrome-common</artifactId>
+			<groupId>com.wuerchat.common</groupId>
+			<artifactId>wuerchat-common</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
