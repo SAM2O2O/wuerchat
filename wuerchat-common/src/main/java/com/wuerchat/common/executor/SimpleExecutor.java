@@ -13,7 +13,6 @@ public class SimpleExecutor<T> extends AbstracteExecutor<T> {
 
 	@Override
 	public boolean execute(String name, T t) {
-
 		IHandler<T> chain = getChain(name);
 		return chain.handle(t);
 

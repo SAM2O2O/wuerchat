@@ -27,7 +27,7 @@ public class MessageEncoder extends MessageToByteEncoder<RedisCommand> {
 				if (future.isSuccess()) {
 					System.out.println("write to user success!");
 				} else {
-					System.out.println("write to user fail");
+					System.out.println("write to user fail" + future.cause());
 				}
 
 			}

@@ -33,23 +33,25 @@ public abstract class NettyServer {
 		childGroup = new NioEventLoopGroup(childThreadNum, new PrefixThreadFactory("bim-worker-evenloopgroup"));
 		bootstrap = new ServerBootstrap();
 		bootstrap.group(parentGroup, childGroup);
-		bootstrap.channel(NioServerSocketChannel.class).localAddress(8448);
+		bootstrap.channel(NioServerSocketChannel.class);
 		bootstrap.option(ChannelOption.SO_BACKLOG, 2000);
 		bootstrap.option(ChannelOption.SO_REUSEADDR, true);
 		bootstrap.option(ChannelOption.SO_RCVBUF, 256 * 1024);
 		bootstrap.option(ChannelOption.SO_SNDBUF, 256 * 1024);
+		bootstrap.option(ChannelOption.ALLOCATOR, PooledByteBufAllocator.DEFAULT);
+		
 		bootstrap.childOption(ChannelOption.SO_KEEPALIVE, true);
 		bootstrap.childOption(ChannelOption.TCP_NODELAY, true);
 		bootstrap.childOption(ChannelOption.ALLOCATOR, PooledByteBufAllocator.DEFAULT);
 		bootstrap.childOption(ChannelOption.RCVBUF_ALLOCATOR, AdaptiveRecvByteBufAllocator.DEFAULT); // 动态缓冲区
-		bootstrap.handler(new LoggingHandler(LogLevel.INFO));
+		bootstrap.handler(new LoggingHandler(LogLevel.ERROR));
 		bootstrap.childHandler(new BimChannelInitializer());
 	}
 
-	public void start() {
+	public void start(String address, int port) {
 		try {
 			if (bootstrap != null) {
-				ChannelFuture channelFuture = bootstrap.bind("10.11.56.76", 8448).sync();
+				ChannelFuture channelFuture = bootstrap.bind(address, port).sync();
 				channelFuture.channel().closeFuture().sync();
 			}
 		} catch (InterruptedException e) {
@@ -74,13 +76,16 @@ public abstract class NettyServer {
 
 			ch.pipeline().addLast(new MessageDecoder());
 			ch.pipeline().addLast(new MessageEncoder());
-//			ch.pipeline().addLast("timeout", new IdleStateHandler(0, 10, 0, TimeUnit.MICROSECONDS));
+			// ch.pipeline().addLast("timeout", new IdleStateHandler(0, 10, 0,
+			// TimeUnit.MICROSECONDS));
 
 			// ch.pipeline().addLast(new SslHandler(sslEngine));
 
-//			ch.pipeline().addLast("readTimeoutHandler", new ReadTimeoutHandler(50, TimeUnit.SECONDS));
-//			ch.pipeline().addLast(new AuthResponseHandler());
-//			ch.pipeline().addLast("keepAliveHandler", new HeartBeatHandler());
+			// ch.pipeline().addLast("readTimeoutHandler", new
+			// ReadTimeoutHandler(50, TimeUnit.SECONDS));
+			// ch.pipeline().addLast(new AuthResponseHandler());
+			// ch.pipeline().addLast("keepAliveHandler", new
+			// HeartBeatHandler());
 			ch.pipeline().addLast(new NettyInboundHandler());
 		}
 

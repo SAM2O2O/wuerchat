@@ -26,7 +26,7 @@ public class ProtocolParser implements IProtocolParser {
 			List<AbstractParameter> paramsList = null;
 
 			if (inByte.readByte() == '*') {
-				List<Byte> sizeBytes = new ArrayList<>();
+				List<Byte> sizeBytes = new ArrayList<Byte>();
 				while (true) {
 					byte curent = inByte.readByte();
 					if (curent == '\r' && inByte.readByte() == '\n') {
@@ -64,11 +64,17 @@ public class ProtocolParser implements IProtocolParser {
 						int readByteSize = Integer.parseInt(new String(tempInnerByte));
 						System.out.println("String length=" + readByteSize);
 
-						byte[] dataBuffer = new byte[readByteSize + 2];
+						byte[] dataBuffer = new byte[readByteSize];
 						inByte.readBytes(dataBuffer);
 						String str = new String(dataBuffer);
 						System.out.println("read String==" + str);
 						paramsList.add(new RedisStringParameter(str));
+
+						if (inByte.readByte() == '\r' && inByte.readByte() == '\n') {
+							System.out.println("success!...");
+						} else {
+							System.out.println("error!.....");
+						}
 
 						if (paramsList.size() == Integer.parseInt(new String(tempBytes))) {
 							System.out.println("read data finished");

@@ -75,4 +75,11 @@ public class RedisCommand {
 
 	}
 
+	public String getParameterByIndex(int i) {
+		if (i > arguments.size()) {
+			return null;
+		}
+		return arguments.get(i).getValue();
+	}
+
 }

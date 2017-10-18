@@ -20,9 +20,10 @@ public class ProtocolBuilder implements IProtocolBuilder {
 		IProtocolBuilder instance = new ProtocolBuilder();
 	}
 
+	
 	public void writeAndOut(Channel ch, RedisCommand cmd, ByteBuf out) {
 		
-		ByteBuffer byteBuffer = ByteBuffer.allocate(100);
+		ByteBuffer byteBuffer = ByteBuffer.allocate(1000);
 		cmd.encode(byteBuffer);
 		byte[] bytes = byteBuffer.array();
 

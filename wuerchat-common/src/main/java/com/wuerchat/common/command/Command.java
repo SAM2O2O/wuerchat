@@ -10,6 +10,7 @@ public class Command {
 	private String service;
 	private String method;
 	private String params;
+	private Object response;
 
 	public void setServiceMethod(String splitStrs) {
 		String[] splitStr = splitStrs.split("\\.");
@@ -39,6 +40,14 @@ public class Command {
 
 	public void setParams(String params) {
 		this.params = params;
+	}
+
+	public Object getResponse() {
+		return response;
+	}
+
+	public void setResponse(Object response) {
+		this.response = response;
 	}
 
 	public String toString() {
