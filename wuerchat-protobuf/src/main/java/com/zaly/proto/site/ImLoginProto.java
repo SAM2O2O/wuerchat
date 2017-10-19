@@ -19,21 +19,21 @@ public final class ImLoginProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string user_id_pubk = 1;</code>
+     * <code>optional string user_id_pubk = 1;</code>
      */
     java.lang.String getUserIdPubk();
     /**
-     * <code>string user_id_pubk = 1;</code>
+     * <code>optional string user_id_pubk = 1;</code>
      */
     com.google.protobuf.ByteString
         getUserIdPubkBytes();
 
     /**
-     * <code>string user_device_id_pubk = 2;</code>
+     * <code>optional string user_device_id_pubk = 2;</code>
      */
     java.lang.String getUserDeviceIdPubk();
     /**
-     * <code>string user_device_id_pubk = 2;</code>
+     * <code>optional string user_device_id_pubk = 2;</code>
      */
     com.google.protobuf.ByteString
         getUserDeviceIdPubkBytes();
@@ -43,7 +43,7 @@ public final class ImLoginProto {
      *使用user_device_id_sign验证user_device_id_pubk合法性
      * </pre>
      *
-     * <code>string user_device_id_sign = 3;</code>
+     * <code>optional string user_device_id_sign = 3;</code>
      */
     java.lang.String getUserDeviceIdSign();
     /**
@@ -51,17 +51,17 @@ public final class ImLoginProto {
      *使用user_device_id_sign验证user_device_id_pubk合法性
      * </pre>
      *
-     * <code>string user_device_id_sign = 3;</code>
+     * <code>optional string user_device_id_sign = 3;</code>
      */
     com.google.protobuf.ByteString
         getUserDeviceIdSignBytes();
 
     /**
-     * <code>string user_device_name = 4;</code>
+     * <code>optional string user_device_name = 4;</code>
      */
     java.lang.String getUserDeviceName();
     /**
-     * <code>string user_device_name = 4;</code>
+     * <code>optional string user_device_name = 4;</code>
      */
     com.google.protobuf.ByteString
         getUserDeviceNameBytes();
@@ -73,7 +73,6 @@ public final class ImLoginProto {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:site.ApiLoginRequest)
       ApiLoginRequestOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use ApiLoginRequest.newBuilder() to construct.
     private ApiLoginRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -88,7 +87,7 @@ public final class ImLoginProto {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
     private ApiLoginRequest(
         com.google.protobuf.CodedInputStream input,
@@ -96,8 +95,6 @@ public final class ImLoginProto {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -107,8 +104,7 @@ public final class ImLoginProto {
               done = true;
               break;
             default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!input.skipField(tag)) {
                 done = true;
               }
               break;
@@ -145,7 +141,6 @@ public final class ImLoginProto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -164,7 +159,7 @@ public final class ImLoginProto {
     public static final int USER_ID_PUBK_FIELD_NUMBER = 1;
     private volatile java.lang.Object userIdPubk_;
     /**
-     * <code>string user_id_pubk = 1;</code>
+     * <code>optional string user_id_pubk = 1;</code>
      */
     public java.lang.String getUserIdPubk() {
       java.lang.Object ref = userIdPubk_;
@@ -179,7 +174,7 @@ public final class ImLoginProto {
       }
     }
     /**
-     * <code>string user_id_pubk = 1;</code>
+     * <code>optional string user_id_pubk = 1;</code>
      */
     public com.google.protobuf.ByteString
         getUserIdPubkBytes() {
@@ -198,7 +193,7 @@ public final class ImLoginProto {
     public static final int USER_DEVICE_ID_PUBK_FIELD_NUMBER = 2;
     private volatile java.lang.Object userDeviceIdPubk_;
     /**
-     * <code>string user_device_id_pubk = 2;</code>
+     * <code>optional string user_device_id_pubk = 2;</code>
      */
     public java.lang.String getUserDeviceIdPubk() {
       java.lang.Object ref = userDeviceIdPubk_;
@@ -213,7 +208,7 @@ public final class ImLoginProto {
       }
     }
     /**
-     * <code>string user_device_id_pubk = 2;</code>
+     * <code>optional string user_device_id_pubk = 2;</code>
      */
     public com.google.protobuf.ByteString
         getUserDeviceIdPubkBytes() {
@@ -236,7 +231,7 @@ public final class ImLoginProto {
      *使用user_device_id_sign验证user_device_id_pubk合法性
      * </pre>
      *
-     * <code>string user_device_id_sign = 3;</code>
+     * <code>optional string user_device_id_sign = 3;</code>
      */
     public java.lang.String getUserDeviceIdSign() {
       java.lang.Object ref = userDeviceIdSign_;
@@ -255,7 +250,7 @@ public final class ImLoginProto {
      *使用user_device_id_sign验证user_device_id_pubk合法性
      * </pre>
      *
-     * <code>string user_device_id_sign = 3;</code>
+     * <code>optional string user_device_id_sign = 3;</code>
      */
     public com.google.protobuf.ByteString
         getUserDeviceIdSignBytes() {
@@ -274,7 +269,7 @@ public final class ImLoginProto {
     public static final int USER_DEVICE_NAME_FIELD_NUMBER = 4;
     private volatile java.lang.Object userDeviceName_;
     /**
-     * <code>string user_device_name = 4;</code>
+     * <code>optional string user_device_name = 4;</code>
      */
     public java.lang.String getUserDeviceName() {
       java.lang.Object ref = userDeviceName_;
@@ -289,7 +284,7 @@ public final class ImLoginProto {
       }
     }
     /**
-     * <code>string user_device_name = 4;</code>
+     * <code>optional string user_device_name = 4;</code>
      */
     public com.google.protobuf.ByteString
         getUserDeviceNameBytes() {
@@ -329,7 +324,6 @@ public final class ImLoginProto {
       if (!getUserDeviceNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, userDeviceName_);
       }
-      unknownFields.writeTo(output);
     }
 
     public int getSerializedSize() {
@@ -349,11 +343,11 @@ public final class ImLoginProto {
       if (!getUserDeviceNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, userDeviceName_);
       }
-      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -373,7 +367,6 @@ public final class ImLoginProto {
           .equals(other.getUserDeviceIdSign());
       result = result && getUserDeviceName()
           .equals(other.getUserDeviceName());
-      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -383,7 +376,7 @@ public final class ImLoginProto {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       hash = (37 * hash) + USER_ID_PUBK_FIELD_NUMBER;
       hash = (53 * hash) + getUserIdPubk().hashCode();
       hash = (37 * hash) + USER_DEVICE_ID_PUBK_FIELD_NUMBER;
@@ -397,17 +390,6 @@ public final class ImLoginProto {
       return hash;
     }
 
-    public static com.zaly.proto.site.ImLoginProto.ApiLoginRequest parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.zaly.proto.site.ImLoginProto.ApiLoginRequest parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
     public static com.zaly.proto.site.ImLoginProto.ApiLoginRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -564,7 +546,7 @@ public final class ImLoginProto {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -577,12 +559,12 @@ public final class ImLoginProto {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -612,7 +594,6 @@ public final class ImLoginProto {
           userDeviceName_ = other.userDeviceName_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -641,7 +622,7 @@ public final class ImLoginProto {
 
       private java.lang.Object userIdPubk_ = "";
       /**
-       * <code>string user_id_pubk = 1;</code>
+       * <code>optional string user_id_pubk = 1;</code>
        */
       public java.lang.String getUserIdPubk() {
         java.lang.Object ref = userIdPubk_;
@@ -656,7 +637,7 @@ public final class ImLoginProto {
         }
       }
       /**
-       * <code>string user_id_pubk = 1;</code>
+       * <code>optional string user_id_pubk = 1;</code>
        */
       public com.google.protobuf.ByteString
           getUserIdPubkBytes() {
@@ -672,7 +653,7 @@ public final class ImLoginProto {
         }
       }
       /**
-       * <code>string user_id_pubk = 1;</code>
+       * <code>optional string user_id_pubk = 1;</code>
        */
       public Builder setUserIdPubk(
           java.lang.String value) {
@@ -685,7 +666,7 @@ public final class ImLoginProto {
         return this;
       }
       /**
-       * <code>string user_id_pubk = 1;</code>
+       * <code>optional string user_id_pubk = 1;</code>
        */
       public Builder clearUserIdPubk() {
         
@@ -694,7 +675,7 @@ public final class ImLoginProto {
         return this;
       }
       /**
-       * <code>string user_id_pubk = 1;</code>
+       * <code>optional string user_id_pubk = 1;</code>
        */
       public Builder setUserIdPubkBytes(
           com.google.protobuf.ByteString value) {
@@ -710,7 +691,7 @@ public final class ImLoginProto {
 
       private java.lang.Object userDeviceIdPubk_ = "";
       /**
-       * <code>string user_device_id_pubk = 2;</code>
+       * <code>optional string user_device_id_pubk = 2;</code>
        */
       public java.lang.String getUserDeviceIdPubk() {
         java.lang.Object ref = userDeviceIdPubk_;
@@ -725,7 +706,7 @@ public final class ImLoginProto {
         }
       }
       /**
-       * <code>string user_device_id_pubk = 2;</code>
+       * <code>optional string user_device_id_pubk = 2;</code>
        */
       public com.google.protobuf.ByteString
           getUserDeviceIdPubkBytes() {
@@ -741,7 +722,7 @@ public final class ImLoginProto {
         }
       }
       /**
-       * <code>string user_device_id_pubk = 2;</code>
+       * <code>optional string user_device_id_pubk = 2;</code>
        */
       public Builder setUserDeviceIdPubk(
           java.lang.String value) {
@@ -754,7 +735,7 @@ public final class ImLoginProto {
         return this;
       }
       /**
-       * <code>string user_device_id_pubk = 2;</code>
+       * <code>optional string user_device_id_pubk = 2;</code>
        */
       public Builder clearUserDeviceIdPubk() {
         
@@ -763,7 +744,7 @@ public final class ImLoginProto {
         return this;
       }
       /**
-       * <code>string user_device_id_pubk = 2;</code>
+       * <code>optional string user_device_id_pubk = 2;</code>
        */
       public Builder setUserDeviceIdPubkBytes(
           com.google.protobuf.ByteString value) {
@@ -783,7 +764,7 @@ public final class ImLoginProto {
        *使用user_device_id_sign验证user_device_id_pubk合法性
        * </pre>
        *
-       * <code>string user_device_id_sign = 3;</code>
+       * <code>optional string user_device_id_sign = 3;</code>
        */
       public java.lang.String getUserDeviceIdSign() {
         java.lang.Object ref = userDeviceIdSign_;
@@ -802,7 +783,7 @@ public final class ImLoginProto {
        *使用user_device_id_sign验证user_device_id_pubk合法性
        * </pre>
        *
-       * <code>string user_device_id_sign = 3;</code>
+       * <code>optional string user_device_id_sign = 3;</code>
        */
       public com.google.protobuf.ByteString
           getUserDeviceIdSignBytes() {
@@ -822,7 +803,7 @@ public final class ImLoginProto {
        *使用user_device_id_sign验证user_device_id_pubk合法性
        * </pre>
        *
-       * <code>string user_device_id_sign = 3;</code>
+       * <code>optional string user_device_id_sign = 3;</code>
        */
       public Builder setUserDeviceIdSign(
           java.lang.String value) {
@@ -839,7 +820,7 @@ public final class ImLoginProto {
        *使用user_device_id_sign验证user_device_id_pubk合法性
        * </pre>
        *
-       * <code>string user_device_id_sign = 3;</code>
+       * <code>optional string user_device_id_sign = 3;</code>
        */
       public Builder clearUserDeviceIdSign() {
         
@@ -852,7 +833,7 @@ public final class ImLoginProto {
        *使用user_device_id_sign验证user_device_id_pubk合法性
        * </pre>
        *
-       * <code>string user_device_id_sign = 3;</code>
+       * <code>optional string user_device_id_sign = 3;</code>
        */
       public Builder setUserDeviceIdSignBytes(
           com.google.protobuf.ByteString value) {
@@ -868,7 +849,7 @@ public final class ImLoginProto {
 
       private java.lang.Object userDeviceName_ = "";
       /**
-       * <code>string user_device_name = 4;</code>
+       * <code>optional string user_device_name = 4;</code>
        */
       public java.lang.String getUserDeviceName() {
         java.lang.Object ref = userDeviceName_;
@@ -883,7 +864,7 @@ public final class ImLoginProto {
         }
       }
       /**
-       * <code>string user_device_name = 4;</code>
+       * <code>optional string user_device_name = 4;</code>
        */
       public com.google.protobuf.ByteString
           getUserDeviceNameBytes() {
@@ -899,7 +880,7 @@ public final class ImLoginProto {
         }
       }
       /**
-       * <code>string user_device_name = 4;</code>
+       * <code>optional string user_device_name = 4;</code>
        */
       public Builder setUserDeviceName(
           java.lang.String value) {
@@ -912,7 +893,7 @@ public final class ImLoginProto {
         return this;
       }
       /**
-       * <code>string user_device_name = 4;</code>
+       * <code>optional string user_device_name = 4;</code>
        */
       public Builder clearUserDeviceName() {
         
@@ -921,7 +902,7 @@ public final class ImLoginProto {
         return this;
       }
       /**
-       * <code>string user_device_name = 4;</code>
+       * <code>optional string user_device_name = 4;</code>
        */
       public Builder setUserDeviceNameBytes(
           com.google.protobuf.ByteString value) {
@@ -936,12 +917,12 @@ public final class ImLoginProto {
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return this;
       }
 
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return this;
       }
 
 
@@ -988,21 +969,21 @@ public final class ImLoginProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string user_session_id = 1;</code>
+     * <code>optional string user_session_id = 1;</code>
      */
     java.lang.String getUserSessionId();
     /**
-     * <code>string user_session_id = 1;</code>
+     * <code>optional string user_session_id = 1;</code>
      */
     com.google.protobuf.ByteString
         getUserSessionIdBytes();
 
     /**
-     * <code>string site_user_id = 2;</code>
+     * <code>optional string site_user_id = 2;</code>
      */
     java.lang.String getSiteUserId();
     /**
-     * <code>string site_user_id = 2;</code>
+     * <code>optional string site_user_id = 2;</code>
      */
     com.google.protobuf.ByteString
         getSiteUserIdBytes();
@@ -1014,7 +995,6 @@ public final class ImLoginProto {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:site.ApiLoginResponse)
       ApiLoginResponseOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use ApiLoginResponse.newBuilder() to construct.
     private ApiLoginResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1027,7 +1007,7 @@ public final class ImLoginProto {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
     private ApiLoginResponse(
         com.google.protobuf.CodedInputStream input,
@@ -1035,8 +1015,6 @@ public final class ImLoginProto {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -1046,8 +1024,7 @@ public final class ImLoginProto {
               done = true;
               break;
             default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!input.skipField(tag)) {
                 done = true;
               }
               break;
@@ -1072,7 +1049,6 @@ public final class ImLoginProto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -1091,7 +1067,7 @@ public final class ImLoginProto {
     public static final int USER_SESSION_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object userSessionId_;
     /**
-     * <code>string user_session_id = 1;</code>
+     * <code>optional string user_session_id = 1;</code>
      */
     public java.lang.String getUserSessionId() {
       java.lang.Object ref = userSessionId_;
@@ -1106,7 +1082,7 @@ public final class ImLoginProto {
       }
     }
     /**
-     * <code>string user_session_id = 1;</code>
+     * <code>optional string user_session_id = 1;</code>
      */
     public com.google.protobuf.ByteString
         getUserSessionIdBytes() {
@@ -1125,7 +1101,7 @@ public final class ImLoginProto {
     public static final int SITE_USER_ID_FIELD_NUMBER = 2;
     private volatile java.lang.Object siteUserId_;
     /**
-     * <code>string site_user_id = 2;</code>
+     * <code>optional string site_user_id = 2;</code>
      */
     public java.lang.String getSiteUserId() {
       java.lang.Object ref = siteUserId_;
@@ -1140,7 +1116,7 @@ public final class ImLoginProto {
       }
     }
     /**
-     * <code>string site_user_id = 2;</code>
+     * <code>optional string site_user_id = 2;</code>
      */
     public com.google.protobuf.ByteString
         getSiteUserIdBytes() {
@@ -1174,7 +1150,6 @@ public final class ImLoginProto {
       if (!getSiteUserIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, siteUserId_);
       }
-      unknownFields.writeTo(output);
     }
 
     public int getSerializedSize() {
@@ -1188,11 +1163,11 @@ public final class ImLoginProto {
       if (!getSiteUserIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, siteUserId_);
       }
-      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -1208,7 +1183,6 @@ public final class ImLoginProto {
           .equals(other.getUserSessionId());
       result = result && getSiteUserId()
           .equals(other.getSiteUserId());
-      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -1218,7 +1192,7 @@ public final class ImLoginProto {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       hash = (37 * hash) + USER_SESSION_ID_FIELD_NUMBER;
       hash = (53 * hash) + getUserSessionId().hashCode();
       hash = (37 * hash) + SITE_USER_ID_FIELD_NUMBER;
@@ -1228,17 +1202,6 @@ public final class ImLoginProto {
       return hash;
     }
 
-    public static com.zaly.proto.site.ImLoginProto.ApiLoginResponse parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.zaly.proto.site.ImLoginProto.ApiLoginResponse parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
     public static com.zaly.proto.site.ImLoginProto.ApiLoginResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1389,7 +1352,7 @@ public final class ImLoginProto {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -1402,12 +1365,12 @@ public final class ImLoginProto {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -1429,7 +1392,6 @@ public final class ImLoginProto {
           siteUserId_ = other.siteUserId_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1458,7 +1420,7 @@ public final class ImLoginProto {
 
       private java.lang.Object userSessionId_ = "";
       /**
-       * <code>string user_session_id = 1;</code>
+       * <code>optional string user_session_id = 1;</code>
        */
       public java.lang.String getUserSessionId() {
         java.lang.Object ref = userSessionId_;
@@ -1473,7 +1435,7 @@ public final class ImLoginProto {
         }
       }
       /**
-       * <code>string user_session_id = 1;</code>
+       * <code>optional string user_session_id = 1;</code>
        */
       public com.google.protobuf.ByteString
           getUserSessionIdBytes() {
@@ -1489,7 +1451,7 @@ public final class ImLoginProto {
         }
       }
       /**
-       * <code>string user_session_id = 1;</code>
+       * <code>optional string user_session_id = 1;</code>
        */
       public Builder setUserSessionId(
           java.lang.String value) {
@@ -1502,7 +1464,7 @@ public final class ImLoginProto {
         return this;
       }
       /**
-       * <code>string user_session_id = 1;</code>
+       * <code>optional string user_session_id = 1;</code>
        */
       public Builder clearUserSessionId() {
         
@@ -1511,7 +1473,7 @@ public final class ImLoginProto {
         return this;
       }
       /**
-       * <code>string user_session_id = 1;</code>
+       * <code>optional string user_session_id = 1;</code>
        */
       public Builder setUserSessionIdBytes(
           com.google.protobuf.ByteString value) {
@@ -1527,7 +1489,7 @@ public final class ImLoginProto {
 
       private java.lang.Object siteUserId_ = "";
       /**
-       * <code>string site_user_id = 2;</code>
+       * <code>optional string site_user_id = 2;</code>
        */
       public java.lang.String getSiteUserId() {
         java.lang.Object ref = siteUserId_;
@@ -1542,7 +1504,7 @@ public final class ImLoginProto {
         }
       }
       /**
-       * <code>string site_user_id = 2;</code>
+       * <code>optional string site_user_id = 2;</code>
        */
       public com.google.protobuf.ByteString
           getSiteUserIdBytes() {
@@ -1558,7 +1520,7 @@ public final class ImLoginProto {
         }
       }
       /**
-       * <code>string site_user_id = 2;</code>
+       * <code>optional string site_user_id = 2;</code>
        */
       public Builder setSiteUserId(
           java.lang.String value) {
@@ -1571,7 +1533,7 @@ public final class ImLoginProto {
         return this;
       }
       /**
-       * <code>string site_user_id = 2;</code>
+       * <code>optional string site_user_id = 2;</code>
        */
       public Builder clearSiteUserId() {
         
@@ -1580,7 +1542,7 @@ public final class ImLoginProto {
         return this;
       }
       /**
-       * <code>string site_user_id = 2;</code>
+       * <code>optional string site_user_id = 2;</code>
        */
       public Builder setSiteUserIdBytes(
           com.google.protobuf.ByteString value) {
@@ -1595,12 +1557,12 @@ public final class ImLoginProto {
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return this;
       }
 
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return this;
       }
 
 

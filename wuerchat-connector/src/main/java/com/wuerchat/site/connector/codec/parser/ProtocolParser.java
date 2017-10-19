@@ -7,7 +7,7 @@ import com.wuerchat.site.connector.codec.protocol.MessageDecoder;
 import com.wuerchat.site.connector.codec.protocol.RedisCommand;
 import com.wuerchat.site.connector.codec.protocol.ReplaySignal;
 import com.wuerchat.site.connector.codec.redis.AbstractParameter;
-import com.wuerchat.site.connector.codec.redis.RedisStringParameter;
+import com.wuerchat.site.connector.codec.redis.RedisBytesParameter;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.Channel;
@@ -21,12 +21,13 @@ import io.netty.channel.Channel;
 public class ProtocolParser implements IProtocolParser {
 
 	public void readAndOut(Channel ch, ByteBuf inByte, List<Object> out, MessageDecoder decoder) {
-		System.out.println("ProtocolParser:readAndOut");
+		// System.out.println("ProtocolParser:readAndOut");
 		switch (decoder.state()) {
 		case START_POINT:
 			List<AbstractParameter> paramsList = null;
 
-			if (inByte.readByte() == '*') {
+			byte firstByte = inByte.readByte();
+			if (firstByte == '*') {
 				List<Byte> sizeBytes = new ArrayList<Byte>();
 				while (true) {
 					byte curent = inByte.readByte();
@@ -41,13 +42,12 @@ public class ProtocolParser implements IProtocolParser {
 					tempBytes[i] = sizeBytes.get(i);
 				}
 
-				// System.out.println("start read data size=" +
-				// Integer.parseInt(new String(tempBytes)));
+				System.out.println("start read data size=" + Integer.parseInt(new String(tempBytes)));
 				paramsList = new ArrayList<AbstractParameter>(Integer.parseInt(new String(tempBytes)));
 
 				while (true) {
 					if (inByte.readByte() == '$') {
-						// System.out.println("start read String ");
+						System.out.println("start read String ");
 						List<Byte> interBytes = new ArrayList<Byte>();
 						while (true) {
 							byte curent = inByte.readByte();
@@ -64,16 +64,19 @@ public class ProtocolParser implements IProtocolParser {
 						}
 
 						int readByteSize = Integer.parseInt(new String(tempInnerByte));
-						// System.out.println("String length=" + readByteSize);
+						System.out.println("String length=" + readByteSize);
 
 						byte[] dataBuffer = new byte[readByteSize];
 						inByte.readBytes(dataBuffer);
-						String str = new String(dataBuffer);
-						// System.out.println("read String==" + str);
-						paramsList.add(new RedisStringParameter(str));
+//						for (byte aa : dataBuffer) {
+//							System.out.print("," + (int) aa);
+//						}
+//						System.out.println("------");
+						System.out.println("read String real size ==" + dataBuffer.length);
+						paramsList.add(new RedisBytesParameter(dataBuffer));
 
 						if (inByte.readByte() == '\r' && inByte.readByte() == '\n') {
-							// System.out.println("success!...");
+							System.out.println("success!...");
 						} else {
 							System.out.println("error!.....");
 						}
@@ -85,14 +88,13 @@ public class ProtocolParser implements IProtocolParser {
 
 					}
 				}
-			
+
 				decoder.checkpoint(ReplaySignal.START_POINT);
-			
+
 				out.add(buildRedisCommand(paramsList));
-			}else{
-				System.out.println("read first data not right");
+			} else {
+				System.out.println("read first data not right=" + firstByte);
 			}
-			
 
 			break;
 

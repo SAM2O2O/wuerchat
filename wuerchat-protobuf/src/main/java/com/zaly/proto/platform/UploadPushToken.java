@@ -19,41 +19,41 @@ public final class UploadPushToken {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string user_id_pubk = 1;</code>
+     * <code>optional string user_id_pubk = 1;</code>
      */
     java.lang.String getUserIdPubk();
     /**
-     * <code>string user_id_pubk = 1;</code>
+     * <code>optional string user_id_pubk = 1;</code>
      */
     com.google.protobuf.ByteString
         getUserIdPubkBytes();
 
     /**
-     * <code>string user_device_pubk = 2;</code>
+     * <code>optional string user_device_pubk = 2;</code>
      */
     java.lang.String getUserDevicePubk();
     /**
-     * <code>string user_device_pubk = 2;</code>
+     * <code>optional string user_device_pubk = 2;</code>
      */
     com.google.protobuf.ByteString
         getUserDevicePubkBytes();
 
     /**
-     * <code>string user_device_sign = 3;</code>
+     * <code>optional string user_device_sign = 3;</code>
      */
     java.lang.String getUserDeviceSign();
     /**
-     * <code>string user_device_sign = 3;</code>
+     * <code>optional string user_device_sign = 3;</code>
      */
     com.google.protobuf.ByteString
         getUserDeviceSignBytes();
 
     /**
-     * <code>string push_token = 4;</code>
+     * <code>optional string push_token = 4;</code>
      */
     java.lang.String getPushToken();
     /**
-     * <code>string push_token = 4;</code>
+     * <code>optional string push_token = 4;</code>
      */
     com.google.protobuf.ByteString
         getPushTokenBytes();
@@ -65,7 +65,6 @@ public final class UploadPushToken {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:platform.ApiPushTokenRequest)
       ApiPushTokenRequestOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use ApiPushTokenRequest.newBuilder() to construct.
     private ApiPushTokenRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -80,7 +79,7 @@ public final class UploadPushToken {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
     private ApiPushTokenRequest(
         com.google.protobuf.CodedInputStream input,
@@ -88,8 +87,6 @@ public final class UploadPushToken {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -99,8 +96,7 @@ public final class UploadPushToken {
               done = true;
               break;
             default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!input.skipField(tag)) {
                 done = true;
               }
               break;
@@ -137,7 +133,6 @@ public final class UploadPushToken {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -156,7 +151,7 @@ public final class UploadPushToken {
     public static final int USER_ID_PUBK_FIELD_NUMBER = 1;
     private volatile java.lang.Object userIdPubk_;
     /**
-     * <code>string user_id_pubk = 1;</code>
+     * <code>optional string user_id_pubk = 1;</code>
      */
     public java.lang.String getUserIdPubk() {
       java.lang.Object ref = userIdPubk_;
@@ -171,7 +166,7 @@ public final class UploadPushToken {
       }
     }
     /**
-     * <code>string user_id_pubk = 1;</code>
+     * <code>optional string user_id_pubk = 1;</code>
      */
     public com.google.protobuf.ByteString
         getUserIdPubkBytes() {
@@ -190,7 +185,7 @@ public final class UploadPushToken {
     public static final int USER_DEVICE_PUBK_FIELD_NUMBER = 2;
     private volatile java.lang.Object userDevicePubk_;
     /**
-     * <code>string user_device_pubk = 2;</code>
+     * <code>optional string user_device_pubk = 2;</code>
      */
     public java.lang.String getUserDevicePubk() {
       java.lang.Object ref = userDevicePubk_;
@@ -205,7 +200,7 @@ public final class UploadPushToken {
       }
     }
     /**
-     * <code>string user_device_pubk = 2;</code>
+     * <code>optional string user_device_pubk = 2;</code>
      */
     public com.google.protobuf.ByteString
         getUserDevicePubkBytes() {
@@ -224,7 +219,7 @@ public final class UploadPushToken {
     public static final int USER_DEVICE_SIGN_FIELD_NUMBER = 3;
     private volatile java.lang.Object userDeviceSign_;
     /**
-     * <code>string user_device_sign = 3;</code>
+     * <code>optional string user_device_sign = 3;</code>
      */
     public java.lang.String getUserDeviceSign() {
       java.lang.Object ref = userDeviceSign_;
@@ -239,7 +234,7 @@ public final class UploadPushToken {
       }
     }
     /**
-     * <code>string user_device_sign = 3;</code>
+     * <code>optional string user_device_sign = 3;</code>
      */
     public com.google.protobuf.ByteString
         getUserDeviceSignBytes() {
@@ -258,7 +253,7 @@ public final class UploadPushToken {
     public static final int PUSH_TOKEN_FIELD_NUMBER = 4;
     private volatile java.lang.Object pushToken_;
     /**
-     * <code>string push_token = 4;</code>
+     * <code>optional string push_token = 4;</code>
      */
     public java.lang.String getPushToken() {
       java.lang.Object ref = pushToken_;
@@ -273,7 +268,7 @@ public final class UploadPushToken {
       }
     }
     /**
-     * <code>string push_token = 4;</code>
+     * <code>optional string push_token = 4;</code>
      */
     public com.google.protobuf.ByteString
         getPushTokenBytes() {
@@ -313,7 +308,6 @@ public final class UploadPushToken {
       if (!getPushTokenBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, pushToken_);
       }
-      unknownFields.writeTo(output);
     }
 
     public int getSerializedSize() {
@@ -333,11 +327,11 @@ public final class UploadPushToken {
       if (!getPushTokenBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, pushToken_);
       }
-      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -357,7 +351,6 @@ public final class UploadPushToken {
           .equals(other.getUserDeviceSign());
       result = result && getPushToken()
           .equals(other.getPushToken());
-      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -367,7 +360,7 @@ public final class UploadPushToken {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       hash = (37 * hash) + USER_ID_PUBK_FIELD_NUMBER;
       hash = (53 * hash) + getUserIdPubk().hashCode();
       hash = (37 * hash) + USER_DEVICE_PUBK_FIELD_NUMBER;
@@ -381,17 +374,6 @@ public final class UploadPushToken {
       return hash;
     }
 
-    public static com.zaly.proto.platform.UploadPushToken.ApiPushTokenRequest parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.zaly.proto.platform.UploadPushToken.ApiPushTokenRequest parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
     public static com.zaly.proto.platform.UploadPushToken.ApiPushTokenRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -548,7 +530,7 @@ public final class UploadPushToken {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -561,12 +543,12 @@ public final class UploadPushToken {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -596,7 +578,6 @@ public final class UploadPushToken {
           pushToken_ = other.pushToken_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -625,7 +606,7 @@ public final class UploadPushToken {
 
       private java.lang.Object userIdPubk_ = "";
       /**
-       * <code>string user_id_pubk = 1;</code>
+       * <code>optional string user_id_pubk = 1;</code>
        */
       public java.lang.String getUserIdPubk() {
         java.lang.Object ref = userIdPubk_;
@@ -640,7 +621,7 @@ public final class UploadPushToken {
         }
       }
       /**
-       * <code>string user_id_pubk = 1;</code>
+       * <code>optional string user_id_pubk = 1;</code>
        */
       public com.google.protobuf.ByteString
           getUserIdPubkBytes() {
@@ -656,7 +637,7 @@ public final class UploadPushToken {
         }
       }
       /**
-       * <code>string user_id_pubk = 1;</code>
+       * <code>optional string user_id_pubk = 1;</code>
        */
       public Builder setUserIdPubk(
           java.lang.String value) {
@@ -669,7 +650,7 @@ public final class UploadPushToken {
         return this;
       }
       /**
-       * <code>string user_id_pubk = 1;</code>
+       * <code>optional string user_id_pubk = 1;</code>
        */
       public Builder clearUserIdPubk() {
         
@@ -678,7 +659,7 @@ public final class UploadPushToken {
         return this;
       }
       /**
-       * <code>string user_id_pubk = 1;</code>
+       * <code>optional string user_id_pubk = 1;</code>
        */
       public Builder setUserIdPubkBytes(
           com.google.protobuf.ByteString value) {
@@ -694,7 +675,7 @@ public final class UploadPushToken {
 
       private java.lang.Object userDevicePubk_ = "";
       /**
-       * <code>string user_device_pubk = 2;</code>
+       * <code>optional string user_device_pubk = 2;</code>
        */
       public java.lang.String getUserDevicePubk() {
         java.lang.Object ref = userDevicePubk_;
@@ -709,7 +690,7 @@ public final class UploadPushToken {
         }
       }
       /**
-       * <code>string user_device_pubk = 2;</code>
+       * <code>optional string user_device_pubk = 2;</code>
        */
       public com.google.protobuf.ByteString
           getUserDevicePubkBytes() {
@@ -725,7 +706,7 @@ public final class UploadPushToken {
         }
       }
       /**
-       * <code>string user_device_pubk = 2;</code>
+       * <code>optional string user_device_pubk = 2;</code>
        */
       public Builder setUserDevicePubk(
           java.lang.String value) {
@@ -738,7 +719,7 @@ public final class UploadPushToken {
         return this;
       }
       /**
-       * <code>string user_device_pubk = 2;</code>
+       * <code>optional string user_device_pubk = 2;</code>
        */
       public Builder clearUserDevicePubk() {
         
@@ -747,7 +728,7 @@ public final class UploadPushToken {
         return this;
       }
       /**
-       * <code>string user_device_pubk = 2;</code>
+       * <code>optional string user_device_pubk = 2;</code>
        */
       public Builder setUserDevicePubkBytes(
           com.google.protobuf.ByteString value) {
@@ -763,7 +744,7 @@ public final class UploadPushToken {
 
       private java.lang.Object userDeviceSign_ = "";
       /**
-       * <code>string user_device_sign = 3;</code>
+       * <code>optional string user_device_sign = 3;</code>
        */
       public java.lang.String getUserDeviceSign() {
         java.lang.Object ref = userDeviceSign_;
@@ -778,7 +759,7 @@ public final class UploadPushToken {
         }
       }
       /**
-       * <code>string user_device_sign = 3;</code>
+       * <code>optional string user_device_sign = 3;</code>
        */
       public com.google.protobuf.ByteString
           getUserDeviceSignBytes() {
@@ -794,7 +775,7 @@ public final class UploadPushToken {
         }
       }
       /**
-       * <code>string user_device_sign = 3;</code>
+       * <code>optional string user_device_sign = 3;</code>
        */
       public Builder setUserDeviceSign(
           java.lang.String value) {
@@ -807,7 +788,7 @@ public final class UploadPushToken {
         return this;
       }
       /**
-       * <code>string user_device_sign = 3;</code>
+       * <code>optional string user_device_sign = 3;</code>
        */
       public Builder clearUserDeviceSign() {
         
@@ -816,7 +797,7 @@ public final class UploadPushToken {
         return this;
       }
       /**
-       * <code>string user_device_sign = 3;</code>
+       * <code>optional string user_device_sign = 3;</code>
        */
       public Builder setUserDeviceSignBytes(
           com.google.protobuf.ByteString value) {
@@ -832,7 +813,7 @@ public final class UploadPushToken {
 
       private java.lang.Object pushToken_ = "";
       /**
-       * <code>string push_token = 4;</code>
+       * <code>optional string push_token = 4;</code>
        */
       public java.lang.String getPushToken() {
         java.lang.Object ref = pushToken_;
@@ -847,7 +828,7 @@ public final class UploadPushToken {
         }
       }
       /**
-       * <code>string push_token = 4;</code>
+       * <code>optional string push_token = 4;</code>
        */
       public com.google.protobuf.ByteString
           getPushTokenBytes() {
@@ -863,7 +844,7 @@ public final class UploadPushToken {
         }
       }
       /**
-       * <code>string push_token = 4;</code>
+       * <code>optional string push_token = 4;</code>
        */
       public Builder setPushToken(
           java.lang.String value) {
@@ -876,7 +857,7 @@ public final class UploadPushToken {
         return this;
       }
       /**
-       * <code>string push_token = 4;</code>
+       * <code>optional string push_token = 4;</code>
        */
       public Builder clearPushToken() {
         
@@ -885,7 +866,7 @@ public final class UploadPushToken {
         return this;
       }
       /**
-       * <code>string push_token = 4;</code>
+       * <code>optional string push_token = 4;</code>
        */
       public Builder setPushTokenBytes(
           com.google.protobuf.ByteString value) {
@@ -900,12 +881,12 @@ public final class UploadPushToken {
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return this;
       }
 
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return this;
       }
 
 
@@ -952,26 +933,26 @@ public final class UploadPushToken {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 res_code = 1;</code>
+     * <code>optional int32 res_code = 1;</code>
      */
     int getResCode();
 
     /**
-     * <code>string res_data = 2;</code>
+     * <code>optional string res_data = 2;</code>
      */
     java.lang.String getResData();
     /**
-     * <code>string res_data = 2;</code>
+     * <code>optional string res_data = 2;</code>
      */
     com.google.protobuf.ByteString
         getResDataBytes();
 
     /**
-     * <code>string err_info = 3;</code>
+     * <code>optional string err_info = 3;</code>
      */
     java.lang.String getErrInfo();
     /**
-     * <code>string err_info = 3;</code>
+     * <code>optional string err_info = 3;</code>
      */
     com.google.protobuf.ByteString
         getErrInfoBytes();
@@ -983,7 +964,6 @@ public final class UploadPushToken {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:platform.ApiPushTokenResponse)
       ApiPushTokenResponseOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use ApiPushTokenResponse.newBuilder() to construct.
     private ApiPushTokenResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -997,7 +977,7 @@ public final class UploadPushToken {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
     private ApiPushTokenResponse(
         com.google.protobuf.CodedInputStream input,
@@ -1005,8 +985,6 @@ public final class UploadPushToken {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -1016,8 +994,7 @@ public final class UploadPushToken {
               done = true;
               break;
             default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!input.skipField(tag)) {
                 done = true;
               }
               break;
@@ -1047,7 +1024,6 @@ public final class UploadPushToken {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -1066,7 +1042,7 @@ public final class UploadPushToken {
     public static final int RES_CODE_FIELD_NUMBER = 1;
     private int resCode_;
     /**
-     * <code>int32 res_code = 1;</code>
+     * <code>optional int32 res_code = 1;</code>
      */
     public int getResCode() {
       return resCode_;
@@ -1075,7 +1051,7 @@ public final class UploadPushToken {
     public static final int RES_DATA_FIELD_NUMBER = 2;
     private volatile java.lang.Object resData_;
     /**
-     * <code>string res_data = 2;</code>
+     * <code>optional string res_data = 2;</code>
      */
     public java.lang.String getResData() {
       java.lang.Object ref = resData_;
@@ -1090,7 +1066,7 @@ public final class UploadPushToken {
       }
     }
     /**
-     * <code>string res_data = 2;</code>
+     * <code>optional string res_data = 2;</code>
      */
     public com.google.protobuf.ByteString
         getResDataBytes() {
@@ -1109,7 +1085,7 @@ public final class UploadPushToken {
     public static final int ERR_INFO_FIELD_NUMBER = 3;
     private volatile java.lang.Object errInfo_;
     /**
-     * <code>string err_info = 3;</code>
+     * <code>optional string err_info = 3;</code>
      */
     public java.lang.String getErrInfo() {
       java.lang.Object ref = errInfo_;
@@ -1124,7 +1100,7 @@ public final class UploadPushToken {
       }
     }
     /**
-     * <code>string err_info = 3;</code>
+     * <code>optional string err_info = 3;</code>
      */
     public com.google.protobuf.ByteString
         getErrInfoBytes() {
@@ -1161,7 +1137,6 @@ public final class UploadPushToken {
       if (!getErrInfoBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, errInfo_);
       }
-      unknownFields.writeTo(output);
     }
 
     public int getSerializedSize() {
@@ -1179,11 +1154,11 @@ public final class UploadPushToken {
       if (!getErrInfoBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, errInfo_);
       }
-      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -1201,7 +1176,6 @@ public final class UploadPushToken {
           .equals(other.getResData());
       result = result && getErrInfo()
           .equals(other.getErrInfo());
-      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -1211,7 +1185,7 @@ public final class UploadPushToken {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       hash = (37 * hash) + RES_CODE_FIELD_NUMBER;
       hash = (53 * hash) + getResCode();
       hash = (37 * hash) + RES_DATA_FIELD_NUMBER;
@@ -1223,17 +1197,6 @@ public final class UploadPushToken {
       return hash;
     }
 
-    public static com.zaly.proto.platform.UploadPushToken.ApiPushTokenResponse parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.zaly.proto.platform.UploadPushToken.ApiPushTokenResponse parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
     public static com.zaly.proto.platform.UploadPushToken.ApiPushTokenResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1387,7 +1350,7 @@ public final class UploadPushToken {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -1400,12 +1363,12 @@ public final class UploadPushToken {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -1430,7 +1393,6 @@ public final class UploadPushToken {
           errInfo_ = other.errInfo_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1459,13 +1421,13 @@ public final class UploadPushToken {
 
       private int resCode_ ;
       /**
-       * <code>int32 res_code = 1;</code>
+       * <code>optional int32 res_code = 1;</code>
        */
       public int getResCode() {
         return resCode_;
       }
       /**
-       * <code>int32 res_code = 1;</code>
+       * <code>optional int32 res_code = 1;</code>
        */
       public Builder setResCode(int value) {
         
@@ -1474,7 +1436,7 @@ public final class UploadPushToken {
         return this;
       }
       /**
-       * <code>int32 res_code = 1;</code>
+       * <code>optional int32 res_code = 1;</code>
        */
       public Builder clearResCode() {
         
@@ -1485,7 +1447,7 @@ public final class UploadPushToken {
 
       private java.lang.Object resData_ = "";
       /**
-       * <code>string res_data = 2;</code>
+       * <code>optional string res_data = 2;</code>
        */
       public java.lang.String getResData() {
         java.lang.Object ref = resData_;
@@ -1500,7 +1462,7 @@ public final class UploadPushToken {
         }
       }
       /**
-       * <code>string res_data = 2;</code>
+       * <code>optional string res_data = 2;</code>
        */
       public com.google.protobuf.ByteString
           getResDataBytes() {
@@ -1516,7 +1478,7 @@ public final class UploadPushToken {
         }
       }
       /**
-       * <code>string res_data = 2;</code>
+       * <code>optional string res_data = 2;</code>
        */
       public Builder setResData(
           java.lang.String value) {
@@ -1529,7 +1491,7 @@ public final class UploadPushToken {
         return this;
       }
       /**
-       * <code>string res_data = 2;</code>
+       * <code>optional string res_data = 2;</code>
        */
       public Builder clearResData() {
         
@@ -1538,7 +1500,7 @@ public final class UploadPushToken {
         return this;
       }
       /**
-       * <code>string res_data = 2;</code>
+       * <code>optional string res_data = 2;</code>
        */
       public Builder setResDataBytes(
           com.google.protobuf.ByteString value) {
@@ -1554,7 +1516,7 @@ public final class UploadPushToken {
 
       private java.lang.Object errInfo_ = "";
       /**
-       * <code>string err_info = 3;</code>
+       * <code>optional string err_info = 3;</code>
        */
       public java.lang.String getErrInfo() {
         java.lang.Object ref = errInfo_;
@@ -1569,7 +1531,7 @@ public final class UploadPushToken {
         }
       }
       /**
-       * <code>string err_info = 3;</code>
+       * <code>optional string err_info = 3;</code>
        */
       public com.google.protobuf.ByteString
           getErrInfoBytes() {
@@ -1585,7 +1547,7 @@ public final class UploadPushToken {
         }
       }
       /**
-       * <code>string err_info = 3;</code>
+       * <code>optional string err_info = 3;</code>
        */
       public Builder setErrInfo(
           java.lang.String value) {
@@ -1598,7 +1560,7 @@ public final class UploadPushToken {
         return this;
       }
       /**
-       * <code>string err_info = 3;</code>
+       * <code>optional string err_info = 3;</code>
        */
       public Builder clearErrInfo() {
         
@@ -1607,7 +1569,7 @@ public final class UploadPushToken {
         return this;
       }
       /**
-       * <code>string err_info = 3;</code>
+       * <code>optional string err_info = 3;</code>
        */
       public Builder setErrInfoBytes(
           com.google.protobuf.ByteString value) {
@@ -1622,12 +1584,12 @@ public final class UploadPushToken {
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return this;
       }
 
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return this;
       }
 
 

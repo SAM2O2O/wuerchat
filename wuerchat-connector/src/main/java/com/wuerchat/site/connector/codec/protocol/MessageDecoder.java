@@ -27,7 +27,7 @@ public class MessageDecoder extends ReplayingDecoder<ReplaySignal> {
 
 	@Override
 	public void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) throws Exception {
-		System.out.println("MessageDecoder::::");
+//		System.out.println("MessageDecoder::::");
 		// receive data from client
 		parser.readAndOut(ctx.channel(), in, out, this);
 

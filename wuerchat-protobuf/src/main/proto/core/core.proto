@@ -30,18 +30,18 @@ message NoneResponse {
 
 //使用protobuf描述最基础的协议
 //！！！本结构只用作说明，没有实际用处！！！
-message TransportPackage {
-    string protocol_version = 1;
-
-    //要执行的动作，如im.msg\api.login等
-    //如果action=='_'，代表这是对上一个请求的响应，由调用者来负责解读，一般用在同步调用中。
-    string action= 2;
-
-    //具体的数据。有package接收者根据action来决定怎样解读data
-    TransportPackageData data = 3;
-
-    //以后可能会增加的传输层配置
-}
+//message TransportPackage {
+//    string protocol_version = 1;
+//
+//    //要执行的动作，如im.msg\api.login等
+//    //如果action=='_'，代表这是对上一个请求的响应，由调用者来负责解读，一般用在同步调用中。
+//    string action= 2;
+//
+//    //具体的数据。有package接收者根据action来决定怎样解读data
+//    TransportPackageData data = 3;
+//
+//    //以后可能会增加的传输层配置
+//}
 
 message TransportPackageData {
 

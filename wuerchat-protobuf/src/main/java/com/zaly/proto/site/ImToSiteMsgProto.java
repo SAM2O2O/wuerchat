@@ -19,63 +19,63 @@ public final class ImToSiteMsgProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.core.MsgType type = 1;</code>
+     * <code>optional .core.MsgType type = 1;</code>
      */
     int getTypeValue();
     /**
-     * <code>.core.MsgType type = 1;</code>
+     * <code>optional .core.MsgType type = 1;</code>
      */
     com.zaly.proto.core.CoreProto.MsgType getType();
 
     /**
-     * <code>.core.MsgText text = 2;</code>
+     * <code>optional .core.MsgText text = 2;</code>
      */
     boolean hasText();
     /**
-     * <code>.core.MsgText text = 2;</code>
+     * <code>optional .core.MsgText text = 2;</code>
      */
     com.zaly.proto.core.CoreProto.MsgText getText();
     /**
-     * <code>.core.MsgText text = 2;</code>
+     * <code>optional .core.MsgText text = 2;</code>
      */
     com.zaly.proto.core.CoreProto.MsgTextOrBuilder getTextOrBuilder();
 
     /**
-     * <code>.core.MsgSecretText secretText = 3;</code>
+     * <code>optional .core.MsgSecretText secretText = 3;</code>
      */
     boolean hasSecretText();
     /**
-     * <code>.core.MsgSecretText secretText = 3;</code>
+     * <code>optional .core.MsgSecretText secretText = 3;</code>
      */
     com.zaly.proto.core.CoreProto.MsgSecretText getSecretText();
     /**
-     * <code>.core.MsgSecretText secretText = 3;</code>
+     * <code>optional .core.MsgSecretText secretText = 3;</code>
      */
     com.zaly.proto.core.CoreProto.MsgSecretTextOrBuilder getSecretTextOrBuilder();
 
     /**
-     * <code>.core.GroupText groupText = 4;</code>
+     * <code>optional .core.GroupText groupText = 4;</code>
      */
     boolean hasGroupText();
     /**
-     * <code>.core.GroupText groupText = 4;</code>
+     * <code>optional .core.GroupText groupText = 4;</code>
      */
     com.zaly.proto.core.CoreProto.GroupText getGroupText();
     /**
-     * <code>.core.GroupText groupText = 4;</code>
+     * <code>optional .core.GroupText groupText = 4;</code>
      */
     com.zaly.proto.core.CoreProto.GroupTextOrBuilder getGroupTextOrBuilder();
 
     /**
-     * <code>.core.GroupSecretText groupSecretText = 5;</code>
+     * <code>optional .core.GroupSecretText groupSecretText = 5;</code>
      */
     boolean hasGroupSecretText();
     /**
-     * <code>.core.GroupSecretText groupSecretText = 5;</code>
+     * <code>optional .core.GroupSecretText groupSecretText = 5;</code>
      */
     com.zaly.proto.core.CoreProto.GroupSecretText getGroupSecretText();
     /**
-     * <code>.core.GroupSecretText groupSecretText = 5;</code>
+     * <code>optional .core.GroupSecretText groupSecretText = 5;</code>
      */
     com.zaly.proto.core.CoreProto.GroupSecretTextOrBuilder getGroupSecretTextOrBuilder();
   }
@@ -86,7 +86,6 @@ public final class ImToSiteMsgProto {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:site.ToSiteMsgRequest)
       ToSiteMsgRequestOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use ToSiteMsgRequest.newBuilder() to construct.
     private ToSiteMsgRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -98,7 +97,7 @@ public final class ImToSiteMsgProto {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
     private ToSiteMsgRequest(
         com.google.protobuf.CodedInputStream input,
@@ -106,8 +105,6 @@ public final class ImToSiteMsgProto {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -117,8 +114,7 @@ public final class ImToSiteMsgProto {
               done = true;
               break;
             default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!input.skipField(tag)) {
                 done = true;
               }
               break;
@@ -189,7 +185,6 @@ public final class ImToSiteMsgProto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -208,13 +203,13 @@ public final class ImToSiteMsgProto {
     public static final int TYPE_FIELD_NUMBER = 1;
     private int type_;
     /**
-     * <code>.core.MsgType type = 1;</code>
+     * <code>optional .core.MsgType type = 1;</code>
      */
     public int getTypeValue() {
       return type_;
     }
     /**
-     * <code>.core.MsgType type = 1;</code>
+     * <code>optional .core.MsgType type = 1;</code>
      */
     public com.zaly.proto.core.CoreProto.MsgType getType() {
       com.zaly.proto.core.CoreProto.MsgType result = com.zaly.proto.core.CoreProto.MsgType.valueOf(type_);
@@ -224,19 +219,19 @@ public final class ImToSiteMsgProto {
     public static final int TEXT_FIELD_NUMBER = 2;
     private com.zaly.proto.core.CoreProto.MsgText text_;
     /**
-     * <code>.core.MsgText text = 2;</code>
+     * <code>optional .core.MsgText text = 2;</code>
      */
     public boolean hasText() {
       return text_ != null;
     }
     /**
-     * <code>.core.MsgText text = 2;</code>
+     * <code>optional .core.MsgText text = 2;</code>
      */
     public com.zaly.proto.core.CoreProto.MsgText getText() {
       return text_ == null ? com.zaly.proto.core.CoreProto.MsgText.getDefaultInstance() : text_;
     }
     /**
-     * <code>.core.MsgText text = 2;</code>
+     * <code>optional .core.MsgText text = 2;</code>
      */
     public com.zaly.proto.core.CoreProto.MsgTextOrBuilder getTextOrBuilder() {
       return getText();
@@ -245,19 +240,19 @@ public final class ImToSiteMsgProto {
     public static final int SECRETTEXT_FIELD_NUMBER = 3;
     private com.zaly.proto.core.CoreProto.MsgSecretText secretText_;
     /**
-     * <code>.core.MsgSecretText secretText = 3;</code>
+     * <code>optional .core.MsgSecretText secretText = 3;</code>
      */
     public boolean hasSecretText() {
       return secretText_ != null;
     }
     /**
-     * <code>.core.MsgSecretText secretText = 3;</code>
+     * <code>optional .core.MsgSecretText secretText = 3;</code>
      */
     public com.zaly.proto.core.CoreProto.MsgSecretText getSecretText() {
       return secretText_ == null ? com.zaly.proto.core.CoreProto.MsgSecretText.getDefaultInstance() : secretText_;
     }
     /**
-     * <code>.core.MsgSecretText secretText = 3;</code>
+     * <code>optional .core.MsgSecretText secretText = 3;</code>
      */
     public com.zaly.proto.core.CoreProto.MsgSecretTextOrBuilder getSecretTextOrBuilder() {
       return getSecretText();
@@ -266,19 +261,19 @@ public final class ImToSiteMsgProto {
     public static final int GROUPTEXT_FIELD_NUMBER = 4;
     private com.zaly.proto.core.CoreProto.GroupText groupText_;
     /**
-     * <code>.core.GroupText groupText = 4;</code>
+     * <code>optional .core.GroupText groupText = 4;</code>
      */
     public boolean hasGroupText() {
       return groupText_ != null;
     }
     /**
-     * <code>.core.GroupText groupText = 4;</code>
+     * <code>optional .core.GroupText groupText = 4;</code>
      */
     public com.zaly.proto.core.CoreProto.GroupText getGroupText() {
       return groupText_ == null ? com.zaly.proto.core.CoreProto.GroupText.getDefaultInstance() : groupText_;
     }
     /**
-     * <code>.core.GroupText groupText = 4;</code>
+     * <code>optional .core.GroupText groupText = 4;</code>
      */
     public com.zaly.proto.core.CoreProto.GroupTextOrBuilder getGroupTextOrBuilder() {
       return getGroupText();
@@ -287,19 +282,19 @@ public final class ImToSiteMsgProto {
     public static final int GROUPSECRETTEXT_FIELD_NUMBER = 5;
     private com.zaly.proto.core.CoreProto.GroupSecretText groupSecretText_;
     /**
-     * <code>.core.GroupSecretText groupSecretText = 5;</code>
+     * <code>optional .core.GroupSecretText groupSecretText = 5;</code>
      */
     public boolean hasGroupSecretText() {
       return groupSecretText_ != null;
     }
     /**
-     * <code>.core.GroupSecretText groupSecretText = 5;</code>
+     * <code>optional .core.GroupSecretText groupSecretText = 5;</code>
      */
     public com.zaly.proto.core.CoreProto.GroupSecretText getGroupSecretText() {
       return groupSecretText_ == null ? com.zaly.proto.core.CoreProto.GroupSecretText.getDefaultInstance() : groupSecretText_;
     }
     /**
-     * <code>.core.GroupSecretText groupSecretText = 5;</code>
+     * <code>optional .core.GroupSecretText groupSecretText = 5;</code>
      */
     public com.zaly.proto.core.CoreProto.GroupSecretTextOrBuilder getGroupSecretTextOrBuilder() {
       return getGroupSecretText();
@@ -332,7 +327,6 @@ public final class ImToSiteMsgProto {
       if (groupSecretText_ != null) {
         output.writeMessage(5, getGroupSecretText());
       }
-      unknownFields.writeTo(output);
     }
 
     public int getSerializedSize() {
@@ -360,11 +354,11 @@ public final class ImToSiteMsgProto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, getGroupSecretText());
       }
-      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -397,7 +391,6 @@ public final class ImToSiteMsgProto {
         result = result && getGroupSecretText()
             .equals(other.getGroupSecretText());
       }
-      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -407,7 +400,7 @@ public final class ImToSiteMsgProto {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + type_;
       if (hasText()) {
@@ -431,17 +424,6 @@ public final class ImToSiteMsgProto {
       return hash;
     }
 
-    public static com.zaly.proto.site.ImToSiteMsgProto.ToSiteMsgRequest parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.zaly.proto.site.ImToSiteMsgProto.ToSiteMsgRequest parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
     public static com.zaly.proto.site.ImToSiteMsgProto.ToSiteMsgRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -633,7 +615,7 @@ public final class ImToSiteMsgProto {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -646,12 +628,12 @@ public final class ImToSiteMsgProto {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -680,7 +662,6 @@ public final class ImToSiteMsgProto {
         if (other.hasGroupSecretText()) {
           mergeGroupSecretText(other.getGroupSecretText());
         }
-        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -709,13 +690,13 @@ public final class ImToSiteMsgProto {
 
       private int type_ = 0;
       /**
-       * <code>.core.MsgType type = 1;</code>
+       * <code>optional .core.MsgType type = 1;</code>
        */
       public int getTypeValue() {
         return type_;
       }
       /**
-       * <code>.core.MsgType type = 1;</code>
+       * <code>optional .core.MsgType type = 1;</code>
        */
       public Builder setTypeValue(int value) {
         type_ = value;
@@ -723,14 +704,14 @@ public final class ImToSiteMsgProto {
         return this;
       }
       /**
-       * <code>.core.MsgType type = 1;</code>
+       * <code>optional .core.MsgType type = 1;</code>
        */
       public com.zaly.proto.core.CoreProto.MsgType getType() {
         com.zaly.proto.core.CoreProto.MsgType result = com.zaly.proto.core.CoreProto.MsgType.valueOf(type_);
         return result == null ? com.zaly.proto.core.CoreProto.MsgType.UNRECOGNIZED : result;
       }
       /**
-       * <code>.core.MsgType type = 1;</code>
+       * <code>optional .core.MsgType type = 1;</code>
        */
       public Builder setType(com.zaly.proto.core.CoreProto.MsgType value) {
         if (value == null) {
@@ -742,7 +723,7 @@ public final class ImToSiteMsgProto {
         return this;
       }
       /**
-       * <code>.core.MsgType type = 1;</code>
+       * <code>optional .core.MsgType type = 1;</code>
        */
       public Builder clearType() {
         
@@ -755,13 +736,13 @@ public final class ImToSiteMsgProto {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.zaly.proto.core.CoreProto.MsgText, com.zaly.proto.core.CoreProto.MsgText.Builder, com.zaly.proto.core.CoreProto.MsgTextOrBuilder> textBuilder_;
       /**
-       * <code>.core.MsgText text = 2;</code>
+       * <code>optional .core.MsgText text = 2;</code>
        */
       public boolean hasText() {
         return textBuilder_ != null || text_ != null;
       }
       /**
-       * <code>.core.MsgText text = 2;</code>
+       * <code>optional .core.MsgText text = 2;</code>
        */
       public com.zaly.proto.core.CoreProto.MsgText getText() {
         if (textBuilder_ == null) {
@@ -771,7 +752,7 @@ public final class ImToSiteMsgProto {
         }
       }
       /**
-       * <code>.core.MsgText text = 2;</code>
+       * <code>optional .core.MsgText text = 2;</code>
        */
       public Builder setText(com.zaly.proto.core.CoreProto.MsgText value) {
         if (textBuilder_ == null) {
@@ -787,7 +768,7 @@ public final class ImToSiteMsgProto {
         return this;
       }
       /**
-       * <code>.core.MsgText text = 2;</code>
+       * <code>optional .core.MsgText text = 2;</code>
        */
       public Builder setText(
           com.zaly.proto.core.CoreProto.MsgText.Builder builderForValue) {
@@ -801,7 +782,7 @@ public final class ImToSiteMsgProto {
         return this;
       }
       /**
-       * <code>.core.MsgText text = 2;</code>
+       * <code>optional .core.MsgText text = 2;</code>
        */
       public Builder mergeText(com.zaly.proto.core.CoreProto.MsgText value) {
         if (textBuilder_ == null) {
@@ -819,7 +800,7 @@ public final class ImToSiteMsgProto {
         return this;
       }
       /**
-       * <code>.core.MsgText text = 2;</code>
+       * <code>optional .core.MsgText text = 2;</code>
        */
       public Builder clearText() {
         if (textBuilder_ == null) {
@@ -833,7 +814,7 @@ public final class ImToSiteMsgProto {
         return this;
       }
       /**
-       * <code>.core.MsgText text = 2;</code>
+       * <code>optional .core.MsgText text = 2;</code>
        */
       public com.zaly.proto.core.CoreProto.MsgText.Builder getTextBuilder() {
         
@@ -841,7 +822,7 @@ public final class ImToSiteMsgProto {
         return getTextFieldBuilder().getBuilder();
       }
       /**
-       * <code>.core.MsgText text = 2;</code>
+       * <code>optional .core.MsgText text = 2;</code>
        */
       public com.zaly.proto.core.CoreProto.MsgTextOrBuilder getTextOrBuilder() {
         if (textBuilder_ != null) {
@@ -852,7 +833,7 @@ public final class ImToSiteMsgProto {
         }
       }
       /**
-       * <code>.core.MsgText text = 2;</code>
+       * <code>optional .core.MsgText text = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.zaly.proto.core.CoreProto.MsgText, com.zaly.proto.core.CoreProto.MsgText.Builder, com.zaly.proto.core.CoreProto.MsgTextOrBuilder> 
@@ -872,13 +853,13 @@ public final class ImToSiteMsgProto {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.zaly.proto.core.CoreProto.MsgSecretText, com.zaly.proto.core.CoreProto.MsgSecretText.Builder, com.zaly.proto.core.CoreProto.MsgSecretTextOrBuilder> secretTextBuilder_;
       /**
-       * <code>.core.MsgSecretText secretText = 3;</code>
+       * <code>optional .core.MsgSecretText secretText = 3;</code>
        */
       public boolean hasSecretText() {
         return secretTextBuilder_ != null || secretText_ != null;
       }
       /**
-       * <code>.core.MsgSecretText secretText = 3;</code>
+       * <code>optional .core.MsgSecretText secretText = 3;</code>
        */
       public com.zaly.proto.core.CoreProto.MsgSecretText getSecretText() {
         if (secretTextBuilder_ == null) {
@@ -888,7 +869,7 @@ public final class ImToSiteMsgProto {
         }
       }
       /**
-       * <code>.core.MsgSecretText secretText = 3;</code>
+       * <code>optional .core.MsgSecretText secretText = 3;</code>
        */
       public Builder setSecretText(com.zaly.proto.core.CoreProto.MsgSecretText value) {
         if (secretTextBuilder_ == null) {
@@ -904,7 +885,7 @@ public final class ImToSiteMsgProto {
         return this;
       }
       /**
-       * <code>.core.MsgSecretText secretText = 3;</code>
+       * <code>optional .core.MsgSecretText secretText = 3;</code>
        */
       public Builder setSecretText(
           com.zaly.proto.core.CoreProto.MsgSecretText.Builder builderForValue) {
@@ -918,7 +899,7 @@ public final class ImToSiteMsgProto {
         return this;
       }
       /**
-       * <code>.core.MsgSecretText secretText = 3;</code>
+       * <code>optional .core.MsgSecretText secretText = 3;</code>
        */
       public Builder mergeSecretText(com.zaly.proto.core.CoreProto.MsgSecretText value) {
         if (secretTextBuilder_ == null) {
@@ -936,7 +917,7 @@ public final class ImToSiteMsgProto {
         return this;
       }
       /**
-       * <code>.core.MsgSecretText secretText = 3;</code>
+       * <code>optional .core.MsgSecretText secretText = 3;</code>
        */
       public Builder clearSecretText() {
         if (secretTextBuilder_ == null) {
@@ -950,7 +931,7 @@ public final class ImToSiteMsgProto {
         return this;
       }
       /**
-       * <code>.core.MsgSecretText secretText = 3;</code>
+       * <code>optional .core.MsgSecretText secretText = 3;</code>
        */
       public com.zaly.proto.core.CoreProto.MsgSecretText.Builder getSecretTextBuilder() {
         
@@ -958,7 +939,7 @@ public final class ImToSiteMsgProto {
         return getSecretTextFieldBuilder().getBuilder();
       }
       /**
-       * <code>.core.MsgSecretText secretText = 3;</code>
+       * <code>optional .core.MsgSecretText secretText = 3;</code>
        */
       public com.zaly.proto.core.CoreProto.MsgSecretTextOrBuilder getSecretTextOrBuilder() {
         if (secretTextBuilder_ != null) {
@@ -969,7 +950,7 @@ public final class ImToSiteMsgProto {
         }
       }
       /**
-       * <code>.core.MsgSecretText secretText = 3;</code>
+       * <code>optional .core.MsgSecretText secretText = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.zaly.proto.core.CoreProto.MsgSecretText, com.zaly.proto.core.CoreProto.MsgSecretText.Builder, com.zaly.proto.core.CoreProto.MsgSecretTextOrBuilder> 
@@ -989,13 +970,13 @@ public final class ImToSiteMsgProto {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.zaly.proto.core.CoreProto.GroupText, com.zaly.proto.core.CoreProto.GroupText.Builder, com.zaly.proto.core.CoreProto.GroupTextOrBuilder> groupTextBuilder_;
       /**
-       * <code>.core.GroupText groupText = 4;</code>
+       * <code>optional .core.GroupText groupText = 4;</code>
        */
       public boolean hasGroupText() {
         return groupTextBuilder_ != null || groupText_ != null;
       }
       /**
-       * <code>.core.GroupText groupText = 4;</code>
+       * <code>optional .core.GroupText groupText = 4;</code>
        */
       public com.zaly.proto.core.CoreProto.GroupText getGroupText() {
         if (groupTextBuilder_ == null) {
@@ -1005,7 +986,7 @@ public final class ImToSiteMsgProto {
         }
       }
       /**
-       * <code>.core.GroupText groupText = 4;</code>
+       * <code>optional .core.GroupText groupText = 4;</code>
        */
       public Builder setGroupText(com.zaly.proto.core.CoreProto.GroupText value) {
         if (groupTextBuilder_ == null) {
@@ -1021,7 +1002,7 @@ public final class ImToSiteMsgProto {
         return this;
       }
       /**
-       * <code>.core.GroupText groupText = 4;</code>
+       * <code>optional .core.GroupText groupText = 4;</code>
        */
       public Builder setGroupText(
           com.zaly.proto.core.CoreProto.GroupText.Builder builderForValue) {
@@ -1035,7 +1016,7 @@ public final class ImToSiteMsgProto {
         return this;
       }
       /**
-       * <code>.core.GroupText groupText = 4;</code>
+       * <code>optional .core.GroupText groupText = 4;</code>
        */
       public Builder mergeGroupText(com.zaly.proto.core.CoreProto.GroupText value) {
         if (groupTextBuilder_ == null) {
@@ -1053,7 +1034,7 @@ public final class ImToSiteMsgProto {
         return this;
       }
       /**
-       * <code>.core.GroupText groupText = 4;</code>
+       * <code>optional .core.GroupText groupText = 4;</code>
        */
       public Builder clearGroupText() {
         if (groupTextBuilder_ == null) {
@@ -1067,7 +1048,7 @@ public final class ImToSiteMsgProto {
         return this;
       }
       /**
-       * <code>.core.GroupText groupText = 4;</code>
+       * <code>optional .core.GroupText groupText = 4;</code>
        */
       public com.zaly.proto.core.CoreProto.GroupText.Builder getGroupTextBuilder() {
         
@@ -1075,7 +1056,7 @@ public final class ImToSiteMsgProto {
         return getGroupTextFieldBuilder().getBuilder();
       }
       /**
-       * <code>.core.GroupText groupText = 4;</code>
+       * <code>optional .core.GroupText groupText = 4;</code>
        */
       public com.zaly.proto.core.CoreProto.GroupTextOrBuilder getGroupTextOrBuilder() {
         if (groupTextBuilder_ != null) {
@@ -1086,7 +1067,7 @@ public final class ImToSiteMsgProto {
         }
       }
       /**
-       * <code>.core.GroupText groupText = 4;</code>
+       * <code>optional .core.GroupText groupText = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.zaly.proto.core.CoreProto.GroupText, com.zaly.proto.core.CoreProto.GroupText.Builder, com.zaly.proto.core.CoreProto.GroupTextOrBuilder> 
@@ -1106,13 +1087,13 @@ public final class ImToSiteMsgProto {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.zaly.proto.core.CoreProto.GroupSecretText, com.zaly.proto.core.CoreProto.GroupSecretText.Builder, com.zaly.proto.core.CoreProto.GroupSecretTextOrBuilder> groupSecretTextBuilder_;
       /**
-       * <code>.core.GroupSecretText groupSecretText = 5;</code>
+       * <code>optional .core.GroupSecretText groupSecretText = 5;</code>
        */
       public boolean hasGroupSecretText() {
         return groupSecretTextBuilder_ != null || groupSecretText_ != null;
       }
       /**
-       * <code>.core.GroupSecretText groupSecretText = 5;</code>
+       * <code>optional .core.GroupSecretText groupSecretText = 5;</code>
        */
       public com.zaly.proto.core.CoreProto.GroupSecretText getGroupSecretText() {
         if (groupSecretTextBuilder_ == null) {
@@ -1122,7 +1103,7 @@ public final class ImToSiteMsgProto {
         }
       }
       /**
-       * <code>.core.GroupSecretText groupSecretText = 5;</code>
+       * <code>optional .core.GroupSecretText groupSecretText = 5;</code>
        */
       public Builder setGroupSecretText(com.zaly.proto.core.CoreProto.GroupSecretText value) {
         if (groupSecretTextBuilder_ == null) {
@@ -1138,7 +1119,7 @@ public final class ImToSiteMsgProto {
         return this;
       }
       /**
-       * <code>.core.GroupSecretText groupSecretText = 5;</code>
+       * <code>optional .core.GroupSecretText groupSecretText = 5;</code>
        */
       public Builder setGroupSecretText(
           com.zaly.proto.core.CoreProto.GroupSecretText.Builder builderForValue) {
@@ -1152,7 +1133,7 @@ public final class ImToSiteMsgProto {
         return this;
       }
       /**
-       * <code>.core.GroupSecretText groupSecretText = 5;</code>
+       * <code>optional .core.GroupSecretText groupSecretText = 5;</code>
        */
       public Builder mergeGroupSecretText(com.zaly.proto.core.CoreProto.GroupSecretText value) {
         if (groupSecretTextBuilder_ == null) {
@@ -1170,7 +1151,7 @@ public final class ImToSiteMsgProto {
         return this;
       }
       /**
-       * <code>.core.GroupSecretText groupSecretText = 5;</code>
+       * <code>optional .core.GroupSecretText groupSecretText = 5;</code>
        */
       public Builder clearGroupSecretText() {
         if (groupSecretTextBuilder_ == null) {
@@ -1184,7 +1165,7 @@ public final class ImToSiteMsgProto {
         return this;
       }
       /**
-       * <code>.core.GroupSecretText groupSecretText = 5;</code>
+       * <code>optional .core.GroupSecretText groupSecretText = 5;</code>
        */
       public com.zaly.proto.core.CoreProto.GroupSecretText.Builder getGroupSecretTextBuilder() {
         
@@ -1192,7 +1173,7 @@ public final class ImToSiteMsgProto {
         return getGroupSecretTextFieldBuilder().getBuilder();
       }
       /**
-       * <code>.core.GroupSecretText groupSecretText = 5;</code>
+       * <code>optional .core.GroupSecretText groupSecretText = 5;</code>
        */
       public com.zaly.proto.core.CoreProto.GroupSecretTextOrBuilder getGroupSecretTextOrBuilder() {
         if (groupSecretTextBuilder_ != null) {
@@ -1203,7 +1184,7 @@ public final class ImToSiteMsgProto {
         }
       }
       /**
-       * <code>.core.GroupSecretText groupSecretText = 5;</code>
+       * <code>optional .core.GroupSecretText groupSecretText = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.zaly.proto.core.CoreProto.GroupSecretText, com.zaly.proto.core.CoreProto.GroupSecretText.Builder, com.zaly.proto.core.CoreProto.GroupSecretTextOrBuilder> 
@@ -1220,12 +1201,12 @@ public final class ImToSiteMsgProto {
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return this;
       }
 
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return this;
       }
 
 

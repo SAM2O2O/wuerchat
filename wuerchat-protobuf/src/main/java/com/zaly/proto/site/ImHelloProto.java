@@ -19,11 +19,11 @@ public final class ImHelloProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string client_version = 1;</code>
+     * <code>optional string client_version = 1;</code>
      */
     java.lang.String getClientVersion();
     /**
-     * <code>string client_version = 1;</code>
+     * <code>optional string client_version = 1;</code>
      */
     com.google.protobuf.ByteString
         getClientVersionBytes();
@@ -35,7 +35,6 @@ public final class ImHelloProto {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:site.ImHelloRequest)
       ImHelloRequestOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use ImHelloRequest.newBuilder() to construct.
     private ImHelloRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -47,7 +46,7 @@ public final class ImHelloProto {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
     private ImHelloRequest(
         com.google.protobuf.CodedInputStream input,
@@ -55,8 +54,6 @@ public final class ImHelloProto {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -66,8 +63,7 @@ public final class ImHelloProto {
               done = true;
               break;
             default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!input.skipField(tag)) {
                 done = true;
               }
               break;
@@ -86,7 +82,6 @@ public final class ImHelloProto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -105,7 +100,7 @@ public final class ImHelloProto {
     public static final int CLIENT_VERSION_FIELD_NUMBER = 1;
     private volatile java.lang.Object clientVersion_;
     /**
-     * <code>string client_version = 1;</code>
+     * <code>optional string client_version = 1;</code>
      */
     public java.lang.String getClientVersion() {
       java.lang.Object ref = clientVersion_;
@@ -120,7 +115,7 @@ public final class ImHelloProto {
       }
     }
     /**
-     * <code>string client_version = 1;</code>
+     * <code>optional string client_version = 1;</code>
      */
     public com.google.protobuf.ByteString
         getClientVersionBytes() {
@@ -151,7 +146,6 @@ public final class ImHelloProto {
       if (!getClientVersionBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, clientVersion_);
       }
-      unknownFields.writeTo(output);
     }
 
     public int getSerializedSize() {
@@ -162,11 +156,11 @@ public final class ImHelloProto {
       if (!getClientVersionBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, clientVersion_);
       }
-      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -180,7 +174,6 @@ public final class ImHelloProto {
       boolean result = true;
       result = result && getClientVersion()
           .equals(other.getClientVersion());
-      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -190,7 +183,7 @@ public final class ImHelloProto {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       hash = (37 * hash) + CLIENT_VERSION_FIELD_NUMBER;
       hash = (53 * hash) + getClientVersion().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -198,17 +191,6 @@ public final class ImHelloProto {
       return hash;
     }
 
-    public static com.zaly.proto.site.ImHelloProto.ImHelloRequest parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.zaly.proto.site.ImHelloProto.ImHelloRequest parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
     public static com.zaly.proto.site.ImHelloProto.ImHelloRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -356,7 +338,7 @@ public final class ImHelloProto {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -369,12 +351,12 @@ public final class ImHelloProto {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -392,7 +374,6 @@ public final class ImHelloProto {
           clientVersion_ = other.clientVersion_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -421,7 +402,7 @@ public final class ImHelloProto {
 
       private java.lang.Object clientVersion_ = "";
       /**
-       * <code>string client_version = 1;</code>
+       * <code>optional string client_version = 1;</code>
        */
       public java.lang.String getClientVersion() {
         java.lang.Object ref = clientVersion_;
@@ -436,7 +417,7 @@ public final class ImHelloProto {
         }
       }
       /**
-       * <code>string client_version = 1;</code>
+       * <code>optional string client_version = 1;</code>
        */
       public com.google.protobuf.ByteString
           getClientVersionBytes() {
@@ -452,7 +433,7 @@ public final class ImHelloProto {
         }
       }
       /**
-       * <code>string client_version = 1;</code>
+       * <code>optional string client_version = 1;</code>
        */
       public Builder setClientVersion(
           java.lang.String value) {
@@ -465,7 +446,7 @@ public final class ImHelloProto {
         return this;
       }
       /**
-       * <code>string client_version = 1;</code>
+       * <code>optional string client_version = 1;</code>
        */
       public Builder clearClientVersion() {
         
@@ -474,7 +455,7 @@ public final class ImHelloProto {
         return this;
       }
       /**
-       * <code>string client_version = 1;</code>
+       * <code>optional string client_version = 1;</code>
        */
       public Builder setClientVersionBytes(
           com.google.protobuf.ByteString value) {
@@ -489,12 +470,12 @@ public final class ImHelloProto {
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return this;
       }
 
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return this;
       }
 
 
@@ -541,11 +522,11 @@ public final class ImHelloProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string site_version = 1;</code>
+     * <code>optional string site_version = 1;</code>
      */
     java.lang.String getSiteVersion();
     /**
-     * <code>string site_version = 1;</code>
+     * <code>optional string site_version = 1;</code>
      */
     com.google.protobuf.ByteString
         getSiteVersionBytes();
@@ -557,7 +538,6 @@ public final class ImHelloProto {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:site.ImHelloResponse)
       ImHelloResponseOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use ImHelloResponse.newBuilder() to construct.
     private ImHelloResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -569,7 +549,7 @@ public final class ImHelloProto {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
     private ImHelloResponse(
         com.google.protobuf.CodedInputStream input,
@@ -577,8 +557,6 @@ public final class ImHelloProto {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -588,8 +566,7 @@ public final class ImHelloProto {
               done = true;
               break;
             default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!input.skipField(tag)) {
                 done = true;
               }
               break;
@@ -608,7 +585,6 @@ public final class ImHelloProto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -627,7 +603,7 @@ public final class ImHelloProto {
     public static final int SITE_VERSION_FIELD_NUMBER = 1;
     private volatile java.lang.Object siteVersion_;
     /**
-     * <code>string site_version = 1;</code>
+     * <code>optional string site_version = 1;</code>
      */
     public java.lang.String getSiteVersion() {
       java.lang.Object ref = siteVersion_;
@@ -642,7 +618,7 @@ public final class ImHelloProto {
       }
     }
     /**
-     * <code>string site_version = 1;</code>
+     * <code>optional string site_version = 1;</code>
      */
     public com.google.protobuf.ByteString
         getSiteVersionBytes() {
@@ -673,7 +649,6 @@ public final class ImHelloProto {
       if (!getSiteVersionBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, siteVersion_);
       }
-      unknownFields.writeTo(output);
     }
 
     public int getSerializedSize() {
@@ -684,11 +659,11 @@ public final class ImHelloProto {
       if (!getSiteVersionBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, siteVersion_);
       }
-      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -702,7 +677,6 @@ public final class ImHelloProto {
       boolean result = true;
       result = result && getSiteVersion()
           .equals(other.getSiteVersion());
-      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -712,7 +686,7 @@ public final class ImHelloProto {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       hash = (37 * hash) + SITE_VERSION_FIELD_NUMBER;
       hash = (53 * hash) + getSiteVersion().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -720,17 +694,6 @@ public final class ImHelloProto {
       return hash;
     }
 
-    public static com.zaly.proto.site.ImHelloProto.ImHelloResponse parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.zaly.proto.site.ImHelloProto.ImHelloResponse parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
     public static com.zaly.proto.site.ImHelloProto.ImHelloResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -878,7 +841,7 @@ public final class ImHelloProto {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -891,12 +854,12 @@ public final class ImHelloProto {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -914,7 +877,6 @@ public final class ImHelloProto {
           siteVersion_ = other.siteVersion_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -943,7 +905,7 @@ public final class ImHelloProto {
 
       private java.lang.Object siteVersion_ = "";
       /**
-       * <code>string site_version = 1;</code>
+       * <code>optional string site_version = 1;</code>
        */
       public java.lang.String getSiteVersion() {
         java.lang.Object ref = siteVersion_;
@@ -958,7 +920,7 @@ public final class ImHelloProto {
         }
       }
       /**
-       * <code>string site_version = 1;</code>
+       * <code>optional string site_version = 1;</code>
        */
       public com.google.protobuf.ByteString
           getSiteVersionBytes() {
@@ -974,7 +936,7 @@ public final class ImHelloProto {
         }
       }
       /**
-       * <code>string site_version = 1;</code>
+       * <code>optional string site_version = 1;</code>
        */
       public Builder setSiteVersion(
           java.lang.String value) {
@@ -987,7 +949,7 @@ public final class ImHelloProto {
         return this;
       }
       /**
-       * <code>string site_version = 1;</code>
+       * <code>optional string site_version = 1;</code>
        */
       public Builder clearSiteVersion() {
         
@@ -996,7 +958,7 @@ public final class ImHelloProto {
         return this;
       }
       /**
-       * <code>string site_version = 1;</code>
+       * <code>optional string site_version = 1;</code>
        */
       public Builder setSiteVersionBytes(
           com.google.protobuf.ByteString value) {
@@ -1011,12 +973,12 @@ public final class ImHelloProto {
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return this;
       }
 
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return this;
       }
 
 

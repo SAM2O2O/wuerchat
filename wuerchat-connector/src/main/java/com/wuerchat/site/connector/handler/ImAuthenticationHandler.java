@@ -43,9 +43,10 @@ public class ImAuthenticationHandler extends AbstractCommonHandler<Command> {
 	}
 
 	private void process(ChannelSession channelSession, Command command) {
-
 		try {
-			ImAuthProto.ImAuthRequest request = ImAuthProto.ImAuthRequest.parseFrom(command.getParams().getBytes());
+			CoreProto.TransportPackageData packageData = CoreProto.TransportPackageData
+					.parseFrom(ByteString.copyFrom(command.getParams().getBytes()));
+			ImAuthProto.ImAuthRequest request = ImAuthProto.ImAuthRequest.parseFrom(packageData.getData());
 
 			String site_user_id = request.getSiteUserId();
 			String site_session_id = request.getSiteSessionId();

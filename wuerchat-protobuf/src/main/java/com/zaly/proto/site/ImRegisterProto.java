@@ -19,21 +19,21 @@ public final class ImRegisterProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string user_id_pubk = 1;</code>
+     * <code>optional string user_id_pubk = 1;</code>
      */
     java.lang.String getUserIdPubk();
     /**
-     * <code>string user_id_pubk = 1;</code>
+     * <code>optional string user_id_pubk = 1;</code>
      */
     com.google.protobuf.ByteString
         getUserIdPubkBytes();
 
     /**
-     * <code>string user_name = 2;</code>
+     * <code>optional string user_name = 2;</code>
      */
     java.lang.String getUserName();
     /**
-     * <code>string user_name = 2;</code>
+     * <code>optional string user_name = 2;</code>
      */
     com.google.protobuf.ByteString
         getUserNameBytes();
@@ -43,7 +43,7 @@ public final class ImRegisterProto {
      *the binary bytes of the photo
      * </pre>
      *
-     * <code>string user_photo = 3;</code>
+     * <code>optional string user_photo = 3;</code>
      */
     java.lang.String getUserPhoto();
     /**
@@ -51,37 +51,37 @@ public final class ImRegisterProto {
      *the binary bytes of the photo
      * </pre>
      *
-     * <code>string user_photo = 3;</code>
+     * <code>optional string user_photo = 3;</code>
      */
     com.google.protobuf.ByteString
         getUserPhotoBytes();
 
     /**
-     * <code>string invitation_code = 4;</code>
+     * <code>optional string invitation_code = 4;</code>
      */
     java.lang.String getInvitationCode();
     /**
-     * <code>string invitation_code = 4;</code>
+     * <code>optional string invitation_code = 4;</code>
      */
     com.google.protobuf.ByteString
         getInvitationCodeBytes();
 
     /**
-     * <code>string apply_info = 5;</code>
+     * <code>optional string apply_info = 5;</code>
      */
     java.lang.String getApplyInfo();
     /**
-     * <code>string apply_info = 5;</code>
+     * <code>optional string apply_info = 5;</code>
      */
     com.google.protobuf.ByteString
         getApplyInfoBytes();
 
     /**
-     * <code>string platform_phone_code = 6;</code>
+     * <code>optional string platform_phone_code = 6;</code>
      */
     java.lang.String getPlatformPhoneCode();
     /**
-     * <code>string platform_phone_code = 6;</code>
+     * <code>optional string platform_phone_code = 6;</code>
      */
     com.google.protobuf.ByteString
         getPlatformPhoneCodeBytes();
@@ -93,7 +93,6 @@ public final class ImRegisterProto {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:site.ApiRegisterRequest)
       ApiRegisterRequestOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use ApiRegisterRequest.newBuilder() to construct.
     private ApiRegisterRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -110,7 +109,7 @@ public final class ImRegisterProto {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
     private ApiRegisterRequest(
         com.google.protobuf.CodedInputStream input,
@@ -118,8 +117,6 @@ public final class ImRegisterProto {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -129,8 +126,7 @@ public final class ImRegisterProto {
               done = true;
               break;
             default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!input.skipField(tag)) {
                 done = true;
               }
               break;
@@ -179,7 +175,6 @@ public final class ImRegisterProto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -198,7 +193,7 @@ public final class ImRegisterProto {
     public static final int USER_ID_PUBK_FIELD_NUMBER = 1;
     private volatile java.lang.Object userIdPubk_;
     /**
-     * <code>string user_id_pubk = 1;</code>
+     * <code>optional string user_id_pubk = 1;</code>
      */
     public java.lang.String getUserIdPubk() {
       java.lang.Object ref = userIdPubk_;
@@ -213,7 +208,7 @@ public final class ImRegisterProto {
       }
     }
     /**
-     * <code>string user_id_pubk = 1;</code>
+     * <code>optional string user_id_pubk = 1;</code>
      */
     public com.google.protobuf.ByteString
         getUserIdPubkBytes() {
@@ -232,7 +227,7 @@ public final class ImRegisterProto {
     public static final int USER_NAME_FIELD_NUMBER = 2;
     private volatile java.lang.Object userName_;
     /**
-     * <code>string user_name = 2;</code>
+     * <code>optional string user_name = 2;</code>
      */
     public java.lang.String getUserName() {
       java.lang.Object ref = userName_;
@@ -247,7 +242,7 @@ public final class ImRegisterProto {
       }
     }
     /**
-     * <code>string user_name = 2;</code>
+     * <code>optional string user_name = 2;</code>
      */
     public com.google.protobuf.ByteString
         getUserNameBytes() {
@@ -270,7 +265,7 @@ public final class ImRegisterProto {
      *the binary bytes of the photo
      * </pre>
      *
-     * <code>string user_photo = 3;</code>
+     * <code>optional string user_photo = 3;</code>
      */
     public java.lang.String getUserPhoto() {
       java.lang.Object ref = userPhoto_;
@@ -289,7 +284,7 @@ public final class ImRegisterProto {
      *the binary bytes of the photo
      * </pre>
      *
-     * <code>string user_photo = 3;</code>
+     * <code>optional string user_photo = 3;</code>
      */
     public com.google.protobuf.ByteString
         getUserPhotoBytes() {
@@ -308,7 +303,7 @@ public final class ImRegisterProto {
     public static final int INVITATION_CODE_FIELD_NUMBER = 4;
     private volatile java.lang.Object invitationCode_;
     /**
-     * <code>string invitation_code = 4;</code>
+     * <code>optional string invitation_code = 4;</code>
      */
     public java.lang.String getInvitationCode() {
       java.lang.Object ref = invitationCode_;
@@ -323,7 +318,7 @@ public final class ImRegisterProto {
       }
     }
     /**
-     * <code>string invitation_code = 4;</code>
+     * <code>optional string invitation_code = 4;</code>
      */
     public com.google.protobuf.ByteString
         getInvitationCodeBytes() {
@@ -342,7 +337,7 @@ public final class ImRegisterProto {
     public static final int APPLY_INFO_FIELD_NUMBER = 5;
     private volatile java.lang.Object applyInfo_;
     /**
-     * <code>string apply_info = 5;</code>
+     * <code>optional string apply_info = 5;</code>
      */
     public java.lang.String getApplyInfo() {
       java.lang.Object ref = applyInfo_;
@@ -357,7 +352,7 @@ public final class ImRegisterProto {
       }
     }
     /**
-     * <code>string apply_info = 5;</code>
+     * <code>optional string apply_info = 5;</code>
      */
     public com.google.protobuf.ByteString
         getApplyInfoBytes() {
@@ -376,7 +371,7 @@ public final class ImRegisterProto {
     public static final int PLATFORM_PHONE_CODE_FIELD_NUMBER = 6;
     private volatile java.lang.Object platformPhoneCode_;
     /**
-     * <code>string platform_phone_code = 6;</code>
+     * <code>optional string platform_phone_code = 6;</code>
      */
     public java.lang.String getPlatformPhoneCode() {
       java.lang.Object ref = platformPhoneCode_;
@@ -391,7 +386,7 @@ public final class ImRegisterProto {
       }
     }
     /**
-     * <code>string platform_phone_code = 6;</code>
+     * <code>optional string platform_phone_code = 6;</code>
      */
     public com.google.protobuf.ByteString
         getPlatformPhoneCodeBytes() {
@@ -437,7 +432,6 @@ public final class ImRegisterProto {
       if (!getPlatformPhoneCodeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, platformPhoneCode_);
       }
-      unknownFields.writeTo(output);
     }
 
     public int getSerializedSize() {
@@ -463,11 +457,11 @@ public final class ImRegisterProto {
       if (!getPlatformPhoneCodeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, platformPhoneCode_);
       }
-      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -491,7 +485,6 @@ public final class ImRegisterProto {
           .equals(other.getApplyInfo());
       result = result && getPlatformPhoneCode()
           .equals(other.getPlatformPhoneCode());
-      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -501,7 +494,7 @@ public final class ImRegisterProto {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       hash = (37 * hash) + USER_ID_PUBK_FIELD_NUMBER;
       hash = (53 * hash) + getUserIdPubk().hashCode();
       hash = (37 * hash) + USER_NAME_FIELD_NUMBER;
@@ -519,17 +512,6 @@ public final class ImRegisterProto {
       return hash;
     }
 
-    public static com.zaly.proto.site.ImRegisterProto.ApiRegisterRequest parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.zaly.proto.site.ImRegisterProto.ApiRegisterRequest parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
     public static com.zaly.proto.site.ImRegisterProto.ApiRegisterRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -692,7 +674,7 @@ public final class ImRegisterProto {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -705,12 +687,12 @@ public final class ImRegisterProto {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -748,7 +730,6 @@ public final class ImRegisterProto {
           platformPhoneCode_ = other.platformPhoneCode_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -777,7 +758,7 @@ public final class ImRegisterProto {
 
       private java.lang.Object userIdPubk_ = "";
       /**
-       * <code>string user_id_pubk = 1;</code>
+       * <code>optional string user_id_pubk = 1;</code>
        */
       public java.lang.String getUserIdPubk() {
         java.lang.Object ref = userIdPubk_;
@@ -792,7 +773,7 @@ public final class ImRegisterProto {
         }
       }
       /**
-       * <code>string user_id_pubk = 1;</code>
+       * <code>optional string user_id_pubk = 1;</code>
        */
       public com.google.protobuf.ByteString
           getUserIdPubkBytes() {
@@ -808,7 +789,7 @@ public final class ImRegisterProto {
         }
       }
       /**
-       * <code>string user_id_pubk = 1;</code>
+       * <code>optional string user_id_pubk = 1;</code>
        */
       public Builder setUserIdPubk(
           java.lang.String value) {
@@ -821,7 +802,7 @@ public final class ImRegisterProto {
         return this;
       }
       /**
-       * <code>string user_id_pubk = 1;</code>
+       * <code>optional string user_id_pubk = 1;</code>
        */
       public Builder clearUserIdPubk() {
         
@@ -830,7 +811,7 @@ public final class ImRegisterProto {
         return this;
       }
       /**
-       * <code>string user_id_pubk = 1;</code>
+       * <code>optional string user_id_pubk = 1;</code>
        */
       public Builder setUserIdPubkBytes(
           com.google.protobuf.ByteString value) {
@@ -846,7 +827,7 @@ public final class ImRegisterProto {
 
       private java.lang.Object userName_ = "";
       /**
-       * <code>string user_name = 2;</code>
+       * <code>optional string user_name = 2;</code>
        */
       public java.lang.String getUserName() {
         java.lang.Object ref = userName_;
@@ -861,7 +842,7 @@ public final class ImRegisterProto {
         }
       }
       /**
-       * <code>string user_name = 2;</code>
+       * <code>optional string user_name = 2;</code>
        */
       public com.google.protobuf.ByteString
           getUserNameBytes() {
@@ -877,7 +858,7 @@ public final class ImRegisterProto {
         }
       }
       /**
-       * <code>string user_name = 2;</code>
+       * <code>optional string user_name = 2;</code>
        */
       public Builder setUserName(
           java.lang.String value) {
@@ -890,7 +871,7 @@ public final class ImRegisterProto {
         return this;
       }
       /**
-       * <code>string user_name = 2;</code>
+       * <code>optional string user_name = 2;</code>
        */
       public Builder clearUserName() {
         
@@ -899,7 +880,7 @@ public final class ImRegisterProto {
         return this;
       }
       /**
-       * <code>string user_name = 2;</code>
+       * <code>optional string user_name = 2;</code>
        */
       public Builder setUserNameBytes(
           com.google.protobuf.ByteString value) {
@@ -919,7 +900,7 @@ public final class ImRegisterProto {
        *the binary bytes of the photo
        * </pre>
        *
-       * <code>string user_photo = 3;</code>
+       * <code>optional string user_photo = 3;</code>
        */
       public java.lang.String getUserPhoto() {
         java.lang.Object ref = userPhoto_;
@@ -938,7 +919,7 @@ public final class ImRegisterProto {
        *the binary bytes of the photo
        * </pre>
        *
-       * <code>string user_photo = 3;</code>
+       * <code>optional string user_photo = 3;</code>
        */
       public com.google.protobuf.ByteString
           getUserPhotoBytes() {
@@ -958,7 +939,7 @@ public final class ImRegisterProto {
        *the binary bytes of the photo
        * </pre>
        *
-       * <code>string user_photo = 3;</code>
+       * <code>optional string user_photo = 3;</code>
        */
       public Builder setUserPhoto(
           java.lang.String value) {
@@ -975,7 +956,7 @@ public final class ImRegisterProto {
        *the binary bytes of the photo
        * </pre>
        *
-       * <code>string user_photo = 3;</code>
+       * <code>optional string user_photo = 3;</code>
        */
       public Builder clearUserPhoto() {
         
@@ -988,7 +969,7 @@ public final class ImRegisterProto {
        *the binary bytes of the photo
        * </pre>
        *
-       * <code>string user_photo = 3;</code>
+       * <code>optional string user_photo = 3;</code>
        */
       public Builder setUserPhotoBytes(
           com.google.protobuf.ByteString value) {
@@ -1004,7 +985,7 @@ public final class ImRegisterProto {
 
       private java.lang.Object invitationCode_ = "";
       /**
-       * <code>string invitation_code = 4;</code>
+       * <code>optional string invitation_code = 4;</code>
        */
       public java.lang.String getInvitationCode() {
         java.lang.Object ref = invitationCode_;
@@ -1019,7 +1000,7 @@ public final class ImRegisterProto {
         }
       }
       /**
-       * <code>string invitation_code = 4;</code>
+       * <code>optional string invitation_code = 4;</code>
        */
       public com.google.protobuf.ByteString
           getInvitationCodeBytes() {
@@ -1035,7 +1016,7 @@ public final class ImRegisterProto {
         }
       }
       /**
-       * <code>string invitation_code = 4;</code>
+       * <code>optional string invitation_code = 4;</code>
        */
       public Builder setInvitationCode(
           java.lang.String value) {
@@ -1048,7 +1029,7 @@ public final class ImRegisterProto {
         return this;
       }
       /**
-       * <code>string invitation_code = 4;</code>
+       * <code>optional string invitation_code = 4;</code>
        */
       public Builder clearInvitationCode() {
         
@@ -1057,7 +1038,7 @@ public final class ImRegisterProto {
         return this;
       }
       /**
-       * <code>string invitation_code = 4;</code>
+       * <code>optional string invitation_code = 4;</code>
        */
       public Builder setInvitationCodeBytes(
           com.google.protobuf.ByteString value) {
@@ -1073,7 +1054,7 @@ public final class ImRegisterProto {
 
       private java.lang.Object applyInfo_ = "";
       /**
-       * <code>string apply_info = 5;</code>
+       * <code>optional string apply_info = 5;</code>
        */
       public java.lang.String getApplyInfo() {
         java.lang.Object ref = applyInfo_;
@@ -1088,7 +1069,7 @@ public final class ImRegisterProto {
         }
       }
       /**
-       * <code>string apply_info = 5;</code>
+       * <code>optional string apply_info = 5;</code>
        */
       public com.google.protobuf.ByteString
           getApplyInfoBytes() {
@@ -1104,7 +1085,7 @@ public final class ImRegisterProto {
         }
       }
       /**
-       * <code>string apply_info = 5;</code>
+       * <code>optional string apply_info = 5;</code>
        */
       public Builder setApplyInfo(
           java.lang.String value) {
@@ -1117,7 +1098,7 @@ public final class ImRegisterProto {
         return this;
       }
       /**
-       * <code>string apply_info = 5;</code>
+       * <code>optional string apply_info = 5;</code>
        */
       public Builder clearApplyInfo() {
         
@@ -1126,7 +1107,7 @@ public final class ImRegisterProto {
         return this;
       }
       /**
-       * <code>string apply_info = 5;</code>
+       * <code>optional string apply_info = 5;</code>
        */
       public Builder setApplyInfoBytes(
           com.google.protobuf.ByteString value) {
@@ -1142,7 +1123,7 @@ public final class ImRegisterProto {
 
       private java.lang.Object platformPhoneCode_ = "";
       /**
-       * <code>string platform_phone_code = 6;</code>
+       * <code>optional string platform_phone_code = 6;</code>
        */
       public java.lang.String getPlatformPhoneCode() {
         java.lang.Object ref = platformPhoneCode_;
@@ -1157,7 +1138,7 @@ public final class ImRegisterProto {
         }
       }
       /**
-       * <code>string platform_phone_code = 6;</code>
+       * <code>optional string platform_phone_code = 6;</code>
        */
       public com.google.protobuf.ByteString
           getPlatformPhoneCodeBytes() {
@@ -1173,7 +1154,7 @@ public final class ImRegisterProto {
         }
       }
       /**
-       * <code>string platform_phone_code = 6;</code>
+       * <code>optional string platform_phone_code = 6;</code>
        */
       public Builder setPlatformPhoneCode(
           java.lang.String value) {
@@ -1186,7 +1167,7 @@ public final class ImRegisterProto {
         return this;
       }
       /**
-       * <code>string platform_phone_code = 6;</code>
+       * <code>optional string platform_phone_code = 6;</code>
        */
       public Builder clearPlatformPhoneCode() {
         
@@ -1195,7 +1176,7 @@ public final class ImRegisterProto {
         return this;
       }
       /**
-       * <code>string platform_phone_code = 6;</code>
+       * <code>optional string platform_phone_code = 6;</code>
        */
       public Builder setPlatformPhoneCodeBytes(
           com.google.protobuf.ByteString value) {
@@ -1210,12 +1191,12 @@ public final class ImRegisterProto {
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return this;
       }
 
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return this;
       }
 
 
@@ -1262,11 +1243,11 @@ public final class ImRegisterProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string site_user_id = 1;</code>
+     * <code>optional string site_user_id = 1;</code>
      */
     java.lang.String getSiteUserId();
     /**
-     * <code>string site_user_id = 1;</code>
+     * <code>optional string site_user_id = 1;</code>
      */
     com.google.protobuf.ByteString
         getSiteUserIdBytes();
@@ -1278,7 +1259,6 @@ public final class ImRegisterProto {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:site.ApiRegisterResponse)
       ApiRegisterResponseOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use ApiRegisterResponse.newBuilder() to construct.
     private ApiRegisterResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1290,7 +1270,7 @@ public final class ImRegisterProto {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
     private ApiRegisterResponse(
         com.google.protobuf.CodedInputStream input,
@@ -1298,8 +1278,6 @@ public final class ImRegisterProto {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -1309,8 +1287,7 @@ public final class ImRegisterProto {
               done = true;
               break;
             default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!input.skipField(tag)) {
                 done = true;
               }
               break;
@@ -1329,7 +1306,6 @@ public final class ImRegisterProto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -1348,7 +1324,7 @@ public final class ImRegisterProto {
     public static final int SITE_USER_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object siteUserId_;
     /**
-     * <code>string site_user_id = 1;</code>
+     * <code>optional string site_user_id = 1;</code>
      */
     public java.lang.String getSiteUserId() {
       java.lang.Object ref = siteUserId_;
@@ -1363,7 +1339,7 @@ public final class ImRegisterProto {
       }
     }
     /**
-     * <code>string site_user_id = 1;</code>
+     * <code>optional string site_user_id = 1;</code>
      */
     public com.google.protobuf.ByteString
         getSiteUserIdBytes() {
@@ -1394,7 +1370,6 @@ public final class ImRegisterProto {
       if (!getSiteUserIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, siteUserId_);
       }
-      unknownFields.writeTo(output);
     }
 
     public int getSerializedSize() {
@@ -1405,11 +1380,11 @@ public final class ImRegisterProto {
       if (!getSiteUserIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, siteUserId_);
       }
-      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -1423,7 +1398,6 @@ public final class ImRegisterProto {
       boolean result = true;
       result = result && getSiteUserId()
           .equals(other.getSiteUserId());
-      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -1433,7 +1407,7 @@ public final class ImRegisterProto {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       hash = (37 * hash) + SITE_USER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSiteUserId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -1441,17 +1415,6 @@ public final class ImRegisterProto {
       return hash;
     }
 
-    public static com.zaly.proto.site.ImRegisterProto.ApiRegisterResponse parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.zaly.proto.site.ImRegisterProto.ApiRegisterResponse parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
     public static com.zaly.proto.site.ImRegisterProto.ApiRegisterResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1599,7 +1562,7 @@ public final class ImRegisterProto {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -1612,12 +1575,12 @@ public final class ImRegisterProto {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -1635,7 +1598,6 @@ public final class ImRegisterProto {
           siteUserId_ = other.siteUserId_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1664,7 +1626,7 @@ public final class ImRegisterProto {
 
       private java.lang.Object siteUserId_ = "";
       /**
-       * <code>string site_user_id = 1;</code>
+       * <code>optional string site_user_id = 1;</code>
        */
       public java.lang.String getSiteUserId() {
         java.lang.Object ref = siteUserId_;
@@ -1679,7 +1641,7 @@ public final class ImRegisterProto {
         }
       }
       /**
-       * <code>string site_user_id = 1;</code>
+       * <code>optional string site_user_id = 1;</code>
        */
       public com.google.protobuf.ByteString
           getSiteUserIdBytes() {
@@ -1695,7 +1657,7 @@ public final class ImRegisterProto {
         }
       }
       /**
-       * <code>string site_user_id = 1;</code>
+       * <code>optional string site_user_id = 1;</code>
        */
       public Builder setSiteUserId(
           java.lang.String value) {
@@ -1708,7 +1670,7 @@ public final class ImRegisterProto {
         return this;
       }
       /**
-       * <code>string site_user_id = 1;</code>
+       * <code>optional string site_user_id = 1;</code>
        */
       public Builder clearSiteUserId() {
         
@@ -1717,7 +1679,7 @@ public final class ImRegisterProto {
         return this;
       }
       /**
-       * <code>string site_user_id = 1;</code>
+       * <code>optional string site_user_id = 1;</code>
        */
       public Builder setSiteUserIdBytes(
           com.google.protobuf.ByteString value) {
@@ -1732,12 +1694,12 @@ public final class ImRegisterProto {
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return this;
       }
 
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return this;
       }
 
 

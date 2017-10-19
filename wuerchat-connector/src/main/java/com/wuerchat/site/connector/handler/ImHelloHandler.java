@@ -41,9 +41,10 @@ public class ImHelloHandler extends AbstractCommonHandler<Command> {
 	private void process(Channel channel, Command command) {
 
 		System.out.println("execute api request from client");
-
 		try {
-			ImHelloProto.ImHelloRequest request = ImHelloProto.ImHelloRequest.parseFrom(command.getParams().getBytes());
+			CoreProto.TransportPackageData packageData = CoreProto.TransportPackageData
+					.parseFrom(ByteString.copyFrom(command.getParams().getBytes()));
+			ImHelloProto.ImHelloRequest request = ImHelloProto.ImHelloRequest.parseFrom(packageData.getData());
 
 			// 兼容客户端版本
 			String client_version = request.getClientVersion();

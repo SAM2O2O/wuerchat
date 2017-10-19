@@ -37,7 +37,7 @@ public class NettyInboundHandler extends SimpleChannelInboundHandler<RedisComman
 	}
 
 	@Override
-	protected void channelRead0(ChannelHandlerContext ctx, RedisCommand cmd) throws Exception {
+	protected void channelRead0(ChannelHandlerContext ctx, RedisCommand redisCmd) throws Exception {
 
 		ChannelSession channelSession = ctx.channel().attr(ParserConst.CHANNELSESSION).get();
 
@@ -50,8 +50,9 @@ public class NettyInboundHandler extends SimpleChannelInboundHandler<RedisComman
 		// ChannelManager.getInstance().getChannelSession(channelSession.getUserId()).send(null);
 
 		Command command = new Command();
-		command.setServiceMethod(cmd.getParameterByIndex(1));
-		command.setParams(cmd.getParameterByIndex(2));
+		System.out.println("version=" + redisCmd.getParameterByIndex(0));
+		command.setServiceMethod(redisCmd.getParameterByIndex(1));
+		command.setParams(redisCmd.getParameterByIndex(2));
 		command.setField("channel_session", channelSession);
 
 		this.executor.execute(command.getService(), command);
@@ -60,7 +61,7 @@ public class NettyInboundHandler extends SimpleChannelInboundHandler<RedisComman
 
 	@Override
 	public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
-		
+
 		System.out.println("channel exeception happen" + cause.getMessage());
 		ctx.channel().close();
 	}

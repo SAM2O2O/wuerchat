@@ -19,81 +19,81 @@ public final class UserInfoProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string user_id_prik = 1;</code>
+     * <code>optional string user_id_prik = 1;</code>
      */
     java.lang.String getUserIdPrik();
     /**
-     * <code>string user_id_prik = 1;</code>
+     * <code>optional string user_id_prik = 1;</code>
      */
     com.google.protobuf.ByteString
         getUserIdPrikBytes();
 
     /**
-     * <code>string user_id_pubk = 2;</code>
+     * <code>optional string user_id_pubk = 2;</code>
      */
     java.lang.String getUserIdPubk();
     /**
-     * <code>string user_id_pubk = 2;</code>
+     * <code>optional string user_id_pubk = 2;</code>
      */
     com.google.protobuf.ByteString
         getUserIdPubkBytes();
 
     /**
-     * <code>string user_photo = 3;</code>
+     * <code>optional string user_photo = 3;</code>
      */
     java.lang.String getUserPhoto();
     /**
-     * <code>string user_photo = 3;</code>
+     * <code>optional string user_photo = 3;</code>
      */
     com.google.protobuf.ByteString
         getUserPhotoBytes();
 
     /**
-     * <code>string user_name = 4;</code>
+     * <code>optional string user_name = 4;</code>
      */
     java.lang.String getUserName();
     /**
-     * <code>string user_name = 4;</code>
+     * <code>optional string user_name = 4;</code>
      */
     com.google.protobuf.ByteString
         getUserNameBytes();
 
     /**
-     * <code>string user_phone_id = 5;</code>
+     * <code>optional string user_phone_id = 5;</code>
      */
     java.lang.String getUserPhoneId();
     /**
-     * <code>string user_phone_id = 5;</code>
+     * <code>optional string user_phone_id = 5;</code>
      */
     com.google.protobuf.ByteString
         getUserPhoneIdBytes();
 
     /**
-     * <code>string client_type = 6;</code>
+     * <code>optional string client_type = 6;</code>
      */
     java.lang.String getClientType();
     /**
-     * <code>string client_type = 6;</code>
+     * <code>optional string client_type = 6;</code>
      */
     com.google.protobuf.ByteString
         getClientTypeBytes();
 
     /**
-     * <code>string rom = 7;</code>
+     * <code>optional string rom = 7;</code>
      */
     java.lang.String getRom();
     /**
-     * <code>string rom = 7;</code>
+     * <code>optional string rom = 7;</code>
      */
     com.google.protobuf.ByteString
         getRomBytes();
 
     /**
-     * <code>string push_token = 8;</code>
+     * <code>optional string push_token = 8;</code>
      */
     java.lang.String getPushToken();
     /**
-     * <code>string push_token = 8;</code>
+     * <code>optional string push_token = 8;</code>
      */
     com.google.protobuf.ByteString
         getPushTokenBytes();
@@ -105,7 +105,6 @@ public final class UserInfoProto {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:platform.UploadUserInfoRequest)
       UploadUserInfoRequestOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use UploadUserInfoRequest.newBuilder() to construct.
     private UploadUserInfoRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -124,7 +123,7 @@ public final class UserInfoProto {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
     private UploadUserInfoRequest(
         com.google.protobuf.CodedInputStream input,
@@ -132,8 +131,6 @@ public final class UserInfoProto {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -143,8 +140,7 @@ public final class UserInfoProto {
               done = true;
               break;
             default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!input.skipField(tag)) {
                 done = true;
               }
               break;
@@ -205,7 +201,6 @@ public final class UserInfoProto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -224,7 +219,7 @@ public final class UserInfoProto {
     public static final int USER_ID_PRIK_FIELD_NUMBER = 1;
     private volatile java.lang.Object userIdPrik_;
     /**
-     * <code>string user_id_prik = 1;</code>
+     * <code>optional string user_id_prik = 1;</code>
      */
     public java.lang.String getUserIdPrik() {
       java.lang.Object ref = userIdPrik_;
@@ -239,7 +234,7 @@ public final class UserInfoProto {
       }
     }
     /**
-     * <code>string user_id_prik = 1;</code>
+     * <code>optional string user_id_prik = 1;</code>
      */
     public com.google.protobuf.ByteString
         getUserIdPrikBytes() {
@@ -258,7 +253,7 @@ public final class UserInfoProto {
     public static final int USER_ID_PUBK_FIELD_NUMBER = 2;
     private volatile java.lang.Object userIdPubk_;
     /**
-     * <code>string user_id_pubk = 2;</code>
+     * <code>optional string user_id_pubk = 2;</code>
      */
     public java.lang.String getUserIdPubk() {
       java.lang.Object ref = userIdPubk_;
@@ -273,7 +268,7 @@ public final class UserInfoProto {
       }
     }
     /**
-     * <code>string user_id_pubk = 2;</code>
+     * <code>optional string user_id_pubk = 2;</code>
      */
     public com.google.protobuf.ByteString
         getUserIdPubkBytes() {
@@ -292,7 +287,7 @@ public final class UserInfoProto {
     public static final int USER_PHOTO_FIELD_NUMBER = 3;
     private volatile java.lang.Object userPhoto_;
     /**
-     * <code>string user_photo = 3;</code>
+     * <code>optional string user_photo = 3;</code>
      */
     public java.lang.String getUserPhoto() {
       java.lang.Object ref = userPhoto_;
@@ -307,7 +302,7 @@ public final class UserInfoProto {
       }
     }
     /**
-     * <code>string user_photo = 3;</code>
+     * <code>optional string user_photo = 3;</code>
      */
     public com.google.protobuf.ByteString
         getUserPhotoBytes() {
@@ -326,7 +321,7 @@ public final class UserInfoProto {
     public static final int USER_NAME_FIELD_NUMBER = 4;
     private volatile java.lang.Object userName_;
     /**
-     * <code>string user_name = 4;</code>
+     * <code>optional string user_name = 4;</code>
      */
     public java.lang.String getUserName() {
       java.lang.Object ref = userName_;
@@ -341,7 +336,7 @@ public final class UserInfoProto {
       }
     }
     /**
-     * <code>string user_name = 4;</code>
+     * <code>optional string user_name = 4;</code>
      */
     public com.google.protobuf.ByteString
         getUserNameBytes() {
@@ -360,7 +355,7 @@ public final class UserInfoProto {
     public static final int USER_PHONE_ID_FIELD_NUMBER = 5;
     private volatile java.lang.Object userPhoneId_;
     /**
-     * <code>string user_phone_id = 5;</code>
+     * <code>optional string user_phone_id = 5;</code>
      */
     public java.lang.String getUserPhoneId() {
       java.lang.Object ref = userPhoneId_;
@@ -375,7 +370,7 @@ public final class UserInfoProto {
       }
     }
     /**
-     * <code>string user_phone_id = 5;</code>
+     * <code>optional string user_phone_id = 5;</code>
      */
     public com.google.protobuf.ByteString
         getUserPhoneIdBytes() {
@@ -394,7 +389,7 @@ public final class UserInfoProto {
     public static final int CLIENT_TYPE_FIELD_NUMBER = 6;
     private volatile java.lang.Object clientType_;
     /**
-     * <code>string client_type = 6;</code>
+     * <code>optional string client_type = 6;</code>
      */
     public java.lang.String getClientType() {
       java.lang.Object ref = clientType_;
@@ -409,7 +404,7 @@ public final class UserInfoProto {
       }
     }
     /**
-     * <code>string client_type = 6;</code>
+     * <code>optional string client_type = 6;</code>
      */
     public com.google.protobuf.ByteString
         getClientTypeBytes() {
@@ -428,7 +423,7 @@ public final class UserInfoProto {
     public static final int ROM_FIELD_NUMBER = 7;
     private volatile java.lang.Object rom_;
     /**
-     * <code>string rom = 7;</code>
+     * <code>optional string rom = 7;</code>
      */
     public java.lang.String getRom() {
       java.lang.Object ref = rom_;
@@ -443,7 +438,7 @@ public final class UserInfoProto {
       }
     }
     /**
-     * <code>string rom = 7;</code>
+     * <code>optional string rom = 7;</code>
      */
     public com.google.protobuf.ByteString
         getRomBytes() {
@@ -462,7 +457,7 @@ public final class UserInfoProto {
     public static final int PUSH_TOKEN_FIELD_NUMBER = 8;
     private volatile java.lang.Object pushToken_;
     /**
-     * <code>string push_token = 8;</code>
+     * <code>optional string push_token = 8;</code>
      */
     public java.lang.String getPushToken() {
       java.lang.Object ref = pushToken_;
@@ -477,7 +472,7 @@ public final class UserInfoProto {
       }
     }
     /**
-     * <code>string push_token = 8;</code>
+     * <code>optional string push_token = 8;</code>
      */
     public com.google.protobuf.ByteString
         getPushTokenBytes() {
@@ -529,7 +524,6 @@ public final class UserInfoProto {
       if (!getPushTokenBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, pushToken_);
       }
-      unknownFields.writeTo(output);
     }
 
     public int getSerializedSize() {
@@ -561,11 +555,11 @@ public final class UserInfoProto {
       if (!getPushTokenBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, pushToken_);
       }
-      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -593,7 +587,6 @@ public final class UserInfoProto {
           .equals(other.getRom());
       result = result && getPushToken()
           .equals(other.getPushToken());
-      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -603,7 +596,7 @@ public final class UserInfoProto {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       hash = (37 * hash) + USER_ID_PRIK_FIELD_NUMBER;
       hash = (53 * hash) + getUserIdPrik().hashCode();
       hash = (37 * hash) + USER_ID_PUBK_FIELD_NUMBER;
@@ -625,17 +618,6 @@ public final class UserInfoProto {
       return hash;
     }
 
-    public static com.zaly.proto.platform.UserInfoProto.UploadUserInfoRequest parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.zaly.proto.platform.UserInfoProto.UploadUserInfoRequest parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
     public static com.zaly.proto.platform.UserInfoProto.UploadUserInfoRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -804,7 +786,7 @@ public final class UserInfoProto {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -817,12 +799,12 @@ public final class UserInfoProto {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -868,7 +850,6 @@ public final class UserInfoProto {
           pushToken_ = other.pushToken_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -897,7 +878,7 @@ public final class UserInfoProto {
 
       private java.lang.Object userIdPrik_ = "";
       /**
-       * <code>string user_id_prik = 1;</code>
+       * <code>optional string user_id_prik = 1;</code>
        */
       public java.lang.String getUserIdPrik() {
         java.lang.Object ref = userIdPrik_;
@@ -912,7 +893,7 @@ public final class UserInfoProto {
         }
       }
       /**
-       * <code>string user_id_prik = 1;</code>
+       * <code>optional string user_id_prik = 1;</code>
        */
       public com.google.protobuf.ByteString
           getUserIdPrikBytes() {
@@ -928,7 +909,7 @@ public final class UserInfoProto {
         }
       }
       /**
-       * <code>string user_id_prik = 1;</code>
+       * <code>optional string user_id_prik = 1;</code>
        */
       public Builder setUserIdPrik(
           java.lang.String value) {
@@ -941,7 +922,7 @@ public final class UserInfoProto {
         return this;
       }
       /**
-       * <code>string user_id_prik = 1;</code>
+       * <code>optional string user_id_prik = 1;</code>
        */
       public Builder clearUserIdPrik() {
         
@@ -950,7 +931,7 @@ public final class UserInfoProto {
         return this;
       }
       /**
-       * <code>string user_id_prik = 1;</code>
+       * <code>optional string user_id_prik = 1;</code>
        */
       public Builder setUserIdPrikBytes(
           com.google.protobuf.ByteString value) {
@@ -966,7 +947,7 @@ public final class UserInfoProto {
 
       private java.lang.Object userIdPubk_ = "";
       /**
-       * <code>string user_id_pubk = 2;</code>
+       * <code>optional string user_id_pubk = 2;</code>
        */
       public java.lang.String getUserIdPubk() {
         java.lang.Object ref = userIdPubk_;
@@ -981,7 +962,7 @@ public final class UserInfoProto {
         }
       }
       /**
-       * <code>string user_id_pubk = 2;</code>
+       * <code>optional string user_id_pubk = 2;</code>
        */
       public com.google.protobuf.ByteString
           getUserIdPubkBytes() {
@@ -997,7 +978,7 @@ public final class UserInfoProto {
         }
       }
       /**
-       * <code>string user_id_pubk = 2;</code>
+       * <code>optional string user_id_pubk = 2;</code>
        */
       public Builder setUserIdPubk(
           java.lang.String value) {
@@ -1010,7 +991,7 @@ public final class UserInfoProto {
         return this;
       }
       /**
-       * <code>string user_id_pubk = 2;</code>
+       * <code>optional string user_id_pubk = 2;</code>
        */
       public Builder clearUserIdPubk() {
         
@@ -1019,7 +1000,7 @@ public final class UserInfoProto {
         return this;
       }
       /**
-       * <code>string user_id_pubk = 2;</code>
+       * <code>optional string user_id_pubk = 2;</code>
        */
       public Builder setUserIdPubkBytes(
           com.google.protobuf.ByteString value) {
@@ -1035,7 +1016,7 @@ public final class UserInfoProto {
 
       private java.lang.Object userPhoto_ = "";
       /**
-       * <code>string user_photo = 3;</code>
+       * <code>optional string user_photo = 3;</code>
        */
       public java.lang.String getUserPhoto() {
         java.lang.Object ref = userPhoto_;
@@ -1050,7 +1031,7 @@ public final class UserInfoProto {
         }
       }
       /**
-       * <code>string user_photo = 3;</code>
+       * <code>optional string user_photo = 3;</code>
        */
       public com.google.protobuf.ByteString
           getUserPhotoBytes() {
@@ -1066,7 +1047,7 @@ public final class UserInfoProto {
         }
       }
       /**
-       * <code>string user_photo = 3;</code>
+       * <code>optional string user_photo = 3;</code>
        */
       public Builder setUserPhoto(
           java.lang.String value) {
@@ -1079,7 +1060,7 @@ public final class UserInfoProto {
         return this;
       }
       /**
-       * <code>string user_photo = 3;</code>
+       * <code>optional string user_photo = 3;</code>
        */
       public Builder clearUserPhoto() {
         
@@ -1088,7 +1069,7 @@ public final class UserInfoProto {
         return this;
       }
       /**
-       * <code>string user_photo = 3;</code>
+       * <code>optional string user_photo = 3;</code>
        */
       public Builder setUserPhotoBytes(
           com.google.protobuf.ByteString value) {
@@ -1104,7 +1085,7 @@ public final class UserInfoProto {
 
       private java.lang.Object userName_ = "";
       /**
-       * <code>string user_name = 4;</code>
+       * <code>optional string user_name = 4;</code>
        */
       public java.lang.String getUserName() {
         java.lang.Object ref = userName_;
@@ -1119,7 +1100,7 @@ public final class UserInfoProto {
         }
       }
       /**
-       * <code>string user_name = 4;</code>
+       * <code>optional string user_name = 4;</code>
        */
       public com.google.protobuf.ByteString
           getUserNameBytes() {
@@ -1135,7 +1116,7 @@ public final class UserInfoProto {
         }
       }
       /**
-       * <code>string user_name = 4;</code>
+       * <code>optional string user_name = 4;</code>
        */
       public Builder setUserName(
           java.lang.String value) {
@@ -1148,7 +1129,7 @@ public final class UserInfoProto {
         return this;
       }
       /**
-       * <code>string user_name = 4;</code>
+       * <code>optional string user_name = 4;</code>
        */
       public Builder clearUserName() {
         
@@ -1157,7 +1138,7 @@ public final class UserInfoProto {
         return this;
       }
       /**
-       * <code>string user_name = 4;</code>
+       * <code>optional string user_name = 4;</code>
        */
       public Builder setUserNameBytes(
           com.google.protobuf.ByteString value) {
@@ -1173,7 +1154,7 @@ public final class UserInfoProto {
 
       private java.lang.Object userPhoneId_ = "";
       /**
-       * <code>string user_phone_id = 5;</code>
+       * <code>optional string user_phone_id = 5;</code>
        */
       public java.lang.String getUserPhoneId() {
         java.lang.Object ref = userPhoneId_;
@@ -1188,7 +1169,7 @@ public final class UserInfoProto {
         }
       }
       /**
-       * <code>string user_phone_id = 5;</code>
+       * <code>optional string user_phone_id = 5;</code>
        */
       public com.google.protobuf.ByteString
           getUserPhoneIdBytes() {
@@ -1204,7 +1185,7 @@ public final class UserInfoProto {
         }
       }
       /**
-       * <code>string user_phone_id = 5;</code>
+       * <code>optional string user_phone_id = 5;</code>
        */
       public Builder setUserPhoneId(
           java.lang.String value) {
@@ -1217,7 +1198,7 @@ public final class UserInfoProto {
         return this;
       }
       /**
-       * <code>string user_phone_id = 5;</code>
+       * <code>optional string user_phone_id = 5;</code>
        */
       public Builder clearUserPhoneId() {
         
@@ -1226,7 +1207,7 @@ public final class UserInfoProto {
         return this;
       }
       /**
-       * <code>string user_phone_id = 5;</code>
+       * <code>optional string user_phone_id = 5;</code>
        */
       public Builder setUserPhoneIdBytes(
           com.google.protobuf.ByteString value) {
@@ -1242,7 +1223,7 @@ public final class UserInfoProto {
 
       private java.lang.Object clientType_ = "";
       /**
-       * <code>string client_type = 6;</code>
+       * <code>optional string client_type = 6;</code>
        */
       public java.lang.String getClientType() {
         java.lang.Object ref = clientType_;
@@ -1257,7 +1238,7 @@ public final class UserInfoProto {
         }
       }
       /**
-       * <code>string client_type = 6;</code>
+       * <code>optional string client_type = 6;</code>
        */
       public com.google.protobuf.ByteString
           getClientTypeBytes() {
@@ -1273,7 +1254,7 @@ public final class UserInfoProto {
         }
       }
       /**
-       * <code>string client_type = 6;</code>
+       * <code>optional string client_type = 6;</code>
        */
       public Builder setClientType(
           java.lang.String value) {
@@ -1286,7 +1267,7 @@ public final class UserInfoProto {
         return this;
       }
       /**
-       * <code>string client_type = 6;</code>
+       * <code>optional string client_type = 6;</code>
        */
       public Builder clearClientType() {
         
@@ -1295,7 +1276,7 @@ public final class UserInfoProto {
         return this;
       }
       /**
-       * <code>string client_type = 6;</code>
+       * <code>optional string client_type = 6;</code>
        */
       public Builder setClientTypeBytes(
           com.google.protobuf.ByteString value) {
@@ -1311,7 +1292,7 @@ public final class UserInfoProto {
 
       private java.lang.Object rom_ = "";
       /**
-       * <code>string rom = 7;</code>
+       * <code>optional string rom = 7;</code>
        */
       public java.lang.String getRom() {
         java.lang.Object ref = rom_;
@@ -1326,7 +1307,7 @@ public final class UserInfoProto {
         }
       }
       /**
-       * <code>string rom = 7;</code>
+       * <code>optional string rom = 7;</code>
        */
       public com.google.protobuf.ByteString
           getRomBytes() {
@@ -1342,7 +1323,7 @@ public final class UserInfoProto {
         }
       }
       /**
-       * <code>string rom = 7;</code>
+       * <code>optional string rom = 7;</code>
        */
       public Builder setRom(
           java.lang.String value) {
@@ -1355,7 +1336,7 @@ public final class UserInfoProto {
         return this;
       }
       /**
-       * <code>string rom = 7;</code>
+       * <code>optional string rom = 7;</code>
        */
       public Builder clearRom() {
         
@@ -1364,7 +1345,7 @@ public final class UserInfoProto {
         return this;
       }
       /**
-       * <code>string rom = 7;</code>
+       * <code>optional string rom = 7;</code>
        */
       public Builder setRomBytes(
           com.google.protobuf.ByteString value) {
@@ -1380,7 +1361,7 @@ public final class UserInfoProto {
 
       private java.lang.Object pushToken_ = "";
       /**
-       * <code>string push_token = 8;</code>
+       * <code>optional string push_token = 8;</code>
        */
       public java.lang.String getPushToken() {
         java.lang.Object ref = pushToken_;
@@ -1395,7 +1376,7 @@ public final class UserInfoProto {
         }
       }
       /**
-       * <code>string push_token = 8;</code>
+       * <code>optional string push_token = 8;</code>
        */
       public com.google.protobuf.ByteString
           getPushTokenBytes() {
@@ -1411,7 +1392,7 @@ public final class UserInfoProto {
         }
       }
       /**
-       * <code>string push_token = 8;</code>
+       * <code>optional string push_token = 8;</code>
        */
       public Builder setPushToken(
           java.lang.String value) {
@@ -1424,7 +1405,7 @@ public final class UserInfoProto {
         return this;
       }
       /**
-       * <code>string push_token = 8;</code>
+       * <code>optional string push_token = 8;</code>
        */
       public Builder clearPushToken() {
         
@@ -1433,7 +1414,7 @@ public final class UserInfoProto {
         return this;
       }
       /**
-       * <code>string push_token = 8;</code>
+       * <code>optional string push_token = 8;</code>
        */
       public Builder setPushTokenBytes(
           com.google.protobuf.ByteString value) {
@@ -1448,12 +1429,12 @@ public final class UserInfoProto {
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return this;
       }
 
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return this;
       }
 
 
@@ -1506,7 +1487,6 @@ public final class UserInfoProto {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:platform.UploadUserInfoResponse)
       UploadUserInfoResponseOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use UploadUserInfoResponse.newBuilder() to construct.
     private UploadUserInfoResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1517,15 +1497,13 @@ public final class UserInfoProto {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
     private UploadUserInfoResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -1535,8 +1513,7 @@ public final class UserInfoProto {
               done = true;
               break;
             default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!input.skipField(tag)) {
                 done = true;
               }
               break;
@@ -1549,7 +1526,6 @@ public final class UserInfoProto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -1577,7 +1553,6 @@ public final class UserInfoProto {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      unknownFields.writeTo(output);
     }
 
     public int getSerializedSize() {
@@ -1585,11 +1560,11 @@ public final class UserInfoProto {
       if (size != -1) return size;
 
       size = 0;
-      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -1601,7 +1576,6 @@ public final class UserInfoProto {
       com.zaly.proto.platform.UserInfoProto.UploadUserInfoResponse other = (com.zaly.proto.platform.UserInfoProto.UploadUserInfoResponse) obj;
 
       boolean result = true;
-      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -1611,23 +1585,12 @@ public final class UserInfoProto {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static com.zaly.proto.platform.UserInfoProto.UploadUserInfoResponse parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.zaly.proto.platform.UserInfoProto.UploadUserInfoResponse parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
     public static com.zaly.proto.platform.UserInfoProto.UploadUserInfoResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1772,7 +1735,7 @@ public final class UserInfoProto {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -1785,12 +1748,12 @@ public final class UserInfoProto {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -1804,7 +1767,6 @@ public final class UserInfoProto {
 
       public Builder mergeFrom(com.zaly.proto.platform.UserInfoProto.UploadUserInfoResponse other) {
         if (other == com.zaly.proto.platform.UserInfoProto.UploadUserInfoResponse.getDefaultInstance()) return this;
-        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1832,12 +1794,12 @@ public final class UserInfoProto {
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return this;
       }
 
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return this;
       }
 
 

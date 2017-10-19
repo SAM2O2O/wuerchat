@@ -6,7 +6,7 @@ public class RedisBytesParameter extends AbstractParameter {
 
 	final byte[] value;
 
-	private RedisBytesParameter(byte[] value) {
+	public RedisBytesParameter(byte[] value) {
 		this.value = value;
 	}
 

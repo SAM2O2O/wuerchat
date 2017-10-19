@@ -19,21 +19,21 @@ public final class ImAuthProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string site_user_id = 1;</code>
+     * <code>optional string site_user_id = 1;</code>
      */
     java.lang.String getSiteUserId();
     /**
-     * <code>string site_user_id = 1;</code>
+     * <code>optional string site_user_id = 1;</code>
      */
     com.google.protobuf.ByteString
         getSiteUserIdBytes();
 
     /**
-     * <code>string site_session_id = 2;</code>
+     * <code>optional string site_session_id = 2;</code>
      */
     java.lang.String getSiteSessionId();
     /**
-     * <code>string site_session_id = 2;</code>
+     * <code>optional string site_session_id = 2;</code>
      */
     com.google.protobuf.ByteString
         getSiteSessionIdBytes();
@@ -45,7 +45,6 @@ public final class ImAuthProto {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:site.ImAuthRequest)
       ImAuthRequestOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use ImAuthRequest.newBuilder() to construct.
     private ImAuthRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -58,7 +57,7 @@ public final class ImAuthProto {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
     private ImAuthRequest(
         com.google.protobuf.CodedInputStream input,
@@ -66,8 +65,6 @@ public final class ImAuthProto {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -77,8 +74,7 @@ public final class ImAuthProto {
               done = true;
               break;
             default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!input.skipField(tag)) {
                 done = true;
               }
               break;
@@ -103,7 +99,6 @@ public final class ImAuthProto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -122,7 +117,7 @@ public final class ImAuthProto {
     public static final int SITE_USER_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object siteUserId_;
     /**
-     * <code>string site_user_id = 1;</code>
+     * <code>optional string site_user_id = 1;</code>
      */
     public java.lang.String getSiteUserId() {
       java.lang.Object ref = siteUserId_;
@@ -137,7 +132,7 @@ public final class ImAuthProto {
       }
     }
     /**
-     * <code>string site_user_id = 1;</code>
+     * <code>optional string site_user_id = 1;</code>
      */
     public com.google.protobuf.ByteString
         getSiteUserIdBytes() {
@@ -156,7 +151,7 @@ public final class ImAuthProto {
     public static final int SITE_SESSION_ID_FIELD_NUMBER = 2;
     private volatile java.lang.Object siteSessionId_;
     /**
-     * <code>string site_session_id = 2;</code>
+     * <code>optional string site_session_id = 2;</code>
      */
     public java.lang.String getSiteSessionId() {
       java.lang.Object ref = siteSessionId_;
@@ -171,7 +166,7 @@ public final class ImAuthProto {
       }
     }
     /**
-     * <code>string site_session_id = 2;</code>
+     * <code>optional string site_session_id = 2;</code>
      */
     public com.google.protobuf.ByteString
         getSiteSessionIdBytes() {
@@ -205,7 +200,6 @@ public final class ImAuthProto {
       if (!getSiteSessionIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, siteSessionId_);
       }
-      unknownFields.writeTo(output);
     }
 
     public int getSerializedSize() {
@@ -219,11 +213,11 @@ public final class ImAuthProto {
       if (!getSiteSessionIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, siteSessionId_);
       }
-      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -239,7 +233,6 @@ public final class ImAuthProto {
           .equals(other.getSiteUserId());
       result = result && getSiteSessionId()
           .equals(other.getSiteSessionId());
-      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -249,7 +242,7 @@ public final class ImAuthProto {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       hash = (37 * hash) + SITE_USER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSiteUserId().hashCode();
       hash = (37 * hash) + SITE_SESSION_ID_FIELD_NUMBER;
@@ -259,17 +252,6 @@ public final class ImAuthProto {
       return hash;
     }
 
-    public static com.zaly.proto.site.ImAuthProto.ImAuthRequest parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.zaly.proto.site.ImAuthProto.ImAuthRequest parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
     public static com.zaly.proto.site.ImAuthProto.ImAuthRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -420,7 +402,7 @@ public final class ImAuthProto {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -433,12 +415,12 @@ public final class ImAuthProto {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -460,7 +442,6 @@ public final class ImAuthProto {
           siteSessionId_ = other.siteSessionId_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -489,7 +470,7 @@ public final class ImAuthProto {
 
       private java.lang.Object siteUserId_ = "";
       /**
-       * <code>string site_user_id = 1;</code>
+       * <code>optional string site_user_id = 1;</code>
        */
       public java.lang.String getSiteUserId() {
         java.lang.Object ref = siteUserId_;
@@ -504,7 +485,7 @@ public final class ImAuthProto {
         }
       }
       /**
-       * <code>string site_user_id = 1;</code>
+       * <code>optional string site_user_id = 1;</code>
        */
       public com.google.protobuf.ByteString
           getSiteUserIdBytes() {
@@ -520,7 +501,7 @@ public final class ImAuthProto {
         }
       }
       /**
-       * <code>string site_user_id = 1;</code>
+       * <code>optional string site_user_id = 1;</code>
        */
       public Builder setSiteUserId(
           java.lang.String value) {
@@ -533,7 +514,7 @@ public final class ImAuthProto {
         return this;
       }
       /**
-       * <code>string site_user_id = 1;</code>
+       * <code>optional string site_user_id = 1;</code>
        */
       public Builder clearSiteUserId() {
         
@@ -542,7 +523,7 @@ public final class ImAuthProto {
         return this;
       }
       /**
-       * <code>string site_user_id = 1;</code>
+       * <code>optional string site_user_id = 1;</code>
        */
       public Builder setSiteUserIdBytes(
           com.google.protobuf.ByteString value) {
@@ -558,7 +539,7 @@ public final class ImAuthProto {
 
       private java.lang.Object siteSessionId_ = "";
       /**
-       * <code>string site_session_id = 2;</code>
+       * <code>optional string site_session_id = 2;</code>
        */
       public java.lang.String getSiteSessionId() {
         java.lang.Object ref = siteSessionId_;
@@ -573,7 +554,7 @@ public final class ImAuthProto {
         }
       }
       /**
-       * <code>string site_session_id = 2;</code>
+       * <code>optional string site_session_id = 2;</code>
        */
       public com.google.protobuf.ByteString
           getSiteSessionIdBytes() {
@@ -589,7 +570,7 @@ public final class ImAuthProto {
         }
       }
       /**
-       * <code>string site_session_id = 2;</code>
+       * <code>optional string site_session_id = 2;</code>
        */
       public Builder setSiteSessionId(
           java.lang.String value) {
@@ -602,7 +583,7 @@ public final class ImAuthProto {
         return this;
       }
       /**
-       * <code>string site_session_id = 2;</code>
+       * <code>optional string site_session_id = 2;</code>
        */
       public Builder clearSiteSessionId() {
         
@@ -611,7 +592,7 @@ public final class ImAuthProto {
         return this;
       }
       /**
-       * <code>string site_session_id = 2;</code>
+       * <code>optional string site_session_id = 2;</code>
        */
       public Builder setSiteSessionIdBytes(
           com.google.protobuf.ByteString value) {
@@ -626,12 +607,12 @@ public final class ImAuthProto {
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return this;
       }
 
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return this;
       }
 
 
@@ -682,7 +663,7 @@ public final class ImAuthProto {
      *"192.168.1.1:8448"
      * </pre>
      *
-     * <code>string site_server = 1;</code>
+     * <code>optional string site_server = 1;</code>
      */
     java.lang.String getSiteServer();
     /**
@@ -690,7 +671,7 @@ public final class ImAuthProto {
      *"192.168.1.1:8448"
      * </pre>
      *
-     * <code>string site_server = 1;</code>
+     * <code>optional string site_server = 1;</code>
      */
     com.google.protobuf.ByteString
         getSiteServerBytes();
@@ -702,7 +683,6 @@ public final class ImAuthProto {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:site.ImAuthResponse)
       ImAuthResponseOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use ImAuthResponse.newBuilder() to construct.
     private ImAuthResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -714,7 +694,7 @@ public final class ImAuthProto {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
     private ImAuthResponse(
         com.google.protobuf.CodedInputStream input,
@@ -722,8 +702,6 @@ public final class ImAuthProto {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -733,8 +711,7 @@ public final class ImAuthProto {
               done = true;
               break;
             default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!input.skipField(tag)) {
                 done = true;
               }
               break;
@@ -753,7 +730,6 @@ public final class ImAuthProto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -776,7 +752,7 @@ public final class ImAuthProto {
      *"192.168.1.1:8448"
      * </pre>
      *
-     * <code>string site_server = 1;</code>
+     * <code>optional string site_server = 1;</code>
      */
     public java.lang.String getSiteServer() {
       java.lang.Object ref = siteServer_;
@@ -795,7 +771,7 @@ public final class ImAuthProto {
      *"192.168.1.1:8448"
      * </pre>
      *
-     * <code>string site_server = 1;</code>
+     * <code>optional string site_server = 1;</code>
      */
     public com.google.protobuf.ByteString
         getSiteServerBytes() {
@@ -826,7 +802,6 @@ public final class ImAuthProto {
       if (!getSiteServerBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, siteServer_);
       }
-      unknownFields.writeTo(output);
     }
 
     public int getSerializedSize() {
@@ -837,11 +812,11 @@ public final class ImAuthProto {
       if (!getSiteServerBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, siteServer_);
       }
-      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -855,7 +830,6 @@ public final class ImAuthProto {
       boolean result = true;
       result = result && getSiteServer()
           .equals(other.getSiteServer());
-      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -865,7 +839,7 @@ public final class ImAuthProto {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       hash = (37 * hash) + SITE_SERVER_FIELD_NUMBER;
       hash = (53 * hash) + getSiteServer().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -873,17 +847,6 @@ public final class ImAuthProto {
       return hash;
     }
 
-    public static com.zaly.proto.site.ImAuthProto.ImAuthResponse parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.zaly.proto.site.ImAuthProto.ImAuthResponse parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
     public static com.zaly.proto.site.ImAuthProto.ImAuthResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1031,7 +994,7 @@ public final class ImAuthProto {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -1044,12 +1007,12 @@ public final class ImAuthProto {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -1067,7 +1030,6 @@ public final class ImAuthProto {
           siteServer_ = other.siteServer_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1100,7 +1062,7 @@ public final class ImAuthProto {
        *"192.168.1.1:8448"
        * </pre>
        *
-       * <code>string site_server = 1;</code>
+       * <code>optional string site_server = 1;</code>
        */
       public java.lang.String getSiteServer() {
         java.lang.Object ref = siteServer_;
@@ -1119,7 +1081,7 @@ public final class ImAuthProto {
        *"192.168.1.1:8448"
        * </pre>
        *
-       * <code>string site_server = 1;</code>
+       * <code>optional string site_server = 1;</code>
        */
       public com.google.protobuf.ByteString
           getSiteServerBytes() {
@@ -1139,7 +1101,7 @@ public final class ImAuthProto {
        *"192.168.1.1:8448"
        * </pre>
        *
-       * <code>string site_server = 1;</code>
+       * <code>optional string site_server = 1;</code>
        */
       public Builder setSiteServer(
           java.lang.String value) {
@@ -1156,7 +1118,7 @@ public final class ImAuthProto {
        *"192.168.1.1:8448"
        * </pre>
        *
-       * <code>string site_server = 1;</code>
+       * <code>optional string site_server = 1;</code>
        */
       public Builder clearSiteServer() {
         
@@ -1169,7 +1131,7 @@ public final class ImAuthProto {
        *"192.168.1.1:8448"
        * </pre>
        *
-       * <code>string site_server = 1;</code>
+       * <code>optional string site_server = 1;</code>
        */
       public Builder setSiteServerBytes(
           com.google.protobuf.ByteString value) {
@@ -1184,12 +1146,12 @@ public final class ImAuthProto {
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return this;
       }
 
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return this;
       }
 
 

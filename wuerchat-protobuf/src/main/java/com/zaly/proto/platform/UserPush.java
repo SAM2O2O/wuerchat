@@ -19,41 +19,41 @@ public final class UserPush {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string user_id_pubk = 1;</code>
+     * <code>optional string user_id_pubk = 1;</code>
      */
     java.lang.String getUserIdPubk();
     /**
-     * <code>string user_id_pubk = 1;</code>
+     * <code>optional string user_id_pubk = 1;</code>
      */
     com.google.protobuf.ByteString
         getUserIdPubkBytes();
 
     /**
-     * <code>string user_device_pubk = 2;</code>
+     * <code>optional string user_device_pubk = 2;</code>
      */
     java.lang.String getUserDevicePubk();
     /**
-     * <code>string user_device_pubk = 2;</code>
+     * <code>optional string user_device_pubk = 2;</code>
      */
     com.google.protobuf.ByteString
         getUserDevicePubkBytes();
 
     /**
-     * <code>string user_device_sign = 3;</code>
+     * <code>optional string user_device_sign = 3;</code>
      */
     java.lang.String getUserDeviceSign();
     /**
-     * <code>string user_device_sign = 3;</code>
+     * <code>optional string user_device_sign = 3;</code>
      */
     com.google.protobuf.ByteString
         getUserDeviceSignBytes();
 
     /**
-     * <code>string push_token = 4;</code>
+     * <code>optional string push_token = 4;</code>
      */
     java.lang.String getPushToken();
     /**
-     * <code>string push_token = 4;</code>
+     * <code>optional string push_token = 4;</code>
      */
     com.google.protobuf.ByteString
         getPushTokenBytes();
@@ -65,7 +65,6 @@ public final class UserPush {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:platform.UploadPushTokenRequest)
       UploadPushTokenRequestOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use UploadPushTokenRequest.newBuilder() to construct.
     private UploadPushTokenRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -80,7 +79,7 @@ public final class UserPush {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
     private UploadPushTokenRequest(
         com.google.protobuf.CodedInputStream input,
@@ -88,8 +87,6 @@ public final class UserPush {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -99,8 +96,7 @@ public final class UserPush {
               done = true;
               break;
             default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!input.skipField(tag)) {
                 done = true;
               }
               break;
@@ -137,7 +133,6 @@ public final class UserPush {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -156,7 +151,7 @@ public final class UserPush {
     public static final int USER_ID_PUBK_FIELD_NUMBER = 1;
     private volatile java.lang.Object userIdPubk_;
     /**
-     * <code>string user_id_pubk = 1;</code>
+     * <code>optional string user_id_pubk = 1;</code>
      */
     public java.lang.String getUserIdPubk() {
       java.lang.Object ref = userIdPubk_;
@@ -171,7 +166,7 @@ public final class UserPush {
       }
     }
     /**
-     * <code>string user_id_pubk = 1;</code>
+     * <code>optional string user_id_pubk = 1;</code>
      */
     public com.google.protobuf.ByteString
         getUserIdPubkBytes() {
@@ -190,7 +185,7 @@ public final class UserPush {
     public static final int USER_DEVICE_PUBK_FIELD_NUMBER = 2;
     private volatile java.lang.Object userDevicePubk_;
     /**
-     * <code>string user_device_pubk = 2;</code>
+     * <code>optional string user_device_pubk = 2;</code>
      */
     public java.lang.String getUserDevicePubk() {
       java.lang.Object ref = userDevicePubk_;
@@ -205,7 +200,7 @@ public final class UserPush {
       }
     }
     /**
-     * <code>string user_device_pubk = 2;</code>
+     * <code>optional string user_device_pubk = 2;</code>
      */
     public com.google.protobuf.ByteString
         getUserDevicePubkBytes() {
@@ -224,7 +219,7 @@ public final class UserPush {
     public static final int USER_DEVICE_SIGN_FIELD_NUMBER = 3;
     private volatile java.lang.Object userDeviceSign_;
     /**
-     * <code>string user_device_sign = 3;</code>
+     * <code>optional string user_device_sign = 3;</code>
      */
     public java.lang.String getUserDeviceSign() {
       java.lang.Object ref = userDeviceSign_;
@@ -239,7 +234,7 @@ public final class UserPush {
       }
     }
     /**
-     * <code>string user_device_sign = 3;</code>
+     * <code>optional string user_device_sign = 3;</code>
      */
     public com.google.protobuf.ByteString
         getUserDeviceSignBytes() {
@@ -258,7 +253,7 @@ public final class UserPush {
     public static final int PUSH_TOKEN_FIELD_NUMBER = 4;
     private volatile java.lang.Object pushToken_;
     /**
-     * <code>string push_token = 4;</code>
+     * <code>optional string push_token = 4;</code>
      */
     public java.lang.String getPushToken() {
       java.lang.Object ref = pushToken_;
@@ -273,7 +268,7 @@ public final class UserPush {
       }
     }
     /**
-     * <code>string push_token = 4;</code>
+     * <code>optional string push_token = 4;</code>
      */
     public com.google.protobuf.ByteString
         getPushTokenBytes() {
@@ -313,7 +308,6 @@ public final class UserPush {
       if (!getPushTokenBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, pushToken_);
       }
-      unknownFields.writeTo(output);
     }
 
     public int getSerializedSize() {
@@ -333,11 +327,11 @@ public final class UserPush {
       if (!getPushTokenBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, pushToken_);
       }
-      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -357,7 +351,6 @@ public final class UserPush {
           .equals(other.getUserDeviceSign());
       result = result && getPushToken()
           .equals(other.getPushToken());
-      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -367,7 +360,7 @@ public final class UserPush {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       hash = (37 * hash) + USER_ID_PUBK_FIELD_NUMBER;
       hash = (53 * hash) + getUserIdPubk().hashCode();
       hash = (37 * hash) + USER_DEVICE_PUBK_FIELD_NUMBER;
@@ -381,17 +374,6 @@ public final class UserPush {
       return hash;
     }
 
-    public static com.zaly.proto.platform.UserPush.UploadPushTokenRequest parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.zaly.proto.platform.UserPush.UploadPushTokenRequest parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
     public static com.zaly.proto.platform.UserPush.UploadPushTokenRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -548,7 +530,7 @@ public final class UserPush {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -561,12 +543,12 @@ public final class UserPush {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -596,7 +578,6 @@ public final class UserPush {
           pushToken_ = other.pushToken_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -625,7 +606,7 @@ public final class UserPush {
 
       private java.lang.Object userIdPubk_ = "";
       /**
-       * <code>string user_id_pubk = 1;</code>
+       * <code>optional string user_id_pubk = 1;</code>
        */
       public java.lang.String getUserIdPubk() {
         java.lang.Object ref = userIdPubk_;
@@ -640,7 +621,7 @@ public final class UserPush {
         }
       }
       /**
-       * <code>string user_id_pubk = 1;</code>
+       * <code>optional string user_id_pubk = 1;</code>
        */
       public com.google.protobuf.ByteString
           getUserIdPubkBytes() {
@@ -656,7 +637,7 @@ public final class UserPush {
         }
       }
       /**
-       * <code>string user_id_pubk = 1;</code>
+       * <code>optional string user_id_pubk = 1;</code>
        */
       public Builder setUserIdPubk(
           java.lang.String value) {
@@ -669,7 +650,7 @@ public final class UserPush {
         return this;
       }
       /**
-       * <code>string user_id_pubk = 1;</code>
+       * <code>optional string user_id_pubk = 1;</code>
        */
       public Builder clearUserIdPubk() {
         
@@ -678,7 +659,7 @@ public final class UserPush {
         return this;
       }
       /**
-       * <code>string user_id_pubk = 1;</code>
+       * <code>optional string user_id_pubk = 1;</code>
        */
       public Builder setUserIdPubkBytes(
           com.google.protobuf.ByteString value) {
@@ -694,7 +675,7 @@ public final class UserPush {
 
       private java.lang.Object userDevicePubk_ = "";
       /**
-       * <code>string user_device_pubk = 2;</code>
+       * <code>optional string user_device_pubk = 2;</code>
        */
       public java.lang.String getUserDevicePubk() {
         java.lang.Object ref = userDevicePubk_;
@@ -709,7 +690,7 @@ public final class UserPush {
         }
       }
       /**
-       * <code>string user_device_pubk = 2;</code>
+       * <code>optional string user_device_pubk = 2;</code>
        */
       public com.google.protobuf.ByteString
           getUserDevicePubkBytes() {
@@ -725,7 +706,7 @@ public final class UserPush {
         }
       }
       /**
-       * <code>string user_device_pubk = 2;</code>
+       * <code>optional string user_device_pubk = 2;</code>
        */
       public Builder setUserDevicePubk(
           java.lang.String value) {
@@ -738,7 +719,7 @@ public final class UserPush {
         return this;
       }
       /**
-       * <code>string user_device_pubk = 2;</code>
+       * <code>optional string user_device_pubk = 2;</code>
        */
       public Builder clearUserDevicePubk() {
         
@@ -747,7 +728,7 @@ public final class UserPush {
         return this;
       }
       /**
-       * <code>string user_device_pubk = 2;</code>
+       * <code>optional string user_device_pubk = 2;</code>
        */
       public Builder setUserDevicePubkBytes(
           com.google.protobuf.ByteString value) {
@@ -763,7 +744,7 @@ public final class UserPush {
 
       private java.lang.Object userDeviceSign_ = "";
       /**
-       * <code>string user_device_sign = 3;</code>
+       * <code>optional string user_device_sign = 3;</code>
        */
       public java.lang.String getUserDeviceSign() {
         java.lang.Object ref = userDeviceSign_;
@@ -778,7 +759,7 @@ public final class UserPush {
         }
       }
       /**
-       * <code>string user_device_sign = 3;</code>
+       * <code>optional string user_device_sign = 3;</code>
        */
       public com.google.protobuf.ByteString
           getUserDeviceSignBytes() {
@@ -794,7 +775,7 @@ public final class UserPush {
         }
       }
       /**
-       * <code>string user_device_sign = 3;</code>
+       * <code>optional string user_device_sign = 3;</code>
        */
       public Builder setUserDeviceSign(
           java.lang.String value) {
@@ -807,7 +788,7 @@ public final class UserPush {
         return this;
       }
       /**
-       * <code>string user_device_sign = 3;</code>
+       * <code>optional string user_device_sign = 3;</code>
        */
       public Builder clearUserDeviceSign() {
         
@@ -816,7 +797,7 @@ public final class UserPush {
         return this;
       }
       /**
-       * <code>string user_device_sign = 3;</code>
+       * <code>optional string user_device_sign = 3;</code>
        */
       public Builder setUserDeviceSignBytes(
           com.google.protobuf.ByteString value) {
@@ -832,7 +813,7 @@ public final class UserPush {
 
       private java.lang.Object pushToken_ = "";
       /**
-       * <code>string push_token = 4;</code>
+       * <code>optional string push_token = 4;</code>
        */
       public java.lang.String getPushToken() {
         java.lang.Object ref = pushToken_;
@@ -847,7 +828,7 @@ public final class UserPush {
         }
       }
       /**
-       * <code>string push_token = 4;</code>
+       * <code>optional string push_token = 4;</code>
        */
       public com.google.protobuf.ByteString
           getPushTokenBytes() {
@@ -863,7 +844,7 @@ public final class UserPush {
         }
       }
       /**
-       * <code>string push_token = 4;</code>
+       * <code>optional string push_token = 4;</code>
        */
       public Builder setPushToken(
           java.lang.String value) {
@@ -876,7 +857,7 @@ public final class UserPush {
         return this;
       }
       /**
-       * <code>string push_token = 4;</code>
+       * <code>optional string push_token = 4;</code>
        */
       public Builder clearPushToken() {
         
@@ -885,7 +866,7 @@ public final class UserPush {
         return this;
       }
       /**
-       * <code>string push_token = 4;</code>
+       * <code>optional string push_token = 4;</code>
        */
       public Builder setPushTokenBytes(
           com.google.protobuf.ByteString value) {
@@ -900,12 +881,12 @@ public final class UserPush {
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return this;
       }
 
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return this;
       }
 
 
@@ -952,26 +933,26 @@ public final class UserPush {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 res_code = 1;</code>
+     * <code>optional int32 res_code = 1;</code>
      */
     int getResCode();
 
     /**
-     * <code>string res_data = 2;</code>
+     * <code>optional string res_data = 2;</code>
      */
     java.lang.String getResData();
     /**
-     * <code>string res_data = 2;</code>
+     * <code>optional string res_data = 2;</code>
      */
     com.google.protobuf.ByteString
         getResDataBytes();
 
     /**
-     * <code>string err_info = 3;</code>
+     * <code>optional string err_info = 3;</code>
      */
     java.lang.String getErrInfo();
     /**
-     * <code>string err_info = 3;</code>
+     * <code>optional string err_info = 3;</code>
      */
     com.google.protobuf.ByteString
         getErrInfoBytes();
@@ -983,7 +964,6 @@ public final class UserPush {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:platform.UploadPushTokenResponse)
       UploadPushTokenResponseOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use UploadPushTokenResponse.newBuilder() to construct.
     private UploadPushTokenResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -997,7 +977,7 @@ public final class UserPush {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
     private UploadPushTokenResponse(
         com.google.protobuf.CodedInputStream input,
@@ -1005,8 +985,6 @@ public final class UserPush {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -1016,8 +994,7 @@ public final class UserPush {
               done = true;
               break;
             default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!input.skipField(tag)) {
                 done = true;
               }
               break;
@@ -1047,7 +1024,6 @@ public final class UserPush {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -1066,7 +1042,7 @@ public final class UserPush {
     public static final int RES_CODE_FIELD_NUMBER = 1;
     private int resCode_;
     /**
-     * <code>int32 res_code = 1;</code>
+     * <code>optional int32 res_code = 1;</code>
      */
     public int getResCode() {
       return resCode_;
@@ -1075,7 +1051,7 @@ public final class UserPush {
     public static final int RES_DATA_FIELD_NUMBER = 2;
     private volatile java.lang.Object resData_;
     /**
-     * <code>string res_data = 2;</code>
+     * <code>optional string res_data = 2;</code>
      */
     public java.lang.String getResData() {
       java.lang.Object ref = resData_;
@@ -1090,7 +1066,7 @@ public final class UserPush {
       }
     }
     /**
-     * <code>string res_data = 2;</code>
+     * <code>optional string res_data = 2;</code>
      */
     public com.google.protobuf.ByteString
         getResDataBytes() {
@@ -1109,7 +1085,7 @@ public final class UserPush {
     public static final int ERR_INFO_FIELD_NUMBER = 3;
     private volatile java.lang.Object errInfo_;
     /**
-     * <code>string err_info = 3;</code>
+     * <code>optional string err_info = 3;</code>
      */
     public java.lang.String getErrInfo() {
       java.lang.Object ref = errInfo_;
@@ -1124,7 +1100,7 @@ public final class UserPush {
       }
     }
     /**
-     * <code>string err_info = 3;</code>
+     * <code>optional string err_info = 3;</code>
      */
     public com.google.protobuf.ByteString
         getErrInfoBytes() {
@@ -1161,7 +1137,6 @@ public final class UserPush {
       if (!getErrInfoBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, errInfo_);
       }
-      unknownFields.writeTo(output);
     }
 
     public int getSerializedSize() {
@@ -1179,11 +1154,11 @@ public final class UserPush {
       if (!getErrInfoBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, errInfo_);
       }
-      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -1201,7 +1176,6 @@ public final class UserPush {
           .equals(other.getResData());
       result = result && getErrInfo()
           .equals(other.getErrInfo());
-      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -1211,7 +1185,7 @@ public final class UserPush {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       hash = (37 * hash) + RES_CODE_FIELD_NUMBER;
       hash = (53 * hash) + getResCode();
       hash = (37 * hash) + RES_DATA_FIELD_NUMBER;
@@ -1223,17 +1197,6 @@ public final class UserPush {
       return hash;
     }
 
-    public static com.zaly.proto.platform.UserPush.UploadPushTokenResponse parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.zaly.proto.platform.UserPush.UploadPushTokenResponse parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
     public static com.zaly.proto.platform.UserPush.UploadPushTokenResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1387,7 +1350,7 @@ public final class UserPush {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -1400,12 +1363,12 @@ public final class UserPush {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -1430,7 +1393,6 @@ public final class UserPush {
           errInfo_ = other.errInfo_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1459,13 +1421,13 @@ public final class UserPush {
 
       private int resCode_ ;
       /**
-       * <code>int32 res_code = 1;</code>
+       * <code>optional int32 res_code = 1;</code>
        */
       public int getResCode() {
         return resCode_;
       }
       /**
-       * <code>int32 res_code = 1;</code>
+       * <code>optional int32 res_code = 1;</code>
        */
       public Builder setResCode(int value) {
         
@@ -1474,7 +1436,7 @@ public final class UserPush {
         return this;
       }
       /**
-       * <code>int32 res_code = 1;</code>
+       * <code>optional int32 res_code = 1;</code>
        */
       public Builder clearResCode() {
         
@@ -1485,7 +1447,7 @@ public final class UserPush {
 
       private java.lang.Object resData_ = "";
       /**
-       * <code>string res_data = 2;</code>
+       * <code>optional string res_data = 2;</code>
        */
       public java.lang.String getResData() {
         java.lang.Object ref = resData_;
@@ -1500,7 +1462,7 @@ public final class UserPush {
         }
       }
       /**
-       * <code>string res_data = 2;</code>
+       * <code>optional string res_data = 2;</code>
        */
       public com.google.protobuf.ByteString
           getResDataBytes() {
@@ -1516,7 +1478,7 @@ public final class UserPush {
         }
       }
       /**
-       * <code>string res_data = 2;</code>
+       * <code>optional string res_data = 2;</code>
        */
       public Builder setResData(
           java.lang.String value) {
@@ -1529,7 +1491,7 @@ public final class UserPush {
         return this;
       }
       /**
-       * <code>string res_data = 2;</code>
+       * <code>optional string res_data = 2;</code>
        */
       public Builder clearResData() {
         
@@ -1538,7 +1500,7 @@ public final class UserPush {
         return this;
       }
       /**
-       * <code>string res_data = 2;</code>
+       * <code>optional string res_data = 2;</code>
        */
       public Builder setResDataBytes(
           com.google.protobuf.ByteString value) {
@@ -1554,7 +1516,7 @@ public final class UserPush {
 
       private java.lang.Object errInfo_ = "";
       /**
-       * <code>string err_info = 3;</code>
+       * <code>optional string err_info = 3;</code>
        */
       public java.lang.String getErrInfo() {
         java.lang.Object ref = errInfo_;
@@ -1569,7 +1531,7 @@ public final class UserPush {
         }
       }
       /**
-       * <code>string err_info = 3;</code>
+       * <code>optional string err_info = 3;</code>
        */
       public com.google.protobuf.ByteString
           getErrInfoBytes() {
@@ -1585,7 +1547,7 @@ public final class UserPush {
         }
       }
       /**
-       * <code>string err_info = 3;</code>
+       * <code>optional string err_info = 3;</code>
        */
       public Builder setErrInfo(
           java.lang.String value) {
@@ -1598,7 +1560,7 @@ public final class UserPush {
         return this;
       }
       /**
-       * <code>string err_info = 3;</code>
+       * <code>optional string err_info = 3;</code>
        */
       public Builder clearErrInfo() {
         
@@ -1607,7 +1569,7 @@ public final class UserPush {
         return this;
       }
       /**
-       * <code>string err_info = 3;</code>
+       * <code>optional string err_info = 3;</code>
        */
       public Builder setErrInfoBytes(
           com.google.protobuf.ByteString value) {
@@ -1622,12 +1584,12 @@ public final class UserPush {
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return this;
       }
 
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return this;
       }
 
 
@@ -1674,71 +1636,71 @@ public final class UserPush {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string user_id_pubk = 1;</code>
+     * <code>optional string user_id_pubk = 1;</code>
      */
     java.lang.String getUserIdPubk();
     /**
-     * <code>string user_id_pubk = 1;</code>
+     * <code>optional string user_id_pubk = 1;</code>
      */
     com.google.protobuf.ByteString
         getUserIdPubkBytes();
 
     /**
-     * <code>string site_server = 2;</code>
+     * <code>optional string site_server = 2;</code>
      */
     java.lang.String getSiteServer();
     /**
-     * <code>string site_server = 2;</code>
+     * <code>optional string site_server = 2;</code>
      */
     com.google.protobuf.ByteString
         getSiteServerBytes();
 
     /**
-     * <code>string user_name = 3;</code>
+     * <code>optional string user_name = 3;</code>
      */
     java.lang.String getUserName();
     /**
-     * <code>string user_name = 3;</code>
+     * <code>optional string user_name = 3;</code>
      */
     com.google.protobuf.ByteString
         getUserNameBytes();
 
     /**
-     * <code>string push_token = 4;</code>
+     * <code>optional string push_token = 4;</code>
      */
     java.lang.String getPushToken();
     /**
-     * <code>string push_token = 4;</code>
+     * <code>optional string push_token = 4;</code>
      */
     com.google.protobuf.ByteString
         getPushTokenBytes();
 
     /**
-     * <code>string push_text = 5;</code>
+     * <code>optional string push_text = 5;</code>
      */
     java.lang.String getPushText();
     /**
-     * <code>string push_text = 5;</code>
+     * <code>optional string push_text = 5;</code>
      */
     com.google.protobuf.ByteString
         getPushTextBytes();
 
     /**
-     * <code>string push_unread = 6;</code>
+     * <code>optional string push_unread = 6;</code>
      */
     java.lang.String getPushUnread();
     /**
-     * <code>string push_unread = 6;</code>
+     * <code>optional string push_unread = 6;</code>
      */
     com.google.protobuf.ByteString
         getPushUnreadBytes();
 
     /**
-     * <code>string push_goto = 7;</code>
+     * <code>optional string push_goto = 7;</code>
      */
     java.lang.String getPushGoto();
     /**
-     * <code>string push_goto = 7;</code>
+     * <code>optional string push_goto = 7;</code>
      */
     com.google.protobuf.ByteString
         getPushGotoBytes();
@@ -1750,7 +1712,6 @@ public final class UserPush {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:platform.UserPushRequest)
       UserPushRequestOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use UserPushRequest.newBuilder() to construct.
     private UserPushRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1768,7 +1729,7 @@ public final class UserPush {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
     private UserPushRequest(
         com.google.protobuf.CodedInputStream input,
@@ -1776,8 +1737,6 @@ public final class UserPush {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -1787,8 +1746,7 @@ public final class UserPush {
               done = true;
               break;
             default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!input.skipField(tag)) {
                 done = true;
               }
               break;
@@ -1843,7 +1801,6 @@ public final class UserPush {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -1862,7 +1819,7 @@ public final class UserPush {
     public static final int USER_ID_PUBK_FIELD_NUMBER = 1;
     private volatile java.lang.Object userIdPubk_;
     /**
-     * <code>string user_id_pubk = 1;</code>
+     * <code>optional string user_id_pubk = 1;</code>
      */
     public java.lang.String getUserIdPubk() {
       java.lang.Object ref = userIdPubk_;
@@ -1877,7 +1834,7 @@ public final class UserPush {
       }
     }
     /**
-     * <code>string user_id_pubk = 1;</code>
+     * <code>optional string user_id_pubk = 1;</code>
      */
     public com.google.protobuf.ByteString
         getUserIdPubkBytes() {
@@ -1896,7 +1853,7 @@ public final class UserPush {
     public static final int SITE_SERVER_FIELD_NUMBER = 2;
     private volatile java.lang.Object siteServer_;
     /**
-     * <code>string site_server = 2;</code>
+     * <code>optional string site_server = 2;</code>
      */
     public java.lang.String getSiteServer() {
       java.lang.Object ref = siteServer_;
@@ -1911,7 +1868,7 @@ public final class UserPush {
       }
     }
     /**
-     * <code>string site_server = 2;</code>
+     * <code>optional string site_server = 2;</code>
      */
     public com.google.protobuf.ByteString
         getSiteServerBytes() {
@@ -1930,7 +1887,7 @@ public final class UserPush {
     public static final int USER_NAME_FIELD_NUMBER = 3;
     private volatile java.lang.Object userName_;
     /**
-     * <code>string user_name = 3;</code>
+     * <code>optional string user_name = 3;</code>
      */
     public java.lang.String getUserName() {
       java.lang.Object ref = userName_;
@@ -1945,7 +1902,7 @@ public final class UserPush {
       }
     }
     /**
-     * <code>string user_name = 3;</code>
+     * <code>optional string user_name = 3;</code>
      */
     public com.google.protobuf.ByteString
         getUserNameBytes() {
@@ -1964,7 +1921,7 @@ public final class UserPush {
     public static final int PUSH_TOKEN_FIELD_NUMBER = 4;
     private volatile java.lang.Object pushToken_;
     /**
-     * <code>string push_token = 4;</code>
+     * <code>optional string push_token = 4;</code>
      */
     public java.lang.String getPushToken() {
       java.lang.Object ref = pushToken_;
@@ -1979,7 +1936,7 @@ public final class UserPush {
       }
     }
     /**
-     * <code>string push_token = 4;</code>
+     * <code>optional string push_token = 4;</code>
      */
     public com.google.protobuf.ByteString
         getPushTokenBytes() {
@@ -1998,7 +1955,7 @@ public final class UserPush {
     public static final int PUSH_TEXT_FIELD_NUMBER = 5;
     private volatile java.lang.Object pushText_;
     /**
-     * <code>string push_text = 5;</code>
+     * <code>optional string push_text = 5;</code>
      */
     public java.lang.String getPushText() {
       java.lang.Object ref = pushText_;
@@ -2013,7 +1970,7 @@ public final class UserPush {
       }
     }
     /**
-     * <code>string push_text = 5;</code>
+     * <code>optional string push_text = 5;</code>
      */
     public com.google.protobuf.ByteString
         getPushTextBytes() {
@@ -2032,7 +1989,7 @@ public final class UserPush {
     public static final int PUSH_UNREAD_FIELD_NUMBER = 6;
     private volatile java.lang.Object pushUnread_;
     /**
-     * <code>string push_unread = 6;</code>
+     * <code>optional string push_unread = 6;</code>
      */
     public java.lang.String getPushUnread() {
       java.lang.Object ref = pushUnread_;
@@ -2047,7 +2004,7 @@ public final class UserPush {
       }
     }
     /**
-     * <code>string push_unread = 6;</code>
+     * <code>optional string push_unread = 6;</code>
      */
     public com.google.protobuf.ByteString
         getPushUnreadBytes() {
@@ -2066,7 +2023,7 @@ public final class UserPush {
     public static final int PUSH_GOTO_FIELD_NUMBER = 7;
     private volatile java.lang.Object pushGoto_;
     /**
-     * <code>string push_goto = 7;</code>
+     * <code>optional string push_goto = 7;</code>
      */
     public java.lang.String getPushGoto() {
       java.lang.Object ref = pushGoto_;
@@ -2081,7 +2038,7 @@ public final class UserPush {
       }
     }
     /**
-     * <code>string push_goto = 7;</code>
+     * <code>optional string push_goto = 7;</code>
      */
     public com.google.protobuf.ByteString
         getPushGotoBytes() {
@@ -2130,7 +2087,6 @@ public final class UserPush {
       if (!getPushGotoBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, pushGoto_);
       }
-      unknownFields.writeTo(output);
     }
 
     public int getSerializedSize() {
@@ -2159,11 +2115,11 @@ public final class UserPush {
       if (!getPushGotoBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, pushGoto_);
       }
-      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -2189,7 +2145,6 @@ public final class UserPush {
           .equals(other.getPushUnread());
       result = result && getPushGoto()
           .equals(other.getPushGoto());
-      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -2199,7 +2154,7 @@ public final class UserPush {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       hash = (37 * hash) + USER_ID_PUBK_FIELD_NUMBER;
       hash = (53 * hash) + getUserIdPubk().hashCode();
       hash = (37 * hash) + SITE_SERVER_FIELD_NUMBER;
@@ -2219,17 +2174,6 @@ public final class UserPush {
       return hash;
     }
 
-    public static com.zaly.proto.platform.UserPush.UserPushRequest parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.zaly.proto.platform.UserPush.UserPushRequest parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
     public static com.zaly.proto.platform.UserPush.UserPushRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2395,7 +2339,7 @@ public final class UserPush {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -2408,12 +2352,12 @@ public final class UserPush {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -2455,7 +2399,6 @@ public final class UserPush {
           pushGoto_ = other.pushGoto_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -2484,7 +2427,7 @@ public final class UserPush {
 
       private java.lang.Object userIdPubk_ = "";
       /**
-       * <code>string user_id_pubk = 1;</code>
+       * <code>optional string user_id_pubk = 1;</code>
        */
       public java.lang.String getUserIdPubk() {
         java.lang.Object ref = userIdPubk_;
@@ -2499,7 +2442,7 @@ public final class UserPush {
         }
       }
       /**
-       * <code>string user_id_pubk = 1;</code>
+       * <code>optional string user_id_pubk = 1;</code>
        */
       public com.google.protobuf.ByteString
           getUserIdPubkBytes() {
@@ -2515,7 +2458,7 @@ public final class UserPush {
         }
       }
       /**
-       * <code>string user_id_pubk = 1;</code>
+       * <code>optional string user_id_pubk = 1;</code>
        */
       public Builder setUserIdPubk(
           java.lang.String value) {
@@ -2528,7 +2471,7 @@ public final class UserPush {
         return this;
       }
       /**
-       * <code>string user_id_pubk = 1;</code>
+       * <code>optional string user_id_pubk = 1;</code>
        */
       public Builder clearUserIdPubk() {
         
@@ -2537,7 +2480,7 @@ public final class UserPush {
         return this;
       }
       /**
-       * <code>string user_id_pubk = 1;</code>
+       * <code>optional string user_id_pubk = 1;</code>
        */
       public Builder setUserIdPubkBytes(
           com.google.protobuf.ByteString value) {
@@ -2553,7 +2496,7 @@ public final class UserPush {
 
       private java.lang.Object siteServer_ = "";
       /**
-       * <code>string site_server = 2;</code>
+       * <code>optional string site_server = 2;</code>
        */
       public java.lang.String getSiteServer() {
         java.lang.Object ref = siteServer_;
@@ -2568,7 +2511,7 @@ public final class UserPush {
         }
       }
       /**
-       * <code>string site_server = 2;</code>
+       * <code>optional string site_server = 2;</code>
        */
       public com.google.protobuf.ByteString
           getSiteServerBytes() {
@@ -2584,7 +2527,7 @@ public final class UserPush {
         }
       }
       /**
-       * <code>string site_server = 2;</code>
+       * <code>optional string site_server = 2;</code>
        */
       public Builder setSiteServer(
           java.lang.String value) {
@@ -2597,7 +2540,7 @@ public final class UserPush {
         return this;
       }
       /**
-       * <code>string site_server = 2;</code>
+       * <code>optional string site_server = 2;</code>
        */
       public Builder clearSiteServer() {
         
@@ -2606,7 +2549,7 @@ public final class UserPush {
         return this;
       }
       /**
-       * <code>string site_server = 2;</code>
+       * <code>optional string site_server = 2;</code>
        */
       public Builder setSiteServerBytes(
           com.google.protobuf.ByteString value) {
@@ -2622,7 +2565,7 @@ public final class UserPush {
 
       private java.lang.Object userName_ = "";
       /**
-       * <code>string user_name = 3;</code>
+       * <code>optional string user_name = 3;</code>
        */
       public java.lang.String getUserName() {
         java.lang.Object ref = userName_;
@@ -2637,7 +2580,7 @@ public final class UserPush {
         }
       }
       /**
-       * <code>string user_name = 3;</code>
+       * <code>optional string user_name = 3;</code>
        */
       public com.google.protobuf.ByteString
           getUserNameBytes() {
@@ -2653,7 +2596,7 @@ public final class UserPush {
         }
       }
       /**
-       * <code>string user_name = 3;</code>
+       * <code>optional string user_name = 3;</code>
        */
       public Builder setUserName(
           java.lang.String value) {
@@ -2666,7 +2609,7 @@ public final class UserPush {
         return this;
       }
       /**
-       * <code>string user_name = 3;</code>
+       * <code>optional string user_name = 3;</code>
        */
       public Builder clearUserName() {
         
@@ -2675,7 +2618,7 @@ public final class UserPush {
         return this;
       }
       /**
-       * <code>string user_name = 3;</code>
+       * <code>optional string user_name = 3;</code>
        */
       public Builder setUserNameBytes(
           com.google.protobuf.ByteString value) {
@@ -2691,7 +2634,7 @@ public final class UserPush {
 
       private java.lang.Object pushToken_ = "";
       /**
-       * <code>string push_token = 4;</code>
+       * <code>optional string push_token = 4;</code>
        */
       public java.lang.String getPushToken() {
         java.lang.Object ref = pushToken_;
@@ -2706,7 +2649,7 @@ public final class UserPush {
         }
       }
       /**
-       * <code>string push_token = 4;</code>
+       * <code>optional string push_token = 4;</code>
        */
       public com.google.protobuf.ByteString
           getPushTokenBytes() {
@@ -2722,7 +2665,7 @@ public final class UserPush {
         }
       }
       /**
-       * <code>string push_token = 4;</code>
+       * <code>optional string push_token = 4;</code>
        */
       public Builder setPushToken(
           java.lang.String value) {
@@ -2735,7 +2678,7 @@ public final class UserPush {
         return this;
       }
       /**
-       * <code>string push_token = 4;</code>
+       * <code>optional string push_token = 4;</code>
        */
       public Builder clearPushToken() {
         
@@ -2744,7 +2687,7 @@ public final class UserPush {
         return this;
       }
       /**
-       * <code>string push_token = 4;</code>
+       * <code>optional string push_token = 4;</code>
        */
       public Builder setPushTokenBytes(
           com.google.protobuf.ByteString value) {
@@ -2760,7 +2703,7 @@ public final class UserPush {
 
       private java.lang.Object pushText_ = "";
       /**
-       * <code>string push_text = 5;</code>
+       * <code>optional string push_text = 5;</code>
        */
       public java.lang.String getPushText() {
         java.lang.Object ref = pushText_;
@@ -2775,7 +2718,7 @@ public final class UserPush {
         }
       }
       /**
-       * <code>string push_text = 5;</code>
+       * <code>optional string push_text = 5;</code>
        */
       public com.google.protobuf.ByteString
           getPushTextBytes() {
@@ -2791,7 +2734,7 @@ public final class UserPush {
         }
       }
       /**
-       * <code>string push_text = 5;</code>
+       * <code>optional string push_text = 5;</code>
        */
       public Builder setPushText(
           java.lang.String value) {
@@ -2804,7 +2747,7 @@ public final class UserPush {
         return this;
       }
       /**
-       * <code>string push_text = 5;</code>
+       * <code>optional string push_text = 5;</code>
        */
       public Builder clearPushText() {
         
@@ -2813,7 +2756,7 @@ public final class UserPush {
         return this;
       }
       /**
-       * <code>string push_text = 5;</code>
+       * <code>optional string push_text = 5;</code>
        */
       public Builder setPushTextBytes(
           com.google.protobuf.ByteString value) {
@@ -2829,7 +2772,7 @@ public final class UserPush {
 
       private java.lang.Object pushUnread_ = "";
       /**
-       * <code>string push_unread = 6;</code>
+       * <code>optional string push_unread = 6;</code>
        */
       public java.lang.String getPushUnread() {
         java.lang.Object ref = pushUnread_;
@@ -2844,7 +2787,7 @@ public final class UserPush {
         }
       }
       /**
-       * <code>string push_unread = 6;</code>
+       * <code>optional string push_unread = 6;</code>
        */
       public com.google.protobuf.ByteString
           getPushUnreadBytes() {
@@ -2860,7 +2803,7 @@ public final class UserPush {
         }
       }
       /**
-       * <code>string push_unread = 6;</code>
+       * <code>optional string push_unread = 6;</code>
        */
       public Builder setPushUnread(
           java.lang.String value) {
@@ -2873,7 +2816,7 @@ public final class UserPush {
         return this;
       }
       /**
-       * <code>string push_unread = 6;</code>
+       * <code>optional string push_unread = 6;</code>
        */
       public Builder clearPushUnread() {
         
@@ -2882,7 +2825,7 @@ public final class UserPush {
         return this;
       }
       /**
-       * <code>string push_unread = 6;</code>
+       * <code>optional string push_unread = 6;</code>
        */
       public Builder setPushUnreadBytes(
           com.google.protobuf.ByteString value) {
@@ -2898,7 +2841,7 @@ public final class UserPush {
 
       private java.lang.Object pushGoto_ = "";
       /**
-       * <code>string push_goto = 7;</code>
+       * <code>optional string push_goto = 7;</code>
        */
       public java.lang.String getPushGoto() {
         java.lang.Object ref = pushGoto_;
@@ -2913,7 +2856,7 @@ public final class UserPush {
         }
       }
       /**
-       * <code>string push_goto = 7;</code>
+       * <code>optional string push_goto = 7;</code>
        */
       public com.google.protobuf.ByteString
           getPushGotoBytes() {
@@ -2929,7 +2872,7 @@ public final class UserPush {
         }
       }
       /**
-       * <code>string push_goto = 7;</code>
+       * <code>optional string push_goto = 7;</code>
        */
       public Builder setPushGoto(
           java.lang.String value) {
@@ -2942,7 +2885,7 @@ public final class UserPush {
         return this;
       }
       /**
-       * <code>string push_goto = 7;</code>
+       * <code>optional string push_goto = 7;</code>
        */
       public Builder clearPushGoto() {
         
@@ -2951,7 +2894,7 @@ public final class UserPush {
         return this;
       }
       /**
-       * <code>string push_goto = 7;</code>
+       * <code>optional string push_goto = 7;</code>
        */
       public Builder setPushGotoBytes(
           com.google.protobuf.ByteString value) {
@@ -2966,12 +2909,12 @@ public final class UserPush {
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return this;
       }
 
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return this;
       }
 
 
@@ -3024,7 +2967,6 @@ public final class UserPush {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:platform.UserPushResponse)
       UserPushResponseOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use UserPushResponse.newBuilder() to construct.
     private UserPushResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3035,15 +2977,13 @@ public final class UserPush {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
     private UserPushResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -3053,8 +2993,7 @@ public final class UserPush {
               done = true;
               break;
             default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!input.skipField(tag)) {
                 done = true;
               }
               break;
@@ -3067,7 +3006,6 @@ public final class UserPush {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -3095,7 +3033,6 @@ public final class UserPush {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      unknownFields.writeTo(output);
     }
 
     public int getSerializedSize() {
@@ -3103,11 +3040,11 @@ public final class UserPush {
       if (size != -1) return size;
 
       size = 0;
-      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -3119,7 +3056,6 @@ public final class UserPush {
       com.zaly.proto.platform.UserPush.UserPushResponse other = (com.zaly.proto.platform.UserPush.UserPushResponse) obj;
 
       boolean result = true;
-      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -3129,23 +3065,12 @@ public final class UserPush {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static com.zaly.proto.platform.UserPush.UserPushResponse parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.zaly.proto.platform.UserPush.UserPushResponse parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
     public static com.zaly.proto.platform.UserPush.UserPushResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3290,7 +3215,7 @@ public final class UserPush {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -3303,12 +3228,12 @@ public final class UserPush {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -3322,7 +3247,6 @@ public final class UserPush {
 
       public Builder mergeFrom(com.zaly.proto.platform.UserPush.UserPushResponse other) {
         if (other == com.zaly.proto.platform.UserPush.UserPushResponse.getDefaultInstance()) return this;
-        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -3350,12 +3274,12 @@ public final class UserPush {
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return this;
       }
 
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return this;
       }
 
 

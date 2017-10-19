@@ -19,7 +19,7 @@ public final class ImSyncFinishProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int64 p2p_pointer = 1;</code>
+     * <code>optional int64 p2p_pointer = 1;</code>
      */
     long getP2PPointer();
 
@@ -64,7 +64,6 @@ public final class ImSyncFinishProto {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:site.ImSyncFinishRequest)
       ImSyncFinishRequestOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use ImSyncFinishRequest.newBuilder() to construct.
     private ImSyncFinishRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -76,7 +75,7 @@ public final class ImSyncFinishProto {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
     private ImSyncFinishRequest(
         com.google.protobuf.CodedInputStream input,
@@ -84,8 +83,6 @@ public final class ImSyncFinishProto {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -95,8 +92,7 @@ public final class ImSyncFinishProto {
               done = true;
               break;
             default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!input.skipField(tag)) {
                 done = true;
               }
               break;
@@ -113,10 +109,9 @@ public final class ImSyncFinishProto {
                 mutable_bitField0_ |= 0x00000002;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.Long>
-              groupsPointer__ = input.readMessage(
+              groupsPointer = input.readMessage(
                   GroupsPointerDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              groupsPointer_.getMutableMap().put(
-                  groupsPointer__.getKey(), groupsPointer__.getValue());
+              groupsPointer_.getMutableMap().put(groupsPointer.getKey(), groupsPointer.getValue());
               break;
             }
           }
@@ -127,7 +122,6 @@ public final class ImSyncFinishProto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -158,7 +152,7 @@ public final class ImSyncFinishProto {
     public static final int P2P_POINTER_FIELD_NUMBER = 1;
     private long p2PPointer_;
     /**
-     * <code>int64 p2p_pointer = 1;</code>
+     * <code>optional int64 p2p_pointer = 1;</code>
      */
     public long getP2PPointer() {
       return p2PPointer_;
@@ -255,13 +249,15 @@ public final class ImSyncFinishProto {
       if (p2PPointer_ != 0L) {
         output.writeInt64(1, p2PPointer_);
       }
-      com.google.protobuf.GeneratedMessageV3
-        .serializeStringMapTo(
-          output,
-          internalGetGroupsPointer(),
-          GroupsPointerDefaultEntryHolder.defaultEntry,
-          2);
-      unknownFields.writeTo(output);
+      for (java.util.Map.Entry<java.lang.String, java.lang.Long> entry
+           : internalGetGroupsPointer().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.Long>
+        groupsPointer = GroupsPointerDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        output.writeMessage(2, groupsPointer);
+      }
     }
 
     public int getSerializedSize() {
@@ -276,18 +272,18 @@ public final class ImSyncFinishProto {
       for (java.util.Map.Entry<java.lang.String, java.lang.Long> entry
            : internalGetGroupsPointer().getMap().entrySet()) {
         com.google.protobuf.MapEntry<java.lang.String, java.lang.Long>
-        groupsPointer__ = GroupsPointerDefaultEntryHolder.defaultEntry.newBuilderForType()
+        groupsPointer = GroupsPointerDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(2, groupsPointer__);
+            .computeMessageSize(2, groupsPointer);
       }
-      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -303,7 +299,6 @@ public final class ImSyncFinishProto {
           == other.getP2PPointer());
       result = result && internalGetGroupsPointer().equals(
           other.internalGetGroupsPointer());
-      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -313,7 +308,7 @@ public final class ImSyncFinishProto {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       hash = (37 * hash) + P2P_POINTER_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getP2PPointer());
@@ -326,17 +321,6 @@ public final class ImSyncFinishProto {
       return hash;
     }
 
-    public static com.zaly.proto.site.ImSyncFinishProto.ImSyncFinishRequest parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.zaly.proto.site.ImSyncFinishProto.ImSyncFinishRequest parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
     public static com.zaly.proto.site.ImSyncFinishProto.ImSyncFinishRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -512,7 +496,7 @@ public final class ImSyncFinishProto {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -525,12 +509,12 @@ public final class ImSyncFinishProto {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -549,7 +533,6 @@ public final class ImSyncFinishProto {
         }
         internalGetMutableGroupsPointer().mergeFrom(
             other.internalGetGroupsPointer());
-        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -579,13 +562,13 @@ public final class ImSyncFinishProto {
 
       private long p2PPointer_ ;
       /**
-       * <code>int64 p2p_pointer = 1;</code>
+       * <code>optional int64 p2p_pointer = 1;</code>
        */
       public long getP2PPointer() {
         return p2PPointer_;
       }
       /**
-       * <code>int64 p2p_pointer = 1;</code>
+       * <code>optional int64 p2p_pointer = 1;</code>
        */
       public Builder setP2PPointer(long value) {
         
@@ -594,7 +577,7 @@ public final class ImSyncFinishProto {
         return this;
       }
       /**
-       * <code>int64 p2p_pointer = 1;</code>
+       * <code>optional int64 p2p_pointer = 1;</code>
        */
       public Builder clearP2PPointer() {
         
@@ -680,8 +663,7 @@ public final class ImSyncFinishProto {
       }
 
       public Builder clearGroupsPointer() {
-        internalGetMutableGroupsPointer().getMutableMap()
-            .clear();
+        getMutableGroupsPointer().clear();
         return this;
       }
       /**
@@ -691,8 +673,7 @@ public final class ImSyncFinishProto {
       public Builder removeGroupsPointer(
           java.lang.String key) {
         if (key == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableGroupsPointer().getMutableMap()
-            .remove(key);
+        getMutableGroupsPointer().remove(key);
         return this;
       }
       /**
@@ -711,8 +692,7 @@ public final class ImSyncFinishProto {
           long value) {
         if (key == null) { throw new java.lang.NullPointerException(); }
         
-        internalGetMutableGroupsPointer().getMutableMap()
-            .put(key, value);
+        getMutableGroupsPointer().put(key, value);
         return this;
       }
       /**
@@ -721,18 +701,17 @@ public final class ImSyncFinishProto {
 
       public Builder putAllGroupsPointer(
           java.util.Map<java.lang.String, java.lang.Long> values) {
-        internalGetMutableGroupsPointer().getMutableMap()
-            .putAll(values);
+        getMutableGroupsPointer().putAll(values);
         return this;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return this;
       }
 
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return this;
       }
 
 
