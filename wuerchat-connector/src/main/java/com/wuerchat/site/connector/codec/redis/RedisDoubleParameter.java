@@ -3,10 +3,10 @@ package com.wuerchat.site.connector.codec.redis;
 import java.nio.ByteBuffer;
 
 public class RedisDoubleParameter extends AbstractParameter {
-	final double val;
+	final double value;
 
-	private RedisDoubleParameter(double val) {
-		this.val = val;
+	private RedisDoubleParameter(double value) {
+		this.value = value;
 	}
 
 	public static RedisDoubleParameter of(double val) {
@@ -15,11 +15,16 @@ public class RedisDoubleParameter extends AbstractParameter {
 
 	@Override
 	public void encode(ByteBuffer target) {
-		RedisStringParameter.writeString(target, Double.toString(val));
+		RedisStringParameter.writeString(target, Double.toString(value));
 	}
-	
+
 	@Override
 	public String getValue() {
-		return String.valueOf(val);
+		return String.valueOf(value);
+	}
+
+	@Override
+	public int getSize() {
+		return RedisStringParameter.getStringByteSize(String.valueOf(value));
 	}
 }

@@ -2,7 +2,7 @@ package com.wuerchat.site.business.impl;
 
 import com.wuerchat.common.command.Command;
 import com.wuerchat.common.command.CommandResponse;
-import com.wuerchat.site.protobuf.business.GetFriendList;
+import com.zaly.proto.site.UserFriendProto;
 
 public class ApiUserFriendService extends AbstractApiBusiness {
 
@@ -14,22 +14,21 @@ public class ApiUserFriendService extends AbstractApiBusiness {
 	public CommandResponse getFriendList(Command command) {
 		// select friendList from database
 
-		GetFriendList.FriendSimpleProfile friendProfile0 = GetFriendList.FriendSimpleProfile.newBuilder()
+		UserFriendProto.FriendSimpleProfile friendProfile0 = UserFriendProto.FriendSimpleProfile.newBuilder()
 				.setSiteUserId("1000").setUserName("Sam").setUserPhotoUrl("hello").build();
-		GetFriendList.FriendSimpleProfile friendProfile1 = GetFriendList.FriendSimpleProfile.newBuilder()
+		UserFriendProto.FriendSimpleProfile friendProfile1 = UserFriendProto.FriendSimpleProfile.newBuilder()
 				.setSiteUserId("1001").setUserName("Sam1").setUserPhotoUrl("").build();
 
-		GetFriendList.FriendSimpleProfile friendProfile2 = GetFriendList.FriendSimpleProfile.newBuilder()
+		UserFriendProto.FriendSimpleProfile friendProfile2 = UserFriendProto.FriendSimpleProfile.newBuilder()
 				.setSiteUserId("1002").setUserName("Sam2").setUserPhotoUrl("").build();
 
-		GetFriendList.FriendSimpleProfile friendProfile3 = GetFriendList.FriendSimpleProfile.newBuilder()
+		UserFriendProto.FriendSimpleProfile friendProfile3 = UserFriendProto.FriendSimpleProfile.newBuilder()
 				.setSiteUserId("1003").setUserName("Sam3").setUserPhotoUrl("").build();
 
-		GetFriendList.ApiFriendListResponse response = GetFriendList.ApiFriendListResponse.newBuilder()
-				.addList(0, friendProfile0)
-				.addList(1, friendProfile1)
-//				.addList(2, friendProfile2)
-//				.addList(3, friendProfile3)
+		UserFriendProto.GetFriendListResponse response = UserFriendProto.GetFriendListResponse.newBuilder()
+				.addList(0, friendProfile0).addList(1, friendProfile1)
+				// .addList(2, friendProfile2)
+				// .addList(3, friendProfile3)
 				.build();
 
 		CommandResponse cmdRes = new CommandResponse();

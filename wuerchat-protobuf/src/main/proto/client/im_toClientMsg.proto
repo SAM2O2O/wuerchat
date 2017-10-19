@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package client;
+
+import "core/core.proto";
+
+option java_package = "com.zaly.proto.client";
+option java_outer_classname = "ImToClientMsgProto";
+
+
+service ImToClientMsgService {
+    rpc toClientMsg(ToClientMsgRequest) returns(ToClientMsgResponse);
+}
+
+message ToClientMsgRequest {
+	repeated MsgWithPointer list =1;
+}
+
+message MsgWithPointer{
+	int64 pointer = 1;
+
+	core.MsgType type = 2;
+
+	core.MsgStatus status = 3;
+	core.MsgFinish finish = 4;
+
+    core.MsgText text = 5;
+    core.MsgSecretText secretText = 6;
+
+    core.GroupText groupText = 7;
+    core.GroupSecretText groupSecretText = 8;
+
+}
+
+message ToClientMsgResponse {}

@@ -21,12 +21,12 @@ public class ProtocolBuilder implements IProtocolBuilder {
 	}
 
 	
-	public void writeAndOut(Channel ch, RedisCommand cmd, ByteBuf out) {
-		
-		ByteBuffer byteBuffer = ByteBuffer.allocate(1000);
-		cmd.encode(byteBuffer);
+	public void writeAndOut(Channel ch, RedisCommand redisCmd, ByteBuf out) {
+		int byteSize = redisCmd.getByteSize();
+		System.out.println("byteSize = " + byteSize);
+		ByteBuffer byteBuffer = ByteBuffer.allocate(byteSize);
+		redisCmd.encode(byteBuffer);
 		byte[] bytes = byteBuffer.array();
-
 		out.writeBytes(bytes);
 
 	}

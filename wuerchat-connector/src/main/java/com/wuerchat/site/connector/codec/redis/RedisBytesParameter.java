@@ -19,7 +19,7 @@ public class RedisBytesParameter extends AbstractParameter {
 		writeBytes(buffer, value);
 	}
 
-	static void writeBytes(ByteBuffer buffer, byte[] value) {
+	public static void writeBytes(ByteBuffer buffer, byte[] value) {
 
 		buffer.put((byte) '$');
 
@@ -30,8 +30,20 @@ public class RedisBytesParameter extends AbstractParameter {
 		buffer.put(CRLF);
 	}
 
+	public static int getByteSize(byte[] value) {
+		int byteSize = CRLF.length * 2 + 1;
+		byteSize += RedisIntegerParameter.getIntegerByteSize(value.length);
+		byteSize += value.length;
+		return byteSize;
+	}
+
 	@Override
 	public String getValue() {
 		return new String(value);
+	}
+
+	@Override
+	public int getSize() {
+		return getByteSize(this.value);
 	}
 }

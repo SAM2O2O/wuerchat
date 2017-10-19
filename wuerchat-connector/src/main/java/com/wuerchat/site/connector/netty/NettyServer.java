@@ -5,6 +5,7 @@ import com.wuerchat.common.executor.AbstracteExecutor;
 import com.wuerchat.common.executor.SimpleExecutor;
 import com.wuerchat.site.connector.codec.protocol.MessageDecoder;
 import com.wuerchat.site.connector.codec.protocol.MessageEncoder;
+import com.wuerchat.site.connector.netty.handler.NettyInboundHandler;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.buffer.PooledByteBufAllocator;
@@ -27,7 +28,6 @@ public abstract class NettyServer {
 	private EventLoopGroup childGroup;
 
 	public NettyServer() {
-		executor = new SimpleExecutor<Command>();
 		parentGroup = new NioEventLoopGroup(10, new PrefixThreadFactory("bim-boss-evenloopgroup"));
 		int childThreadNum = Runtime.getRuntime().availableProcessors() + 1;
 		childGroup = new NioEventLoopGroup(childThreadNum, new PrefixThreadFactory("bim-worker-evenloopgroup"));
@@ -39,13 +39,16 @@ public abstract class NettyServer {
 		bootstrap.option(ChannelOption.SO_RCVBUF, 256 * 1024);
 		bootstrap.option(ChannelOption.SO_SNDBUF, 256 * 1024);
 		bootstrap.option(ChannelOption.ALLOCATOR, PooledByteBufAllocator.DEFAULT);
-		
+
 		bootstrap.childOption(ChannelOption.SO_KEEPALIVE, true);
 		bootstrap.childOption(ChannelOption.TCP_NODELAY, true);
 		bootstrap.childOption(ChannelOption.ALLOCATOR, PooledByteBufAllocator.DEFAULT);
 		bootstrap.childOption(ChannelOption.RCVBUF_ALLOCATOR, AdaptiveRecvByteBufAllocator.DEFAULT); // 动态缓冲区
 		bootstrap.handler(new LoggingHandler(LogLevel.ERROR));
 		bootstrap.childHandler(new BimChannelInitializer());
+
+		executor = new SimpleExecutor<Command>();
+		loadExecutor(executor);
 	}
 
 	public void start(String address, int port) {
@@ -86,7 +89,7 @@ public abstract class NettyServer {
 			// ch.pipeline().addLast(new AuthResponseHandler());
 			// ch.pipeline().addLast("keepAliveHandler", new
 			// HeartBeatHandler());
-			ch.pipeline().addLast(new NettyInboundHandler());
+			ch.pipeline().addLast(new NettyInboundHandler(executor));
 		}
 
 	}

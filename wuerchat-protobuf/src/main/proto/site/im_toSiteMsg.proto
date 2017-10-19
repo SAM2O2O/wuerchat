@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package site;
+
+import "core/core.proto";
+
+option java_package = "com.zaly.proto.site";
+option java_outer_classname = "ImToSiteMsgProto";
+
+
+service ImToSiteMsgService {
+    rpc toSiteMsg(ToSiteMsgRequest) returns(core.NoneResponse);
+}
+
+message ToSiteMsgRequest {
+	core.MsgType type = 1;
+
+    core.MsgText text = 2;
+    core.MsgSecretText secretText = 3;
+
+    core.GroupText groupText = 4;
+    core.GroupSecretText groupSecretText = 5;
+
+}

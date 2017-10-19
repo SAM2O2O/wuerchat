@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package site;
+
+option java_package = "com.zaly.proto.site";
+option java_outer_classname = "ImLoginProto";
+
+// 登录Site
+//
+// 类型1：匿名模式
+//
+// 接收用户登陆请求参数：user-id-pubk
+// 如果user-id-pubk在授权列表里，则允许登陆。
+//
+//
+// 类型2：实名模式
+//
+// 接收用户的登陆请求参数：user-id-pubk，user-phone，用户的手机号查询授权码
+// 向平台查询 user-id-pubk、user-phone是否为一致。
+// 一致则允许登陆。
+// Site需要定期向平台判断此user-id-pubk与user-phone的一致性，一旦发现不一致，应立即更换用户的session并将当前用户踢下线。
+//
+
+service ApiLogin {
+    rpc login(ApiLoginRequest) returns(ApiLoginResponse);
+}
+
+message ApiLoginRequest {
+    string user_id_pubk =1;
+    string user_device_id_pubk =2 ;
+    string user_device_id_sign =3 ;//使用user_device_id_sign验证user_device_id_pubk合法性
+    string user_device_name =4 ;
+}
+
+message ApiLoginResponse {
+    string user_session_id = 1;
+    string site_user_id = 2;
+}

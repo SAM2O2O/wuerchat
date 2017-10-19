@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package site;
+option java_package = "com.zaly.proto.site";
+option java_outer_classname = "UserGroupProto";
+
+
+service UserGroupService {
+    rpc getGroupList(GetGroupsRequest) returns(GetGroupsResponse);
+}
+
+message GetGroupsRequest {
+    //int32 page =3;
+    string site_user_id =1;
+}
+
+message GroupsimpleProfile {
+    string site_group_id =1;
+    string group_name = 2;
+    string group_photo =3;
+}
+
+message GetGroupsResponse {
+    repeated GroupsimpleProfile list =1;
+}

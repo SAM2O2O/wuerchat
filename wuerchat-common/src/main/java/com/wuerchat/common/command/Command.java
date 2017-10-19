@@ -1,5 +1,8 @@
 package com.wuerchat.common.command;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * 处理完成后的消息载体
  * 
@@ -11,6 +14,8 @@ public class Command {
 	private String method;
 	private String params;
 	private Object response;
+
+	private Map<String, Object> fields = new HashMap<String, Object>();
 
 	public void setServiceMethod(String splitStrs) {
 		String[] splitStr = splitStrs.split("\\.");
@@ -48,6 +53,25 @@ public class Command {
 
 	public void setResponse(Object response) {
 		this.response = response;
+	}
+
+	public Map<String, Object> getFields() {
+		return fields;
+	}
+
+	public <T> T getField(String k, Class<T> t) {
+		Object obj = fields.get(k);
+		return obj == null ? null : (T) obj;
+	}
+
+	public Command setFields(Map<String, Object> map) {
+		this.fields.putAll(map);
+		return this;
+	}
+
+	public Command setField(String k, Object v) {
+		this.fields.put(k, v);
+		return this;
 	}
 
 	public String toString() {

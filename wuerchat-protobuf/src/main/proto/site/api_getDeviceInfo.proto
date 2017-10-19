@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package site;
+
+option java_package = "com.zaly.proto.site";
+option java_outer_classname = "GetDeviceInfoProto";
+
+service GetDevicesInfoService {
+    rpc getDeviceList(GetDevicesRequest) returns(GetDevicesResponse);
+}
+
+message GetDevicesRequest {
+    int32 site_user_id =1;
+}
+
+message DeviceSimpleProfile {
+	string device_id = 1;
+    string device_name =2;
+    string user_device_pubk = 3;
+    int64 last_login_time = 4;
+}
+
+message GetDevicesResponse {
+    repeated DeviceSimpleProfile list =1;
+}
+
+/*
+错误码：
+
+api.getDeviceList.none_user
+
+*/

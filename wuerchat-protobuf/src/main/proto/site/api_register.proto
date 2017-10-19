@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package site;
+
+option java_package = "com.zaly.proto.site";
+option java_outer_classname = "ImRegisterProto";
+
+
+// 注册逻辑
+service ApiRegister {
+    rpc register(ApiRegisterRequest) returns(ApiRegisterResponse);
+}
+
+message ApiRegisterRequest {
+    string user_id_pubk =1;
+    string user_name =2;
+    string user_photo =3;//the binary bytes of the photo
+
+    string invitation_code =4;
+    string apply_info =5;
+    string platform_phone_code =6;
+}
+
+message ApiRegisterResponse {
+	string site_user_id = 1;
+}

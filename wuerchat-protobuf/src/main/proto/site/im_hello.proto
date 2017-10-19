@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package site;
+
+option java_package = "com.zaly.proto.site";
+option java_outer_classname = "ImHelloProto";
+
+
+service ImHelloService {
+    rpc hello(ImHelloRequest) returns(ImHelloResponse);
+}
+
+message ImHelloRequest {
+	string client_version = 1;
+}
+
+message ImHelloResponse {
+	string site_version = 1;
+}

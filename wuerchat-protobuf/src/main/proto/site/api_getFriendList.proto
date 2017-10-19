@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package site;
+
+option java_package = "com.zaly.proto.site";
+option java_outer_classname = "UserFriendProto";
+
+
+service UserFriendService {
+    rpc getFriendList(GetFriendListRequest) returns(GetFriendListResponse);
+}
+
+message GetFriendListRequest {
+   	//int32 page =3;
+    string site_user_id =1;
+}
+
+message FriendSimpleProfile {
+    string site_user_id =1;
+    string user_name = 2;
+    string user_photo_url =3;
+}
+
+message GetFriendListResponse {
+    repeated FriendSimpleProfile list =1;
+}

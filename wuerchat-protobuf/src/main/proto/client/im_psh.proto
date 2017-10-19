@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package client;
+
+import "core/core.proto";
+
+option java_package = "com.zaly.proto.client";
+option java_outer_classname = "ImPshProto";
+
+service ImPshService {
+    rpc psh(ImPshRequest) returns(core.NoneResponse);
+}
+
+message ImPshRequest {}

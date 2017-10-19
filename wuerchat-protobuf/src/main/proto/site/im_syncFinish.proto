@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package site;
+
+import "core/core.proto";
+
+option java_package = "com.zaly.proto.site";
+option java_outer_classname = "ImSyncFinishProto";
+
+
+service ImSyncFinishService {
+    rpc syncFinish(ImSyncFinishRequest) returns(core.NoneResponse);
+}
+
+message ImSyncFinishRequest {
+    int64 p2p_pointer = 1;
+    map<string, int64> groups_pointer = 2;
+
+}

@@ -10,4 +10,6 @@ public abstract class AbstractParameter {
 	public abstract void encode(ByteBuffer buffer);
 
 	public abstract String getValue();
+	
+	public abstract int getSize();
 }

@@ -27,10 +27,6 @@ public class RedisCommand {
 
 	}
 
-	public String getUserId() {
-		return arguments.get(2).getValue();
-	}
-
 	public RedisCommand add(int n) {
 		arguments.add(RedisIntegerParameter.of(n));
 		return this;
@@ -73,6 +69,16 @@ public class RedisCommand {
 			argument.encode(buf);
 		}
 
+	}
+
+	public int getByteSize() {
+		int byteSize = CRLF.length + 1;
+		byteSize += RedisIntegerParameter.getIntegerByteSize(arguments.size());
+		for (AbstractParameter argument : arguments) {
+			byteSize += argument.getSize();
+		}
+//		return byteSize;
+		return 1000;
 	}
 
 	public String getParameterByIndex(int i) {

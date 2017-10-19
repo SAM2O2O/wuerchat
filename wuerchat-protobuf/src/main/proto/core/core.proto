@@ -1,0 +1,175 @@
+syntax = "proto3";
+
+// 用于描述整个体系中基础、共用的数据结构。
+// 原则1：网络通讯设计的各类用语，以客户端为中心。
+
+package core;
+
+//set the package name of the class
+option java_package = "com.zaly.proto.core";
+option java_outer_classname = "CoreProto";
+
+// 错误信息
+message ErrorInfo {
+    string code = 1;
+    string info = 2;
+}
+
+// 代表无响应，用户编写rpc service时，因为protobuf要求idl文件中必须包含一个返回值
+message NoneResponse {
+
+}
+
+
+//
+// 传输层协议采用redis的resp协议中的array结构
+// 1. 协议版本（采用字符串形式的数字）
+// 2. action
+// 3. 数据（TransportPackage）
+//
+
+//使用protobuf描述最基础的协议
+//！！！本结构只用作说明，没有实际用处！！！
+message TransportPackage {
+    string protocol_version = 1;
+
+    //要执行的动作，如im.msg\api.login等
+    //如果action=='_'，代表这是对上一个请求的响应，由调用者来负责解读，一般用在同步调用中。
+    string action= 2;
+
+    //具体的数据。有package接收者根据action来决定怎样解读data
+    TransportPackageData data = 3;
+
+    //以后可能会增加的传输层配置
+}
+
+message TransportPackageData {
+
+    //错误信息，如果err不为null，data很有可能是无用的。
+    ErrorInfo err = 1;
+
+    //业务Data，由业务逻辑自己解析
+    bytes data = 2;
+
+    //非业务逻辑的必要数据
+    // 分为两个级别：Socket级 与 Request级
+    // Socket级：只在链接建立后的第一个请求中传递，在链接的整个生命周期都有效。
+    // Request级：在每一次请求中都可能会变化并传递。
+    map<int32, string> header = 3;
+}
+
+enum HeaderKey {
+    //0-500 分配给CLIENT_SOCKET
+    CLIENT_SOCKET_VERSION = 0;
+    CLIENT_SOCKET_SITE_SESSION_ID = 1;
+    CLIENT_SOCKET_PLATFORM_SESSION_ID = 2;
+    CLIENT_SOCKET_DEVICE_ID = 3;
+    CLIENT_SOCKET_LANGUAGE = 4;// 客户端正在使用的语言, cn/en
+
+    //501-1000 分配给CLIENT_REQUEST
+    CLIENT_REQUEST_REFERER = 501;
+
+
+    //1001-2000 分配给SITE
+    SITE_SOCKET_VERSION = 1001;
+
+
+    //2000-2001 分配给PLATFORM
+}
+
+//以下内容为共用消息内容
+//消息类型
+enum MsgType  {
+    NOTICE = 0;
+    MSG_STATUS = 1;
+    MSG_FINISH = 2;
+
+    TEXT = 3;
+    SECRET_TEXT = 4;
+
+
+    IMAGE = 5;
+    SECRET_IMAGE = 6;
+    VOICE = 7;
+    SECRET_VOICE = 8;
+    MAP = 9;
+    SECRET_MAP = 10;
+
+}
+
+message MsgStatus {
+	string msg_id = 1;
+	int32 msg_status = 2;
+}
+
+message MsgFinish {
+
+}
+
+//普通文本消息
+message MsgText{
+	string msg_id = 1;	//消息id
+	string site_user_id = 2;
+	string site_friend_id = 3;
+	bytes text = 4;
+	int64 time = 5; //消息时间
+}
+
+//加密文本消息
+message MsgSecretText{
+	string msg_id = 1;
+	string site_user_id = 2;
+	string site_friend_id = 3;
+	bytes text = 4;
+	string ts_key = 5; //加密key
+	string site_device_id = 6;
+	int64 time = 7; //消息时间
+}
+
+//普通文本消息
+message GroupText{
+	string msg_id = 1;	//消息id
+	string site_user_id = 2;
+	string site_group_id = 3;
+	bytes text = 4;
+	int64 time = 5; //消息时间
+}
+
+//加密文本消息
+message GroupSecretText{
+	string msg_id = 1;
+	string site_user_id = 2;
+	string site_group_id = 3;
+	bytes text = 4;
+	string ts_key = 5; //加密key
+	string site_device_id = 6;
+	int64 time = 7; //消息时间
+}
+
+//普通图片消息
+message MsgImage{
+
+}
+
+//加密图片消息
+message MsgSecretImage{
+
+}
+
+//普通语音消息
+message MsgVoice{
+
+}
+
+//加密语音消息
+message MsgSecretVoice{
+
+}
+
+//普通地理位置消息
+message MsgMap{
+}
+
+//加密地理位置消息
+message MsgSecretMap{
+}

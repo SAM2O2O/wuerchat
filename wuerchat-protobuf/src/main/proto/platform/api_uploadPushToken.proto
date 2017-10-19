@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package platform;
+
+option java_package = "com.zaly.proto.platform";
+option java_outer_classname = "UploadPushToken";
+
+
+service ApiUserInfo {
+    rpc uploadPushToken(ApiPushTokenRequest) returns(ApiPushTokenResponse);
+}
+
+message ApiPushTokenRequest {
+    string user_id_pubk = 1;
+    string user_device_pubk = 2;
+	string user_device_sign = 3;
+    string push_token = 4;
+}
+
+message ApiPushTokenResponse {
+    int32 res_code = 1;
+    string res_data = 2;
+    string err_info = 3;
+}

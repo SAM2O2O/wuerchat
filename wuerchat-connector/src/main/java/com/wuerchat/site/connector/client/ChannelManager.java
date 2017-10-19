@@ -1,36 +1,28 @@
 package com.wuerchat.site.connector.client;
 
+import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
 
 public class ChannelManager {
 
-	private ConcurrentMap<String, ChannelSession> clientChannels = new ConcurrentHashMap<String, ChannelSession>();
+	private static Map<String, ChannelSession> clientChannels = new ConcurrentHashMap<String, ChannelSession>();
 
 	private ChannelManager() {
 
 	}
 
-	public static ChannelManager getInstance() {
-		return SingletonHolder.instance;
-	}
-
-	static class SingletonHolder {
-		private static ChannelManager instance = new ChannelManager();
-	}
-
-	public ChannelManager addChannel(String userId, ChannelSession channelSession) {
+	public static Map<String, ChannelSession> addChannel(String userId, ChannelSession channelSession) {
 		clientChannels.put(userId, channelSession);
-		return this;
+		return clientChannels;
 	}
 
-	public ChannelManager delChannel(String userId) {
+	public static Map<String, ChannelSession> delChannel(String userId) {
 		clientChannels.remove(userId);
-		return this;
+		return clientChannels;
 	}
 
-	public ChannelSession getChannelSession(String userId) {
+	public static ChannelSession getChannelSession(String userId) {
 		for (String key : clientChannels.keySet()) {
 			if (!userId.equals(key)) {
 				System.out.println("key=" + key);
@@ -40,7 +32,15 @@ public class ChannelManager {
 		return clientChannels.get(userId);
 	}
 
-	public Set<String> getChannelSet() {
+	public static Set<String> getChannelSet() {
 		return clientChannels.keySet();
+	}
+
+	public static Map<String, ChannelSession> getChannelSession() {
+		return clientChannels;
+	}
+
+	public static long getChannelsSize() {
+		return clientChannels.size();
 	}
 }

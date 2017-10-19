@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package platform;
+
+option java_package = "com.zaly.proto.platform";
+option java_outer_classname = "UserInfoProto";
+
+
+service UserInfoService {
+    rpc uploadUserInfo(UploadUserInfoRequest) returns(UploadUserInfoResponse);
+}
+
+message UploadUserInfoRequest {
+    string user_id_prik = 1;
+    string user_id_pubk = 2;
+    string user_photo = 3;
+    string user_name = 4;
+    string user_phone_id = 5;
+
+    string client_type = 6;
+    string rom = 7;
+    string push_token = 8;
+}
+
+message UploadUserInfoResponse{
+
+}

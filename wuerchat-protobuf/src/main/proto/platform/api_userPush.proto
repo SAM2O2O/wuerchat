@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package platform;
+
+
+option java_package = "com.zaly.proto.platform";
+option java_outer_classname = "UserPush";
+
+service UserPushService {
+    rpc uploadPushToken(UploadPushTokenRequest) returns(UploadPushTokenResponse);
+    rpc sendPush(UserPushRequest) returns(UserPushResponse);
+}
+
+
+message UploadPushTokenRequest {
+    string user_id_pubk = 1;
+    string user_device_pubk = 2;
+	string user_device_sign = 3;
+    string push_token = 4;
+}
+
+message UploadPushTokenResponse {
+    int32 res_code = 1;
+    string res_data = 2;
+    string err_info = 3;
+}
+
+message UserPushRequest {
+    string user_id_pubk = 1;
+    string site_server = 2;
+    string user_name=3;
+    string push_token = 4;
+    string push_text = 5;
+    string push_unread = 6;
+    string push_goto = 7;
+}
+
+message UserPushResponse {
+
+}

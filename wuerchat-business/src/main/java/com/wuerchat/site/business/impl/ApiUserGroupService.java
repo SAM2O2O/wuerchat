@@ -2,7 +2,7 @@ package com.wuerchat.site.business.impl;
 
 import com.wuerchat.common.command.Command;
 import com.wuerchat.common.command.CommandResponse;
-import com.wuerchat.site.protobuf.business.GetGroupList;
+import com.zaly.proto.site.UserGroupProto;
 
 public class ApiUserGroupService extends AbstractApiBusiness {
 
@@ -14,16 +14,14 @@ public class ApiUserGroupService extends AbstractApiBusiness {
 
 	public CommandResponse getGroupList(Command command) {
 
-		GetGroupList.GroupsimpleProfile groupProfile = GetGroupList.GroupsimpleProfile.newBuilder()
+		UserGroupProto.GroupsimpleProfile groupProfile = UserGroupProto.GroupsimpleProfile.newBuilder()
 				.setSiteGroupId("5000").setGroupName("Group0").setGroupPhoto("").build();
-		
-		GetGroupList.GroupsimpleProfile groupProfile1 = GetGroupList.GroupsimpleProfile.newBuilder()
+
+		UserGroupProto.GroupsimpleProfile groupProfile1 = UserGroupProto.GroupsimpleProfile.newBuilder()
 				.setSiteGroupId("5001").setGroupName("Group1").setGroupPhoto("").build();
 
-		GetGroupList.ApiGetGroupsResponse response = GetGroupList.ApiGetGroupsResponse.newBuilder()
-				.addList(0, groupProfile)
-				.addList(1, groupProfile1).build();
-		
+		UserGroupProto.GetGroupsResponse response = UserGroupProto.GetGroupsResponse.newBuilder()
+				.addList(0, groupProfile).addList(1, groupProfile1).build();
 
 		CommandResponse cmdRes = new CommandResponse();
 		cmdRes.setVersion(1);
