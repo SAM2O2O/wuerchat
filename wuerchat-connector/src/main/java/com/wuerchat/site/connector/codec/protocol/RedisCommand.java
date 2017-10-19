@@ -77,8 +77,8 @@ public class RedisCommand {
 		for (AbstractParameter argument : arguments) {
 			byteSize += argument.getSize();
 		}
-//		return byteSize;
-		return 1000;
+		System.out.println("real byte size=" + byteSize);
+		return byteSize + 10;
 	}
 
 	public String getParameterByIndex(int i) {

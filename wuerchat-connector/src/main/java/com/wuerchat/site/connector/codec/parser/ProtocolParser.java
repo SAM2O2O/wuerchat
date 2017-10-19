@@ -68,13 +68,10 @@ public class ProtocolParser implements IProtocolParser {
 
 						byte[] dataBuffer = new byte[readByteSize];
 						inByte.readBytes(dataBuffer);
-//						for (byte aa : dataBuffer) {
-//							System.out.print("," + (int) aa);
-//						}
-//						System.out.println("------");
-						System.out.println("read String real size ==" + dataBuffer.length);
 						paramsList.add(new RedisBytesParameter(dataBuffer));
 
+						System.out.println("read String ==" + new String(dataBuffer));
+						
 						if (inByte.readByte() == '\r' && inByte.readByte() == '\n') {
 							System.out.println("success!...");
 						} else {

@@ -1,6 +1,5 @@
 package com.wuerchat.site.connector.handler;
 
-import java.nio.charset.Charset;
 import java.util.HashMap;
 import java.util.UUID;
 
@@ -37,44 +36,33 @@ public class ImMessageHandler extends AbstractCommonHandler<Command> {
 		for (byte cub : command.getParams().getBytes()) {
 			System.out.print("," + (int) cub);
 		}
-		
+		System.out.println();
+
 		String method = command.getMethod();
 		if (method.equalsIgnoreCase("toSiteMsg")) {
 			try {
-				try {
-					
-					CoreProto.TransportPackageData packageData = CoreProto.TransportPackageData
-							.parseFrom(ByteString.copyFrom(command.getParams().getBytes()));
 
-					ImToSiteMsgProto.ToSiteMsgRequest request = ImToSiteMsgProto.ToSiteMsgRequest
-							.parseFrom(packageData.getData());
+				CoreProto.TransportPackageData packageData = CoreProto.TransportPackageData
+						.parseFrom(ByteString.copyFrom(command.getParams().getBytes()));
 
-					int type = request.getType().getNumber();
-					System.out.println("inner type = " + type);
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-					System.out.println("error...........");
-				}
-				int type = 3;
-				System.out.println("MsgType = " + type);
+				ImToSiteMsgProto.ToSiteMsgRequest request = ImToSiteMsgProto.ToSiteMsgRequest
+						.parseFrom(packageData.getData());
+
+				int type = request.getType().getNumber();
+				System.out.println("Msg type = " + type);
 
 				switch (type) {
 				case 3:
-					// String site_user_id =
-					// request.getText().getSiteFriendId();
-					// String site_friend_id =
-					// request.getText().getSiteFriendId();
-
-					String site_user_id = "10001";
-					String site_friend_id = "2222";
+					String site_user_id = request.getText().getSiteUserId();
+					String site_friend_id = request.getText().getSiteFriendId();
 
 					System.out.println("message TEXT site_user_id = " + site_user_id);
 					System.out.println("message TEXT site_friend_id = " + site_friend_id);
 
 					// 给friend用户发送消息
-					Channel friend_channel = ChannelManager.getChannelSession(site_friend_id).getChannel();
-
+					// Channel friend_channel =
+					// ChannelManager.getChannelSession(site_friend_id).getChannel();
+					Channel friend_channel = channelSession.getChannel();
 					if (friend_channel == null) {
 						friend_channel = channelSession.getChannel();
 						System.out.println("user friend is offline! userself instead!");
@@ -163,6 +151,7 @@ public class ImMessageHandler extends AbstractCommonHandler<Command> {
 
 		System.out.println("execute toClientMsg Ret");
 		// invoke interface of business
+
 		CoreProto.MsgStatus status = CoreProto.MsgStatus.newBuilder().setMsgId("1001001").setMsgStatus(1).build();
 
 		ImToClientMsgProto.MsgWithPointer statusMsg = ImToClientMsgProto.MsgWithPointer.newBuilder()
@@ -172,9 +161,8 @@ public class ImMessageHandler extends AbstractCommonHandler<Command> {
 				.addList(0, statusMsg).build();
 
 		CoreProto.TransportPackageData data = CoreProto.TransportPackageData.newBuilder()
-				.putAllHeader(new HashMap<Integer, String>()).setData(ByteString.copyFrom(request.toByteArray()))
-				.build();
-
+				.putAllHeader(new HashMap<Integer, String>()).setData(request.toByteString()).build();
+		System.out.println("data.size=" + data.toByteArray().length);
 		channel.writeAndFlush(new RedisCommand().add(1).add("Im.toClientMsg").add(data.toByteArray()));
 
 	}
