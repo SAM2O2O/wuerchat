@@ -1,5 +1,6 @@
 package com.wuerchat.site.connector.handler;
 
+import java.nio.charset.Charset;
 import java.util.HashMap;
 import java.util.UUID;
 
@@ -31,9 +32,9 @@ public class ImMessageHandler extends AbstractCommonHandler<Command> {
 
 		ChannelSession channelSession = command.getField("channel_session", ChannelSession.class);
 
-		System.out.println("ImMessageHandler.length=" + command.getParams().length() + "=" + command.toString());
+		System.out.println("ImMessageHandler.length=" + command.getParams().length + "=" + command.toString());
 
-		for (byte cub : command.getParams().getBytes()) {
+		for (byte cub : command.getParams()) {
 			System.out.print("," + (int) cub);
 		}
 		System.out.println();
@@ -43,7 +44,7 @@ public class ImMessageHandler extends AbstractCommonHandler<Command> {
 			try {
 
 				CoreProto.TransportPackageData packageData = CoreProto.TransportPackageData
-						.parseFrom(ByteString.copyFrom(command.getParams().getBytes()));
+						.parseFrom(ByteString.copyFrom(command.getParams()));
 
 				ImToSiteMsgProto.ToSiteMsgRequest request = ImToSiteMsgProto.ToSiteMsgRequest
 						.parseFrom(packageData.getData());
@@ -59,6 +60,10 @@ public class ImMessageHandler extends AbstractCommonHandler<Command> {
 					System.out.println("message TEXT site_user_id = " + site_user_id);
 					System.out.println("message TEXT site_friend_id = " + site_friend_id);
 
+					ByteString byteStr = request.getText().getText();
+					
+					System.out.println("message TEXT = " + byteStr.toString(Charset.forName("UTF-8")));
+					
 					// 给friend用户发送消息
 					// Channel friend_channel =
 					// ChannelManager.getChannelSession(site_friend_id).getChannel();
@@ -91,7 +96,7 @@ public class ImMessageHandler extends AbstractCommonHandler<Command> {
 			try {
 
 				CoreProto.TransportPackageData packageData = CoreProto.TransportPackageData
-						.parseFrom(ByteString.copyFromUtf8(command.getParams()));
+						.parseFrom(ByteString.copyFrom(command.getParams()));
 
 				ImSyncProto.ImSyncRequest syncRequest = ImSyncProto.ImSyncRequest.parseFrom(packageData.getData());
 

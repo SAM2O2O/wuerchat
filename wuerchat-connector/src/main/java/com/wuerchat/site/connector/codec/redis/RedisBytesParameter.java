@@ -43,6 +43,11 @@ public class RedisBytesParameter extends AbstractParameter {
 	}
 
 	@Override
+	public byte[] getBytesValue() {
+		return this.value;
+	}
+
+	@Override
 	public int getSize() {
 		return getByteSize(this.value);
 	}

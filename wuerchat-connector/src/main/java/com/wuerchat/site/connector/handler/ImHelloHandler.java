@@ -43,7 +43,7 @@ public class ImHelloHandler extends AbstractCommonHandler<Command> {
 		System.out.println("execute api request from client");
 		try {
 			CoreProto.TransportPackageData packageData = CoreProto.TransportPackageData
-					.parseFrom(ByteString.copyFrom(command.getParams().getBytes()));
+					.parseFrom(ByteString.copyFrom(command.getParams()));
 			ImHelloProto.ImHelloRequest request = ImHelloProto.ImHelloRequest.parseFrom(packageData.getData());
 
 			// 兼容客户端版本

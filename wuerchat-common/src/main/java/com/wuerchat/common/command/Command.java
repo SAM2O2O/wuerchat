@@ -12,7 +12,7 @@ import java.util.Map;
 public class Command {
 	private String service;
 	private String method;
-	private String params;
+	private byte[] params;
 	private Object response;
 
 	private Map<String, Object> fields = new HashMap<String, Object>();
@@ -39,11 +39,11 @@ public class Command {
 		this.method = method;
 	}
 
-	public String getParams() {
+	public byte[] getParams() {
 		return params;
 	}
 
-	public void setParams(String params) {
+	public void setParams(byte[] params) {
 		this.params = params;
 	}
 

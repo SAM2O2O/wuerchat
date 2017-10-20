@@ -52,7 +52,7 @@ public class NettyInboundHandler extends SimpleChannelInboundHandler<RedisComman
 		Command command = new Command();
 		System.out.println("version=" + redisCmd.getParameterByIndex(0));
 		command.setServiceMethod(redisCmd.getParameterByIndex(1));
-		command.setParams(redisCmd.getParameterByIndex(2));
+		command.setParams(redisCmd.getBytesParamByIndex(2));
 		command.setField("channel_session", channelSession);
 
 		this.executor.execute(command.getService(), command);

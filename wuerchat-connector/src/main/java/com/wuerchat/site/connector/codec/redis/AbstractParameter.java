@@ -9,7 +9,13 @@ public abstract class AbstractParameter {
 
 	public abstract void encode(ByteBuffer buffer);
 
-	public abstract String getValue();
-	
 	public abstract int getSize();
+
+	public String getValue() {
+		return null;
+	}
+
+	public byte[] getBytesValue() {
+		return null;
+	}
 }

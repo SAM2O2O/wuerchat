@@ -87,5 +87,12 @@ public class RedisCommand {
 		}
 		return arguments.get(i).getValue();
 	}
+	
+	public byte[] getBytesParamByIndex(int i){
+		if (i > arguments.size()) {
+			return null;
+		}
+		return arguments.get(i).getBytesValue();
+	}
 
 }
